@@ -1,0 +1,28 @@
+Package: TBtrends
+Title: Reproducible analysis of TB trends in Blantyre
+Version: 0.0.0.9000
+Authors@R: c(
+    person(given = "Hussein",
+           family = "Twabi",
+           role = c("aut", "cre"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID")),
+    person(given = "McEwen",
+           family = "Khundi",
+           role = c("aut"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID")),
+    person(given = "Marriott",
+           family = "Nliwasa",
+           role = c("aut"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID")),
+    person(given = "Peter",
+           family = "MacPherson",
+           role = c("aut"),
+           email = "peter.macpherson@lstmed.ac.uk",
+           comment = c(ORCID = "0000-0002-0329-9613")))
+Description: A package to allow reproducible analysis of trends in TB case notifications in Blantyre, Malawi over time.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true

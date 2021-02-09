@@ -1,0 +1,1689 @@
+---
+title: "Formating TB case notification data"
+author: "McEwen Khundi & Peter MacPherson"
+date: "17/07/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## TB case notification data formating
+
+```{r }
+library(tidyverse)
+library(haven)
+library(lubridate)
+library(labelled)
+library(here)
+library(usethis)
+library(readxl)
+library(zoo)
+library(janitor)
+```
+
+# import dataset
+
+```{r enter_data, echo=FALSE}
+x01_lab2018 <- read_dta(here("data-raw/x01_labreq_Matched__all.dta"))
+dim(x01_lab2018)
+table(x01_lab2018$x05year)
+#22613 records 2011 to 2018
+x01_2009_2010 <- read_dta(here("data-raw/cnr_2009_2010_cleaned_24may15.dta"))
+dim(x01_2009_2010)
+#8149 records from 2009
+
+x01_merged_2011_2018 <- read_dta(here("data-raw/all_merged_2011_2018.dta"))
+dim(x01_merged_2011_2018)
+table(x01_merged_2011_2018$x05year)
+
+cnrs_mn <- read_dta("cnr_cleaned_MN.dta")
+
+```
+
+#Prep the 2011 to 2018 dataset
+```{r int_clusters}
+#Keep only those in intervention and non-intervention clusters
+dim(x01_lab2018)
+table(x01_lab2018$x01area, useNA = "always")
+
+x01_lab2018 <- x01_lab2018 %>%
+  filter(x01area <= 2)
+
+#6032 outside of ACF and non-ACF areas filtered out
+
+#Check if missing registration date
+
+x01_lab2018 %>%
+  select(x05regdate) %>%
+  head()
+
+sum(is.na(x01_lab2018$x05regdate))
+#6 found
+
+x01_lab2018 <- x01_lab2018 %>%
+  filter(!(is.na(x01_lab2018$x05regdate)))
+dim(x01_lab2018)
+
+```
+
+
+# Create quarters and registration year
+```{r}
+
+x01_lab2018 <- x01_lab2018 %>%
+  mutate(year = year(x05regdate), quarter = quarter(x05regdate))
+table (x01_lab2018$quarter)
+
+
+```
+# Additional cleaning of the data
+
+```{r}
+# only intervention and non intervention
+table(x01_lab2018$x01area)
+
+# drop if missing either sex, age or quarter 
+sum(is.na(x01_lab2018$x11sex)|is.na(x01_lab2018$x12age)|is.na(x01_lab2018$quarter))
+
+x01_lab2018 <- x01_lab2018 %>%
+  filter(!(is.na(x01_lab2018$x11sex) | is.na(x01_lab2018$x12age) | is.na(x01_lab2018$quarter)))
+dim(x01_lab2018)
+
+```
+
+Create ACF periods, pre, acf post
+```{r}
+table(x01_lab2018$year)
+
+x01_lab2018 <- x01_lab2018 %>%
+  filter(!(x01_lab2018$year==201))
+dim(x01_lab2018)
+
+x01_lab2018 <- x01_lab2018 %>%
+  mutate( period = case_when(
+    year %in% c(2009,2010) ~ "pre-ACF",
+    year %in% c(2011) & quarter %in% c(1) ~ "pre-ACF",
+    year %in% c(2011) & quarter %in% c(2,3,4) ~ "ACF",
+    year %in% c(2012,2013) ~ "ACF",
+    year %in% c(2014) & quarter %in% c(1,2,3) ~ "ACF",
+    year %in% c(2014) & quarter %in% c(4) ~ "post-ACF",
+    year %in% c(2015,2016,2017,2018) ~ "post-ACF"
+  ))
+
+table(
+  yearq = paste0(
+    x01_lab2018$year,
+    ".", x01_lab2018$quarter
+  ),
+  x01_lab2018$period
+)
+
+
+```
+
+Create other additional variables i.e age groups,facility type 
+```{r}
+x01_lab2018 <- x01_lab2018 %>%
+  mutate(agegp = case_when(
+    between(x12age, 16,19) ~ 1,
+    between(x12age, 20,29) ~ 2,
+    between(x12age, 30,39) ~ 3,
+    between(x12age, 40,49) ~ 4,
+    TRUE ~ 5
+  ),
+  factype = case_when(
+  x04fac_code %in% c("BTQE") ~ 1,
+  x04fac_code %in% c("BTBG","BTCH","BTLB","BTND","BTSL","BTZG","BTGW") ~ 2,
+  x04fac_code %in% c("BTBAH","BTCW","BTMB","BTMW") ~ 3
+  ),
+  hiv = case_when(
+    x20hiv %in% c(1) ~ 1,
+    x20hiv %in% c(2) ~ 0,
+    TRUE ~ NA_real_
+  ),
+  mode = if_else(is.na(x08mode),true = 1, false = x08mode)
+  )
+
+#Check the created variables
+table(agegp=x01_lab2018$agegp, useNA = "always")
+table(mode=x01_lab2018$mode,x08mode=x01_lab2018$x08mode, useNA = "always")
+table(x01_lab2018$new_mode, useNA = "always")
+table(hiv=x01_lab2018$hiv,x20hiv=x01_lab2018$x20hiv, useNA = "always")
+dim(x01_lab2018)
+```
+
+Create variables for bacteriological confirmation
+Add in culture-positive
+
+```{r}
+#clinic smear from X01
+table(x01_lab2018$x15smr, useNA = "always")
+
+#Lab smear from culture request form
+table(tolower(x01_lab2018$l28smear), useNA = "always")
+
+#Xpert
+table(x01_lab2018$x15xpert, useNA = "always")
+
+x01_lab2018 <- x01_lab2018 %>%
+  mutate(smr_clinic = case_when(
+    x15smr %in% c(1) ~ 1,
+    x15smr %in% c(2) ~ 0,
+    x15smr %in% c(3) ~ NA_real_
+  ),
+  smr_lab = case_when(
+    tolower(l28smear) %in% c("pos","sca","scant","scanty") ~ 1,
+    tolower(l28smear) %in% c("neg") ~ 0,
+    TRUE ~ NA_real_
+  ),
+  smr_either = case_when(
+    smr_clinic %in% c(1) |  smr_lab %in% c(1) ~ 1,
+   smr_clinic %in% c(0) |  smr_lab %in% c(0) ~ 0,
+   TRUE ~ NA_real_
+  )
+  )
+
+
+x01_lab2018 <- x01_lab2018 %>%
+  mutate(xpert_clinic = case_when(x15xpert==1 ~ 1,
+                                  x15xpert==2 ~ 0,
+                                  x15xpert==3 ~ NA_real_, 
+                                  TRUE ~ NA_real_))
+  
+  
+#check the created variables
+table(x01_lab2018$smr_clinic,x01_lab2018$x15smr, useNA = "always")
+table(smr_lab=x01_lab2018$smr_lab,l28smear=tolower(x01_lab2018$l28smear), useNA = "always")
+table(smr_either=x01_lab2018$smr_either,clinic.lab=paste(x01_lab2018$smr_clinic,".",                                                         x01_lab2018$smr_lab))
+
+#smr_both called pos_tb in the do_file not the one called both_smr
+table(clinic=x01_lab2018$smr_clinic,lab=x01_lab2018$smr_lab, useNA = "always")
+
+dim (x01_lab2018)
+```
+
+select the variables that are needed
+
+```{r}
+tb_cases_2011_2018 <- x01_lab2018  %>%
+  mutate(year_q = paste(year, quarter, sep=".")) %>%
+  select(unique_id, fac_code, reg_date = x05regdate, agegp, factype, year, quarter, year_q, period, sex=x11sex, age=x12age,  acf = x01area, hiv, art=x21art, smr_clinic=x15smr, smr_lab, xpert_clinic, new_mode, tbtype=x17tbtype, cgh_dur=x14cgh, tbcat=x16patcat, lab_culture=l32id)
+
+
+#some more tidying up
+tb_cases_2011_2018 <- tb_cases_2011_2018 %>%
+  mutate(reg_date = ymd(reg_date)) %>%
+  mutate(sex= case_when(sex==1 ~ "Male",
+                        sex==2 ~ "Female"))  %>%
+mutate(hiv = case_when(
+    x20hiv %in% c(1) ~ 1,
+    x20hiv %in% c(2) ~ 0,
+    TRUE ~ NA_real_ )) %>%
+  mutate(smr_clinic = case_when(smr_clinic==0 ~ "a) Smear-negative",
+                                smr_clinic==1 ~ "b) Smear-positive")) %>%
+  mutate(smr_lab = case_when(smr_lab==0 ~ "a) Smear-negative",
+                             smr_lab==1 ~ "b) Smear-positive")) %>%
+  mutate(smr_any = case_when(smr_lab=="b) Smear-positive" | smr_clinic=="b) Smear-positive" ~ "b) Smear-positive",
+                             smr_lab=="a) Smear-negative" & smr_clinic=="a) Smear-negative" ~ "a) Smear-negative",
+                             smr_lab=="a) Smear-negative" & is.na(smr_clinic) ~ "a) Smear-negative",
+                             is.na(smr_lab) & smr_clinic=="a) Smear-negative" ~ "a) Smear-negative")) %>%
+  mutate(xpert_clinic = case_when(xpert_clinic==1 ~ "b) Xpert-positive",
+                                  xpert_clinic==0 ~ "a) Xpert-negative")) %>%
+  mutate(xpert_cliniC=if_else(year %in% c(2011:2014), NA_character_, xpert_clinic ))%>%
+  mutate(smr_xpert_any = case_when(smr_any == "b) Smear-positive" | xpert_clinic=="b) Xpert-positive" ~ "b) Smr/Xpert-positive", smr_any == "a) Smear-negative" & (is.na(xpert_clinic) | xpert_clinic=="a) Xpert-negative") ~ "a) Smr/Xpert-negative", is.na(smr_any) & xpert_clinic=="a) Xpert-negative" ~ "a) Smr/Xpert-negative")) %>%
+  mutate(acf = case_when(acf==1 ~ "ACF",
+                         acf==2 ~ "Non-ACF")) %>%
+  mutate(art = case_when(art==1 ~ "b) Taking ART",
+                         art==2 ~ "a) Not taking ART")) %>%
+  mutate(tbtype = case_when(tbtype==1 ~ "a) Pulmonary TB",
+                            tbtype==2 ~ "b) Extrapulmonary TB")) %>%
+  mutate(tbcat = case_when(tbcat==1 ~ "a) New TB case",
+                           tbcat==2 ~ "b) Relapse TB case",
+                           tbcat==3 ~ "c) Retreatment after default",
+                           tbcat==4 ~ "d) Retreatment after failure",
+                           tbcat==5 ~ "e) Other")) %>%
+  mutate(lab_culture = case_when(lab_culture=="MTB" ~ "MTB culture-positive",
+                                 lab_culture=="" ~ "MTB culture-negative",
+                                 lab_culture=="Non TB mycobacteria" ~ "NTM",
+                                 lab_culture=="Non TB mycobateria" ~ "NTM",
+                                 lab_culture=="Unidentified ZN +ve" ~ "NTM",
+                                 TRUE ~ NA_character_)) %>%
+  mutate(smr_xpert_culture_any = case_when(smr_xpert_any=="b) Smr/Xpert-positive" ~ "b) Smr/Xpert/Culture-positive",
+                                           lab_culture=="MTB culture-positive" ~ "b) Smr/Xpert/Culture-positive",
+                                           smr_xpert_any=="a) Smr/Xpert-negative" ~ "a) Smr/Xpert/Culture-negative",
+                                           lab_culture=="MTB culture-negative" ~ "a) Smr/Xpert/Culture-negative",
+                                           lab_culture=="NTM" ~ "a) Smr/Xpert/Culture-negative",
+                                           TRUE ~ smr_xpert_any))
+
+tb_cases_2011_2018 %>%
+  tabyl(lab_culture, smr_xpert_culture_any)
+table(tb_cases_2011_2018$year)
+
+#remove those prior to q2_2011
+table(tb_cases_2011_2018$year_q)
+tb_cases_2011_2018 <- tb_cases_2011_2018 %>%
+  filter(year_q !="2011.1")
+#some 63 cases have been removed that belonged to Q1-2011
+dim (tb_cases_2011_2018)
+
+```
+
+Lets check all of these variables!
+
+There were 4 quarters when Xpert was introduced where TB Officers in the NTP mistakenly classified Xpert negative TB cases as Xpert-positive - correct these here. These are taken from Marriott's cleaned dataset
+
+```{r}
+
+#Keep those where Xpert reported as positive, but xpert_corrected was negative.
+keep_mn <- cnrs_mn %>%
+  select(unique_id, xpert, xpert_corrected, x05regdate) %>%
+  filter(!is.na(xpert_corrected)) %>%
+  mutate(keep = case_when(xpert==1 & xpert_corrected==0 ~ "keep",
+                          TRUE ~ "dont keep")) %>%
+  filter(keep=="keep")
+dim(keep_mn)
+```
+
+Now merge these to the larger dataset
+
+```{r}
+
+tb_cases_2011_2018 <- tb_cases_2011_2018 %>%
+  left_join(keep_mn, by="unique_id") %>%
+  mutate(xpert_clinic = case_when(xpert_clinic=="b) Xpert-positive" & xpert_corrected==0 ~
+                                    "a) Xpert-negative",
+                                  TRUE ~ xpert_clinic)) %>%
+  mutate(smr_xpert_any = case_when(smr_any == "b) Smear-positive" | xpert_clinic=="b) Xpert-positive" ~ "b) Smr/Xpert-positive",
+                                   smr_any == "a) Smear-negative" & (is.na(xpert_clinic) | xpert_clinic=="a) Xpert-negative") ~ "a) Smr/Xpert-negative",
+                                   is.na(smr_any) & xpert_clinic=="a) Xpert-negative" ~ "a) Smr/Xpert-negative")) %>%
+  select(-xpert, -xpert_corrected, -x05regdate, -keep)
+
+#MNeeting with Liz C and Marriott Nliwasa 2019-12-03 to clean these data
+#Now, we are still not convinced by the 135 2014 Xpert clinic positive results
+#there was an issue with the QECH lab here
+#convert all xpert-Positive results in 2014 to missing, and base micro classification on smear (clinic or lab)
+#also need to c onvert Q1 and Q2 of 2015
+
+tb_cases_2011_2018 <- tb_cases_2011_2018 %>%
+  mutate(xpert_clinic = case_when(year==2014 & xpert_clinic=="b) Xpert-positive" ~ NA_character_,
+                                  TRUE ~ xpert_clinic)) %>%
+  mutate(xpert_clinic = case_when(year_q=="2015.1" & xpert_clinic=="b) Xpert-positive" ~ NA_character_,
+                                  TRUE ~ xpert_clinic)) %>%
+  mutate(xpert_clinic = case_when(year_q=="2015.2" & xpert_clinic=="b) Xpert-positive" ~ NA_character_,
+                                  TRUE ~ xpert_clinic)) %>%
+  mutate(smr_xpert_any = case_when(smr_any == "b) Smear-positive" | xpert_clinic=="b) Xpert-positive" ~ "b) Smr/Xpert-positive",
+                                   smr_any == "a) Smear-negative" & (is.na(xpert_clinic) | xpert_clinic=="a) Xpert-negative") ~ "a) Smr/Xpert-negative",
+                                   is.na(smr_any) & xpert_clinic=="a) Xpert-negative" ~ "a) Smr/Xpert-negative"))
+
+tb_cases_2011_2018 <- tb_cases_2011_2018 %>%
+mutate(xpert_cliniC=if_else(year %in% c(2011:2014), NA_character_, xpert_clinic ))
+table(tb_cases_2011_2018$xpert_cliniC, tb_cases_2011_2018$year, useNA="always" )
+
+dim(tb_cases_2011_2018)
+
+tb_cases_2011_2018 <- tb_cases_2011_2018%>%
+  mutate(dxmethod = case_when(smr_clinic == "b) Smear-positive" ~ "afacility smear", 
+  xpert_clinic=="b) Xpert-positive" &  year>=2015 &
+(smr_clinic != "b) Smear-positive" | smr_lab != "b) Smear-positive" | lab_culture != "MTB culture-positive") ~ "bxpert only",
+  smr_lab == "b) Smear-positive"  &  
+  (smr_clinic != "b) Smear-positive" | xpert_clinic!="b) Xpert-positive" | lab_culture != "MTB culture-positive") ~ "clab smear only",
+lab_culture == "MTB culture-positive"    &  
+  (smr_clinic != "b) Smear-positive" | xpert_clinic!="b) Xpert-positive" | smr_lab != "b) Smear-positive") ~ "dculture only",
+                              TRUE ~ "eClinically diagnosed"
+  ))
+
+
+table(tb_cases_2011_2018$dxmethod, tb_cases_2011_2018$year,  useNA="always" )
+
+
+
+```
+
+```{r}
+
+tb_cases_2011_2018 %>%
+  select(-unique_id, -age, -reg_date) %>%
+  map(janitor::tabyl)
+
+tb_cases_2011_2018 %>%
+  janitor::tabyl(smr_clinic, xpert_clinic)
+
+tb_cases_2011_2018 %>%
+  janitor::tabyl(smr_lab, xpert_clinic)
+
+tb_cases_2011_2018 %>%
+  janitor::tabyl(smr_any, xpert_clinic)
+
+tb_cases_2011_2018 %>%
+  janitor::tabyl(smr_xpert_any, xpert_clinic)
+dim(tb_cases_2011_2018)
+
+
+
+```
+
+Save for analysis
+
+```{r}
+
+### table 1 all years
+tb_cases_2011_2018 <- tb_cases_2011_2018 %>%
+  filter(age>15) %>%
+  filter(!is.na(sex))%>%
+  filter(!is.na(reg_date))%>%
+  filter(year>2011)#because the 2011 data uses q1 data from retrospectively collcted data and q2 to q4 in prospectively collected data 
+  
+table(tb_cases_2011_2018$year)
+
+table (tb_cases_2011_2018$year,area=tb_cases_2011_2018$acf)
+
+tb_cases_2011_2018 <- tb_cases_2011_2018 %>%
+mutate(xpert_cliniC=if_else(year %in% 
+  c(2011,2012,2013, 2014), NA_character_, xpert_clinic ))
+table(tb_cases_2011_2018$xpert_clinic, tb_cases_2011_2018$year, useNA="always" )
+
+#sex
+table(sex=tb_cases_2011_2018$sex, year=tb_cases_2011_2018$year)
+table(sex=tb_cases_2011_2018$sex, area=tb_cases_2011_2018$acf, year=tb_cases_2011_2018$year)
+prop.table(table(sex=year2012$sex, area=year2012$acf), 2)
+
+#Age
+table (sex=tb_cases_2011_2018$agegp, year=tb_cases_2011_2018$year, area=tb_cases_2011_2018$acf)
+table (sex=tb_cases_2011_2018$agegp, area=tb_cases_2011_2018$acf, year=tb_cases_2011_2018$year)
+#prop.table(table(year2012$agegp))
+#table(year2012$agegp, year2012$acf)
+#prop.table (table(year2012$agegp, year2012$acf),2)
+
+#hiv
+table (hiv=tb_cases_2011_2018$hiv, year=tb_cases_2011_2018$year, useNA = "always")
+table (hiv=tb_cases_2011_2018$hiv, acf=tb_cases_2011_2018$acf, year=tb_cases_2011_2018$year, useNA = "always")
+
+table(hiv=tb_cases_2011_2018$hiv, art=tb_cases_2011_2018$art, year=tb_cases_2011_2018$year, useNA="always")
+table(hiv=tb_cases_2011_2018$hiv, art=tb_cases_2011_2018$art, year=tb_cases_2011_2018$year, acf=tb_cases_2011_2018$acf, useNA="always")
+
+
+table(hiv=year2012$hiv, art=year2012$art, year2012$acf, useNA="always") 
+
+tb_cases_2011_2018 <- tb_cases_2011_2018 %>%
+  
+mutate(hiv_art = case_when(
+  hiv=="b) HIV-positive" & art == "b) Taking ART"  ~ "aHIV-positive on ART",
+  hiv=="b) HIV-positive" & art == "a) Not taking ART"  ~ "bHIV-positive NOT on ART", 
+  hiv=="a) HIV-negative"  ~ "cHIV-Negative",
+  TRUE ~ "dNotdone")) 
+
+table(tb_cases_2011_2018b$hiv_art, year=tb_cases_2011_2018$year, acf=tb_cases_2011_2018$acf, useNA = "always")
+  
+  
+#facility
+table(tb_cases_2011_2018$fac_code)
+tb_cases_2011_2018 <- tb_cases_2011_2018 %>%
+  mutate( facility = case_when(
+    fac_code %in% c("BTQE") ~ "Central hospital",
+    fac_code  %in% c("BTBG","BTCH","BTLB","BTND","BTSL","BTZG","BTGW")  ~ "Health centre",
+    fac_code %in% c("BTBAH", "BTCH", "BTMB", "BTMW") ~ "private hospital",
+  ))
+
+table(tb_cases_2011_2018$factype, useNA="always")
+table(tb_cases_2011_2018$factype, tb_cases_2011_2018$year,  useNA="always")
+table(tb_cases_2011_2018$factype,  tb_cases_2011_2018$year,tb_cases_2011_2018$acf,   useNA="always")
+
+
+##diagnosis method
+table(tb_cases_2011_2018$smr_clinic)
+table(tb_cases_2011_2018$xpert_clinic)
+table(tb_cases_2011_2018$smr_lab, useNA = "always")
+table(tb_cases_2011_2018$lab_culture)
+
+tb_cases_2011_2018 <- tb_cases_2011_2018 %>%
+mutate(dxmethod = case_when(smr_clinic == "b) Smear-positive" ~ "afacility smear", 
+xpert_clinic=="b) Xpert-positive" & year >=2015~ "bxpert only",
+smr_lab == "b) Smear-positive" ~ "clab smear only",
+lab_culture == "MTB culture-positive" ~ "dculture only",
+TRUE ~ "eClinically diagnosed"
+))
+
+table(tb_cases_2011_2018$smr_clinic, tb_cases_2011_2018$xpert_clinic,  useNA="always")
+table(tb_cases_2011_2018$dxmethod, tb_cases_2011_2018$smr_clinic,  useNA="always")
+table(tb_cases_2011_2018$dxmethod, tb_cases_2011_2018$xpert_clinic,  useNA="always")
+table(lab=tb_cases_2011_2018$smr_lab, facility=tb_cases_2011_2018$smr_clinic,  useNA="always")
+table(tb_cases_2011_2018$dxmethod, tb_cases_2011_2018$smr_lab,  useNA="always")
+table(tb_cases_2011_2018$dxmethod, tb_cases_2011_2018$lab_culture,  useNA="always")
+
+
+table(tb_cases_2011_2018$dxmethod, tb_cases_2011_2018$year, tb_cases_2011_2018$acf,   useNA="always" )
+
+
+#pre-treatmet status
+table(tb_cases_2011_2018$dxmethod)
+
+tb_cases_2011_2018 <- tb_cases_2011_2018 %>%
+mutate(pretreat = case_when(
+  dxmethod=="afacility smear" | dxmethod=="bxpert only"  ~ "aPretreatbact",
+  TRUE ~ "clinical")) 
+table(tb_cases_2011_2018$pretreat)
+table(tb_cases_2011_2018$pretreat, tb_cases_2011_2018$year, useNA="always")
+
+
+#bacteriological
+table(tb_cases_2011_2018$dxmethod)
+
+tb_cases_2011_2018 <- tb_cases_2011_2018 %>%
+mutate(bact = case_when(
+  dxmethod=="afacility smear" | dxmethod=="bxpert only" | dxmethod=="clab smear only" | dxmethod=="dculture only" ~ "aBacteriological",
+  TRUE ~ "clinical")) 
+table(tb_cases_2011_2018$bact)
+table(tb_cases_2011_2018$bact, tb_cases_2011_2018$year, useNA="always")
+
+
+```
+```{r}
+
+```
+
+
+Now need to get the summary number of TB cases per quarter, for all TB cases, and sputum smear positive TB cases.
+
+There was a problem with the collection of the registers in 2010, meaning that the data is inacurate for that year. Here is Emily Webb's notes from the time:
+
+For 2009 data, we are happy that our data capture has been accurate since numbers are very similar to those from NTP (our quarterly totals are 1006, 993, 1019, 975; NTP quarterly totals are 991, 984, 1001, 975). Quarterly % differences (assuming NTP is gold standard) are 1.5%, 0.9%, 1.8% and 0%.
+ 
+For 2010 data, there were some issues with data capture, the primary one being some missing TB registers. Our quarterly totals (after cleaning) are 757, 631, 813, 868; NTP quarterly totals are 909, 848, 900, 933. Quarterly % differences are 16.7%, 25.6%, 9.7% and 7.0%. Note there were particular problems for the first two quarters, but also fairly substantial differences for quarters 3 and 4.
+ 
+The way that we got round this previously was to impute the number of “all TB” and “smear positive TB” cases among adults (16+) by start from the NTP quarterly totals (which are for all areas in Blantyre and all ages) and then applying the following calculations:
+For “all TB, adults (16+)”:
+To get area-specific (intervention urban, non-intervention urban, rural) from the 2010 NTP data, I first applied the overall proportions who were categorised into each area from the 2009 data, rather than using the 2010 data since I was concerned that missingness from the 2010 data would be related to the area of residence.
+Since children are excluded, I estimated the proportion of adults (>=18 years) for each quarter-intervention area combination based on our 2010 data. I made the decision to use the 2010 data to do this since it seemed unlikely to me that missingness would be related to the age of the individual.
+For “smear positive TB, adults (16+)”:
+NTP provide number of smear positives by age group and quarter. They use an age group of 15-24 years where as our cutoff is 16+ years. I assume that 10% of 15-24 year old cases were aged 15 years (strong assumption but will only make a difference of 1-2 cases total) and exclude this number. This gives me the following estimates for number of adult (16+) smear positive cases by quarter for the whole district: 300 (Q1), 261 (Q2), 285 (Q3), 270 (Q4).
+To estimate area-specific numbers I then applied the overall proportions of smear positives who were categorised in each area from the 2009 data.
+
+
+So, lets get the 2009q1-2011q1 case notifications
+
+```{r}
+
+cases_2010 <- tribble(~year_q,  ~acf,   ~n,
+                      "2010.1", "ACF",    169,
+                      "2010.2", "ACF",    156,
+                      "2010.3", "ACF",    161,
+                      "2010.4", "ACF",    163,
+                      "2011.1", "ACF",    142,
+                      "2010.1", "Non-ACF",    353,
+                      "2010.2", "Non-ACF",    325,
+                      "2010.3", "Non-ACF",    341,
+                      "2010.4", "Non-ACF",    369,
+                      "2011.1", "Non-ACF",    239
+                      )
+
+smrposcases_2010 <- tribble(~year_q,  ~acf,   ~n,
+                      "2010.1", "ACF",    74,
+                      "2010.2", "ACF",    65,
+                      "2010.3", "ACF",    71,
+                      "2010.4", "ACF",    67,
+                      "2011.1", "ACF",    63,
+                      "2010.1", "Non-ACF",    106,
+                      "2010.2", "Non-ACF",    92,
+                      "2010.3", "Non-ACF",    101,
+                      "2010.4", "Non-ACF",    95,
+                      "2011.1", "Non-ACF",    88
+                      )
+
+```
+
+get the 2009 cases...
+
+```{r}
+dim(x01_2009_2010)
+#2009 table 1
+
+tb_cases_2009_2010q1 <- x01_2009_2010
+table(tb_cases_2009_2010q1$hiv)
+tb_cases_2009_2010q1 <- x01_2009_2010 %>% 
+  select(reg_date = date, sex, age, hiv, acf=areaname, smr_clinic = smr) %>%
+  mutate(reg_date = ymd(reg_date)) %>%
+  mutate(sex= case_when(sex==1 ~ "Male",
+                        sex==2 ~ "Female"))  %>%
+  mutate(hiv = case_when(hiv==2 ~ "a) HIV-negative",
+                         hiv==1 ~ "b) HIV-positive",)) %>%
+  mutate(smr_clinic = case_when(smr_clinic==2 ~ "a) Smear-negative",
+                                smr_clinic==1 ~ "b) Smear-positive",
+                                smr_clinic==3 ~ NA_character_)) %>%
+  mutate(acf = case_when(acf=="Urban intervention" ~ "ACF",
+                         acf=="Urban non-intervention" ~ "Non-ACF")) %>%
+  mutate(quarter = quarter(reg_date)) %>%
+  mutate(year = year(reg_date)) %>%
+  mutate(year_q = paste(year, quarter, sep=".")) %>%
+  filter(year==2009) %>%
+  filter(!is.na(acf))
+
+usethis::use_data(tb_cases_2009, overwrite = TRUE)
+dim(tb_cases_2009)
+table(tb_cases_2009$sex)
+
+table(tb_cases_2009$sex, tb_cases_2009$acf)
+
+tb_cases_2009 <- tb_cases_2009 %>%
+  filter(age>15) %>%
+  filter(!is.na(sex))
+
+tb_cases_2009 <- tb_cases_2009 %>%
+mutate(agegp = case_when(
+    between(age, 16,19) ~ 1,
+    between(age, 20,29) ~ 2,
+    between(age, 30,39) ~ 3,
+    between(age, 40,49) ~ 4,
+    TRUE ~ 5,
+  ))
+
+
+dim (tb_cases_2009)
+table(tb_cases_2009$acf, useNA="always")
+table(tb_cases_2009$sex, tb_cases_2009$acf, useNA="always")
+table(tb_cases_2009$agegp, tb_cases_2009$acf, useNA="always")
+table(tb_cases_2009$hiv, tb_cases_2009$acf, useNA="always")
+table(tb_cases_2009$smr_clinic, tb_cases_2009$acf, useNA="always")
+
+#2010 table 1
+tb_cases_2010 <- x01_2009_2010 %>% 
+  select(reg_date = date, sex, age, hiv, acf=areaname, smr_clinic = smr) %>%
+  mutate(reg_date = ymd(reg_date)) %>%
+  mutate(sex= case_when(sex==1 ~ "Male",
+                        sex==2 ~ "Female"))  %>%
+  mutate(hiv = case_when(hiv==2 ~ "a) HIV-negative",
+                         hiv==1 ~ "b) HIV-positive")) %>%
+  mutate(smr_clinic = case_when(smr_clinic==2 ~ "a) Smear-negative",
+                                smr_clinic==1 ~ "b) Smear-positive",
+                                smr_clinic==3 ~ NA_character_)) %>%
+  mutate(acf = case_when(acf=="Urban intervention" ~ "ACF",
+                         acf=="Urban non-intervention" ~ "Non-ACF")) %>%
+  mutate(quarter = quarter(reg_date)) %>%
+  mutate(year = year(reg_date)) %>%
+  mutate(year_q = paste(year, quarter, sep=".")) %>%
+  filter(year==2010) %>%
+  filter(!is.na(acf))
+
+usethis::use_data(tb_cases_2010, overwrite = TRUE)
+dim(tb_cases_2010)
+table(tb_cases_2010$sex)
+
+table(tb_cases_2010$sex, tb_cases_2010$acf)
+
+tb_cases_2010 <- tb_cases_2010 %>%
+  filter(age>15) %>%
+  filter(!is.na(sex))
+
+tb_cases_2010 <- tb_cases_2010 %>%
+mutate(agegp = case_when(
+    between(age, 16,19) ~ 1,
+    between(age, 20,29) ~ 2,
+    between(age, 30,39) ~ 3,
+    between(age, 40,49) ~ 4,
+    TRUE ~ 5,
+  ))
+
+
+dim (tb_cases_2010)
+table(tb_cases_2010$acf, useNA="always")
+table(tb_cases_2010$sex, tb_cases_2010$acf, useNA="always")
+table(tb_cases_2010$agegp, tb_cases_2010$acf, useNA="always")
+table(tb_cases_2010$hiv, tb_cases_2010$acf, useNA="always")
+table(tb_cases_2010$smr_clinic, tb_cases_2010$acf, useNA="always")
+
+#2011 table 1
+
+tb_cases_2011 <- x01_2009_2010 %>% 
+  select(reg_date = date, sex, age, hiv, acf=areaname, smr_clinic = smr) %>%
+  mutate(reg_date = ymd(reg_date)) %>%
+  mutate(sex= case_when(sex==1 ~ "Male",
+                        sex==2 ~ "Female"))  %>%
+  mutate(hiv = case_when(hiv==2 ~ "a) HIV-negative",
+                         hiv==1 ~ "b) HIV-positive")) %>%
+  mutate(smr_clinic = case_when(smr_clinic==2 ~ "a) Smear-negative",
+                                smr_clinic==1 ~ "b) Smear-positive",
+                                smr_clinic==3 ~ NA_character_)) %>%
+  mutate(acf = case_when(acf=="Urban intervention" ~ "ACF",
+                         acf=="Urban non-intervention" ~ "Non-ACF")) %>%
+  mutate(quarter = quarter(reg_date)) %>%
+  mutate(year = year(reg_date)) %>%
+  mutate(year_q = paste(year, quarter, sep=".")) %>%
+  filter(year==2011) %>%
+  filter(!is.na(acf))
+
+usethis::use_data(tb_cases_2011, overwrite = TRUE)
+dim(tb_cases_2011)
+table(tb_cases_2011$sex)
+
+table(tb_cases_2011$sex, tb_cases_2011$acf)
+
+tb_cases_2011 <- tb_cases_2011 %>%
+  filter(age>15) %>%
+  filter(!is.na(sex))
+
+tb_cases_2011 <- tb_cases_2011 %>%
+mutate(agegp = case_when(
+    between(age, 16,19) ~ 1,
+    between(age, 20,29) ~ 2,
+    between(age, 30,39) ~ 3,
+    between(age, 40,49) ~ 4,
+    TRUE ~ 5,
+  ))
+table(tb_cases_2011$year_q)
+
+dim (tb_cases_2010)
+table(tb_cases_2010$acf, useNA="always")
+table(tb_cases_2010$sex, tb_cases_2010$acf, useNA="always")
+table(tb_cases_2010$agegp, tb_cases_2010$acf, useNA="always")
+table(tb_cases_2010$hiv, tb_cases_2010$acf, useNA="always")
+table(tb_cases_2010$smr_clinic, tb_cases_2010$acf, useNA="always")
+
+```
+
+
+
+Aggregate TB cases from q2_2011 onwards
+
+```{r}
+cases_2011_2018 <- tb_cases_2011_2018 %>%
+  group_by(year_q, acf) %>%
+  count()
+
+smrposcases_2011_2018 <- tb_cases_2011_2018 %>%
+  filter(smr_xpert_any=="b) Smr/Xpert-positive") %>%
+  group_by(year_q, acf) %>%
+  count()
+
+```
+
+Aggregate the 2009 TB cases
+
+```{r}
+
+cases_2009 <- tb_cases_2009 %>%
+  group_by(year_q, acf) %>%
+  count()
+
+smrposcases_2009 <- tb_cases_2009 %>%
+  filter(smr_clinic=="b) Smear-positive") %>%
+  group_by(year_q, acf) %>%
+  count()
+
+```
+
+
+
+Bind the rows together
+
+```{r}
+all_cases_2009_2018 <- bind_rows(cases_2009, cases_2010, cases_2011_2018) %>%
+  arrange(year_q) %>%
+  ungroup() %>%
+  mutate(tbcases = "All cases")
+
+smrpos_cases_2009_2018 <- bind_rows(smrposcases_2009, smrposcases_2010, smrposcases_2011_2018) %>%
+  arrange(year_q) %>%
+  ungroup() %>%
+  mutate(tbcases = "Smr/Xpert-positive cases")
+
+blantyre_tb_cases_2009_2018 <- bind_rows(all_cases_2009_2018, smrpos_cases_2009_2018)
+
+usethis::use_data(blantyre_tb_cases_2009_2018, overwrite = TRUE)
+
+```
+
+
+
+
+
+<br> 
+
+## Census data
+
+Import the census datasets
+
+```{r}
+blantyre_census_2008_2018 <- read_xlsx(here("data-raw/2019-06-26_blantyre_census.xlsx"))
+
+glimpse(blantyre_census_2008_2018)
+
+```
+
+save the census data
+
+```{r}
+
+usethis::use_data(blantyre_census_2008_2018, overwrite = TRUE)
+
+```
+
+
+Now interpolate population for each age and sex band assuming a constanst population growth over the 10y period
+
+```{r}
+
+#Get the census data into long format
+#note, we are assuming that population estimates are mid-year i.e. at end of Q2
+blantyre_census_2008_2018_2 <- blantyre_census_2008_2018 %>%
+  mutate(quarter = 2) %>%
+  mutate(year_q = paste(Year, quarter, sep=".")) %>%
+  janitor::clean_names() %>%
+  ungroup() %>%
+  gather(sex, population, -district, -year, -age, -quarter, -year_q)
+
+#get the age levels.
+ages <- blantyre_census_2008_2018_2 %>%
+  select(age) %>%
+  distinct() %>%
+  pull()
+
+#get the levels of other variables
+sexes <- c("total","males", "females")
+years <- 2008:2018
+quarters <- 1:4
+districts <- c("Blantyre City", "Blantyre Rural")
+
+#expand to get all combinations
+census_by_q <- crossing(year = years,
+                        quarter = quarters, 
+                        age = ages,
+                        sex = sexes,
+                        district = districts
+                        )
+
+#make the year_q variable
+census_by_q <- census_by_q %>%
+  mutate(year_q = paste(year, quarter, sep="."))
+
+#merge to give the quarters inbetween census with no estimates
+blantyre_census_by_q <- full_join(blantyre_census_2008_2018_2, census_by_q, by= c("year", "year_q", "quarter", "district", "age", "sex"))
+
+#now do the linear interpolation
+blantyre_census_by_q <- blantyre_census_by_q %>%
+  filter(year_q !="2008.1" & year_q !="2018.3" & year_q !="2018.4") %>%
+  arrange(year_q, age, sex) %>%
+  group_by(age, sex, district) %>%
+  mutate(population = round(na.approx(population))) 
+
+#Need to remove some white space from the 75+ age group name
+blantyre_census_by_q <- blantyre_census_by_q %>%
+  ungroup() %>%
+  mutate(age = str_trim(age))
+
+blantyre_census_by_q %>% 
+  janitor::tabyl(age)
+
+#Now need to project forwards for each age-sex district group for the last 2 quarters of 2018.
+qs_2018 <- crossing(
+  year = 2018,
+  quarter = 3:4,
+  age = ages,
+  sex = sexes,
+  district = districts,
+  population = NA_character_
+)
+
+qs_2018 <- qs_2018 %>%
+  mutate(age = str_trim(age))
+
+#make the year_q variable
+qs_2018 <- qs_2018 %>%
+  mutate(year_q = paste(year, quarter, sep="."))
+
+#bind onto the existing census estimates
+blantyre_census_by_q <- blantyre_census_by_q %>%
+  bind_rows(qs_2018)
+
+#now estimate the change per quarter for each age-sex group
+growth_rates <- blantyre_census_by_q %>%
+  ungroup() %>%
+  janitor::clean_names() %>%
+  filter(year_q %in% c("2008.2", "2018.2")) %>%
+  arrange(year_q, age, sex, district) %>%
+  group_by(age, sex, district) %>%
+  mutate(pop_diff = population - lag(population)) %>%
+  mutate(pct_change = (pop_diff/population)/41) %>%
+  mutate(check = round((lag(population) * pct_change) + lag(population))) %>%
+  select(district, age, sex, pct_change) %>%
+  filter(!is.na(pct_change))
+
+
+blantyre_census_by_q <- blantyre_census_by_q %>%
+  left_join(growth_rates)
+
+blantyre_census_by_q <- blantyre_census_by_q %>%
+  ungroup() %>%
+  group_by(district, age, sex) %>%
+  mutate(population = case_when(is.na(population) ~ round((lag(population)*pct_change) + lag(population)),
+                                TRUE ~ population)) %>%
+ mutate(population = case_when(is.na(population) ~ round((lag(population)*pct_change) + lag(population)),
+                                TRUE ~ population))
+
+
+#did that work???
+blantyre_census_by_q %>%
+  ggplot() +
+  geom_line(aes(x=year_q, y=population, group=age, colour=age)) +
+  facet_grid(sex~district, scales="free_y") +
+  theme_classic(base_family = "Open Sans Condensed Light") +
+  theme(axis.text.x=element_text(angle=45, hjust=1))
+
+blantyre_census_by_q %>%
+  filter(district=="Blantyre City") %>%
+  ggplot() +
+  geom_line(aes(x=year_q, y=population, group=age, colour=age)) +
+  facet_wrap(sex~.) +
+  theme_classic(base_family = "Open Sans Condensed Light") +
+  theme(axis.text.x=element_text(angle=45, hjust=1))
+
+blantyre_census_by_q %>%
+  filter(district=="Blantyre Rural") %>%
+  ggplot() +
+  geom_line(aes(x=year_q, y=population, group=age, colour=age)) +
+  facet_wrap(sex~.) +
+  theme_classic(base_family = "Open Sans Condensed Light") +
+  theme(axis.text.x=element_text(angle=45, hjust=1))
+
+#Some sanity checks
+blantyre_census_by_q %>%  
+  filter(year_q !="2008.2") %>%
+  group_by(year, district, age, sex) %>%
+  summarise(population = sum(population))
+
+#Some sanity checks
+blantyre_census_by_q %>%  
+  filter(year_q =="2018.4") %>%
+  group_by(district, sex) %>%
+  summarise(population = sum(population))
+
+#Some sanity checks
+blantyre_census_by_q %>%  
+  filter(year_q =="2018.4") %>%
+  group_by(district, age) %>%
+  summarise(population = sum(population))
+
+blantyre_census_by_q %>%  
+  filter(year_q =="2018.4") %>%
+  filter(sex != "total") %>%
+  group_by(district) %>%
+  summarise(population = sum(population))
+
+blantyre_census_by_q <- blantyre_census_by_q %>%
+  ungroup() %>%
+  select(-pct_change)
+
+```
+
+Save the census dataset
+
+```{r}
+
+use_data(blantyre_census_by_q, overwrite = TRUE)
+
+```
+
+
+
+
+## HIV prevalence estimates.
+
+Now make a dataset for age-group and sex disagregated HIV prevalence estimates over time.
+
+```{r}
+
+load(here::here("data-raw/ind_xray_Scale_HIV_2Dec2019.rda"))
+
+hivprev <- ind_xray_Scale_HIV_2Dec2019 %>%
+  mutate(hivstatus = case_when(d12sumres=="New Positve" ~ "HIV-positive",
+                               d12sumres=="Previous Positive Not on ART" ~ "HIV-positive",
+                               d12sumres=="Previous Positive on ART" ~ "HIV-positive",
+                               d12sumres=="New Negative" ~ "HIV-negative",
+                               TRUE ~ NA_character_)) %>%
+  filter(!is.na(agegp)) %>%
+  filter(!is.na(agegp)) %>%
+  mutate(age2=case_when(age<=19 ~ "16-19",
+                       age>=20 & age <=29 ~ "20-29",
+                       age>=30 & age <=39 ~ "30-39",
+                       age>=40 & age <=49 ~ "40-49",
+                       age>=50 ~ "50+")) %>%
+  mutate(sex = case_when(gender=="Female" ~ "females",
+                         gender=="Male" ~ "males")) %>%
+  filter(!is.na(age2)) %>%
+  filter(!is.na(sex)) %>%
+  filter(!is.na(hivstatus)) %>%
+  select(age=age2, sex, hivstatus) %>%
+  group_by(age, sex, hivstatus) %>%
+  count() %>%
+  group_by(age, sex) %>%
+  mutate(sum = sum(n)) %>%
+  mutate(hiv_prev = n/sum) %>%
+  select(-n, -sum) %>%
+  filter(hivstatus=="HIV-positive") %>%
+  select(-hivstatus)
+  
+
+
+
+hivprev <- tribble(
+  ~sex, ~age, ~hiv_prev,
+  "males", "16-19", 0.019,
+  "females", "16-19", 0.032,
+  "males", "20-29", 0.038,
+  "females", "20-29", 0.100,
+  "males", "30-39", 0.166,
+  "females", "30-39", 0.287,
+  "males", "40-49", 0.220,
+  "females", "40-49", 0.320,
+  "males", "50+", 0.174,
+  "females", "50+", 0.162
+)
+
+#get some denominators
+
+keep_ages <- c("15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54",
+               "55-59", "60-64", "65-69", "70-74", "75+")
+
+hiv_pops_blantyre_city <- blantyre_census_by_q %>%
+  filter(age %in% keep_ages) %>%
+  filter(district=="Blantyre City") %>%
+  filter(sex != "total") %>%
+  mutate(age = case_when(age=="15-19" ~ "16-19",
+                                age=="20-24" ~ "20-29",
+                                age=="25-29" ~ "20-29",
+                                age=="30-34" ~ "30-39",
+                                age=="35-39" ~ "30-39",
+                                age=="40-44" ~ "40-49",
+                                age=="45-49" ~ "40-49",
+                                age=="50-54" ~ "50+",
+                                age=="55-59" ~ "50+",
+                                age=="60-64" ~ "50+",
+                                age=="65-69" ~ "50+",
+                                age=="70-74" ~ "50+",
+                                age=="75+" ~ "50+")) %>%
+  group_by(year_q, sex, age) %>%
+  summarise(population = sum(population))
+
+hiv_pops_blantyre_city <- left_join(hiv_pops_blantyre_city, hivprev, by=c("age", "sex"))
+
+hiv_pops_blantyre_city <- hiv_pops_blantyre_city %>%
+  mutate(hiv_positive_pop = round(population*hiv_prev),
+         hiv_negative_pop = population-hiv_positive_pop) %>%
+  separate(year_q, into = c("year", "quarter"), remove = FALSE)
+
+hiv_pops_blantyre_city <- hiv_pops_blantyre_city %>%
+  rename(total= population, hiv_pos=hiv_positive_pop, hiv_neg = hiv_negative_pop) %>%
+  gather(hiv, population, -year_q, -year, -quarter, -sex, -age, -hiv_prev) %>%
+  filter(hiv != "total")
+
+#Some sanity checks
+#Does the total population match the population of Blantyre City
+
+hiv_pops_blantyre_city %>%
+  ggplot() +
+  geom_bar(aes(x=age, y=population, group=hiv, fill=hiv), stat="identity") +
+  facet_wrap(sex ~ year_q) + theme_minimal()
+
+use_data(hiv_pops_blantyre_city, overwrite = TRUE)
+
+
+
+```
+
+
+```{r}
+
+#Get the acf period for leter merging
+acf_period <- x01_lab2018 %>%
+  select(year, quarter, period) %>%
+  mutate(year_q = paste(year, quarter, sep=".")) %>%
+  select(-quarter, -year) %>%
+  distinct()
+
+acf_period2 <- tibble(
+  year_q = c("2009.1", "2009.2", "2009.3", "2009.4", "2010.1", "2010.2", "2010.3", "2010.4"),
+  period = c("pre_ACF","pre_ACF","pre_ACF","pre_ACF","pre_ACF","pre_ACF","pre_ACF","pre_ACF")
+)
+
+acf_period <- acf_period %>%
+  bind_rows( acf_period2) %>%
+  arrange(year_q)
+
+
+
+```
+
+
+Merge in the case notification data
+
+```{r}
+#merge the HIV pops to the age-sex-quarter groups
+hiv_cnrs <- hiv_pops_blantyre_city %>%
+  mutate(hiv = case_when(hiv=="hiv_pos" ~ "b) HIV-positive",
+                         hiv=="hiv_neg" ~ "a) HIV-negative")) %>%
+  filter(year !="2008")
+
+#TODO Here consider multiple imuptation for HIV status
+
+#sort out the TB case notifications by correct age groups and HIV status
+hiv_tb_cases_2011_2018 <-tb_cases_2011_2018 %>%
+  select(year, quarter, year_q, age, sex, hiv, acf) %>%
+  mutate(sex = case_when(sex=="Male" ~ "males",
+                         sex=="Female" ~ "females")) %>%
+  filter(age>15) %>%
+  mutate(age = case_when(age >15 & age <=19 ~ "16-19",
+                         age >=20 & age <=29 ~ "20-29",
+                         age >=30 & age <=39 ~ "30-39",
+                         age >=40 & age <=49 ~ "40-49",
+                         age >=50 ~ "50+")) %>%
+  group_by(year_q, sex, age, hiv) %>%
+  count() %>%
+  ungroup() %>%
+  mutate(hiv = case_when(is.na(hiv) ~ "c) HIV unknown",
+                         TRUE ~ hiv)) %>%
+  separate(year_q, into=c("year", "quarter"), remove = FALSE) %>%
+  filter(year !="2008")
+
+hiv_cnrs <- left_join(hiv_cnrs, hiv_tb_cases_2011_2018, 
+                      by=c("year_q","year", "quarter", "sex", "age", "hiv"))
+
+#estimate cnrs
+hiv_cnrs <- hiv_cnrs %>%
+  mutate(n = case_when(is.na(n) ~ 0L,
+                       TRUE ~ n)) %>%
+  mutate(q_population = round(population/4)) %>%
+  mutate(hiv_cnr = (n/q_population*100000)) %>%
+  rowwise %>%
+  mutate(xx = list(broom::tidy(binom.test(n, q_population, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+
+hiv_cnrs <- left_join(hiv_cnrs, acf_period)
+
+use_data(hiv_cnrs, overwrite = TRUE)
+
+
+```
+
+We need to get disaggregated population estimates for the ACF and non-ACF areas.
+
+```{r}
+
+acf_pops <- read_xlsx("acf_pops.xlsx")
+
+acf_pops <- acf_pops %>%
+  mutate(sex = case_when(sex==1 ~ "males",
+                         sex==2 ~ "females")) %>%
+  mutate(area = case_when(area==1 ~ "ACF",
+                          area==2 ~ "Non-ACF")) %>%
+  mutate(age =  case_when(agegp==1 ~ "16-19",
+                          agegp==2 ~ "20-29",
+                          agegp==3 ~ "30-39",
+                          agegp==4 ~ "40-49",
+                          agegp==5 ~ "50+")) %>%
+  select(-agegp) %>%
+  mutate(population = round(population)) %>%
+  filter(area == "ACF") %>%
+  mutate(year = as.character(year)) %>%
+  mutate(quarter="1") %>%
+  mutate(year_q = paste(year, quarter, sep=".")) %>%
+  filter(year=="2009")
+
+
+yq <- hiv_cnrs %>%
+  ungroup() %>%
+  select(year, quarter, year_q, sex, age) %>%
+  distinct()
+  
+acf_pops <- left_join(yq, acf_pops, by=c("year", "quarter", "year_q", "sex", "age"))
+
+#get population group growth rates
+growth_rates <- blantyre_census_by_q %>%
+  mutate(new_age = case_when(age=="15-19" ~ "16-19",
+                                age=="20-24" ~ "20-29",
+                                age=="25-29" ~ "20-29",
+                                age=="30-34" ~ "30-39",
+                                age=="35-39" ~ "30-39",
+                                age=="40-44" ~ "40-49",
+                                age=="45-49" ~ "40-49",
+                                age=="50-54" ~ "50+",
+                                age=="55-59" ~ "50+",
+                                age=="60-64" ~ "50+",
+                                age=="65-69" ~ "50+",
+                                age=="70-74" ~ "50+",
+                                age=="75+" ~ "50+",
+                         TRUE ~ NA_character_)) %>%
+  filter(!is.na(new_age)) %>%
+  filter(sex !="total") %>%
+  filter(district=="Blantyre City") %>%
+  filter(year>=2009) %>%
+  mutate(year = as.character(year),
+         quarter = as.character(quarter)) %>%
+  group_by(year_q, new_age, sex) %>%
+  summarise(population = sum(population)) %>%
+  ungroup()
+
+#Check that worked
+growth_rates %>%
+  filter(year_q=="2009.1") %>%
+  summarise(sum=sum(population))
+
+growth_rates %>%
+  filter(year_q=="2018.4") %>%
+  summarise(sum=sum(population))
+  
+
+#now estimate the change per quarter for each age-sex group
+growth_rates <- growth_rates %>%
+  arrange(new_age, sex, year_q) %>%
+  group_by(new_age, sex) %>%
+  mutate(pct_change = (population/ lag(population))) %>%
+  rename(age = new_age, total_pop=population)
+
+acf_pops <- left_join(growth_rates, acf_pops, by=c("year_q", "sex", "age"))
+
+#now project forwards to get the quarterly estimated acf population  
+
+acf_pops <- acf_pops %>%
+  mutate(acf_pop = population)
+
+
+p <- progress_estimated(nrow(acf_pops))
+for(i in 1:nrow(acf_pops)) {
+  acf_pops %>%
+    mutate(acf_pop = if_else(is.na(acf_pop), lag(acf_pop)*pct_change, acf_pop)) -> acf_pops
+  p$tick()$print()
+}
+
+#tidyup a bit
+acf_pops <- acf_pops %>%
+  select(year_q, year, quarter, sex, age, total_pop, acf_pop) %>%
+  mutate(acf_pop = round(acf_pop)) %>%
+  ungroup()
+
+
+# Check these totals
+acf_pops %>%
+  ungroup() %>%
+  filter(year_q=="2009.1") %>%
+  summarise(acf_pop = sum(acf_pop))
+
+acf_pops %>%
+  ungroup() %>%
+  filter(year_q=="2018.4") %>%
+  summarise(acf_pop = sum(acf_pop))
+
+# acf_pops %>%
+#   ungroup() %>%
+#   group_by(acf) %>%
+#   filter(year_q=="2009.1") %>%
+#   summarise(acf_pop = sum(acf_pop))
+
+# acf_pops %>%
+#   ungroup() %>%
+#   group_by(acf) %>%
+#   filter(year_q=="2018.4") %>%
+#   summarise(acf_pop = sum(acf_pop))
+
+# #some graphical checks
+# acf_pops %>%
+#   ggplot() +
+#   geom_line(aes(x=year_q, y=acf_pop, group=age, colour=age)) +
+#   facet_wrap(acf ~ sex + age) +
+#   theme_classic(base_family = "Open Sans Condensed Light") +
+#   theme(axis.text.x=element_text(angle=45, hjust=1))
+# 
+# acf_pops %>%
+#   mutate(percent_acf = acf_pop/total_pop) %>%
+#   ggplot() +
+#   geom_line(aes(x=year_q, y=percent_acf, group=age, colour=age)) +
+#   facet_wrap(sex~age) +
+#   theme_classic(base_family = "Open Sans Condensed Light") +
+#   theme(axis.text.x=element_text(angle=45, hjust=1))
+# 
+# acf_pops %>% 
+#   mutate(non_acf_pop = total_pop -acf_pop) %>%
+#   select(year, year_q, age, sex, acf_pop, non_acf_pop, quarter) %>%
+#   gather(acf, population, -year_q, -age, -sex, -year, -quarter) %>%
+#   mutate(acf = case_when(acf=="acf_pop"~ "ACF",
+#                          acf=="non_acf_pop" ~ "Non-ACF")) %>%
+#   filter(quarter==1) %>%
+#   group_by(year, acf) %>%
+#   summarise(population = sum(population))
+# 
+acf_pops <- acf_pops %>%
+   ungroup() %>%
+   mutate(non_acf_pop = total_pop - acf_pop) %>%
+   gather(acf, population, -year_q, -year, -quarter, -age, -sex) %>%
+   mutate(acf = case_when(acf=="total_pop" ~ "total",
+                          acf=="acf_pop" ~ "ACF",
+                          acf=="non_acf_pop" ~ "Non-ACF")) %>%
+   filter(acf != "total")
+
+
+use_data(acf_pops, overwrite = TRUE)
+
+```
+
+Now merge TB cases onto the acf demographies
+
+```{r}
+
+
+acf_tb_cases <- tb_cases_2011_2018 %>%
+  select(year, quarter, year_q, age, sex, acf) %>%
+  mutate(sex = case_when(sex=="Male" ~ "males",
+                         sex=="Female" ~ "females")) %>%
+  filter(age>15) %>%
+  mutate(age = case_when(age >15 & age <=19 ~ "16-19",
+                         age >=20 & age <=29 ~ "20-29",
+                         age >=30 & age <=39 ~ "30-39",
+                         age >=40 & age <=49 ~ "40-49",
+                         age >=50 ~ "50+")) %>%
+  group_by(year_q, sex, age, acf, .drop = FALSE) %>%
+  tally() %>%
+  ungroup() %>%
+  separate(year_q, into=c("year", "quarter"), remove = FALSE) %>%
+  filter(year !="2008") %>%
+  select(-year, -quarter) %>%
+  complete(year_q, age, sex, acf, fill = list(n=0))
+
+acf_cnrs_age_sex <- full_join(acf_pops, acf_tb_cases)
+
+#estimate acf vs. non_acf cnrs
+acf_cnrs_age_sex <- acf_cnrs_age_sex %>%
+  filter(!is.na(n)) %>%
+  mutate(q_population = round(population/4)) %>%
+  mutate(cnr = n/q_population*100000) %>%
+  rowwise() %>%
+  mutate(xx = list(broom::tidy(binom.test(n, q_population, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+
+acf_cnrs_age_sex
+
+use_data(acf_cnrs_age_sex, overwrite = TRUE)
+```
+
+Get overall case notification rates
+
+```{r}
+#estimate overall acf CNRS (all cases)
+acf_pops_overall <- acf_pops %>%
+  group_by(year_q, acf) %>%
+  summarise(population=sum(population))
+
+
+acf_cnrs_overall <- blantyre_tb_cases_2009_2018 %>%
+  filter(tbcases=="All cases") %>%
+  left_join(acf_pops_overall) %>%
+  rename(cases=n) %>%
+  left_join(acf_pops_overall) %>%
+  arrange(year_q) %>%
+  mutate(q_population = round(population/4)) %>%
+  mutate(cnr = (cases/q_population*100000)) %>%
+  rowwise %>%
+  mutate(xx = list(broom::tidy(binom.test(cases, q_population, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+
+acf_cnrs_overall
+
+acf_cnrs_overall <- left_join(acf_cnrs_overall, acf_period)
+
+use_data(acf_cnrs_overall, overwrite = TRUE)
+
+
+
+
+```
+
+
+Smear Positive TB case notifications (by age and sex first)
+
+```{r}
+
+acf_smrpos_cases <- tb_cases_2011_2018 %>%
+  select(year, quarter, year_q, age, sex, acf, smr_any) %>%
+  mutate(sex = case_when(sex=="Male" ~ "males",
+                         sex=="Female" ~ "females")) %>%
+  filter(age>15) %>%
+  filter(smr_any=="b) Smear-positive") %>%
+  mutate(age = case_when(age >15 & age <=19 ~ "16-19",
+                         age >=20 & age <=29 ~ "20-29",
+                         age >=30 & age <=39 ~ "30-39",
+                         age >=40 & age <=49 ~ "40-49",
+                         age >=50 ~ "50+")) %>%
+  group_by(year_q, sex, age, acf, .drop = FALSE) %>%
+  tally() %>%
+  ungroup() %>%
+  separate(year_q, into=c("year", "quarter"), remove = FALSE) %>%
+  filter(year !="2008") %>%
+  select(-year, -quarter) %>%
+  complete(year_q, age, sex, acf, fill = list(n=0)) 
+
+acf_smrpos_cnrs_age_sex <- left_join(acf_pops, acf_smrpos_cases)
+
+#estimate cnrs
+#estimate acf vs. non_acf cnrs
+acf_smrpos_cnrs_age_sex <- acf_smrpos_cnrs_age_sex %>%
+  filter(!is.na(n)) %>%
+  mutate(q_population = round(population/4)) %>%
+  mutate(cnr = (n/q_population*100000)) %>%
+  rowwise() %>%
+  mutate(xx = list(broom::tidy(binom.test(n, q_population, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+
+acf_smrpos_cnrs_age_sex <- left_join(acf_smrpos_cnrs_age_sex, acf_period)
+
+
+use_data(acf_smrpos_cnrs_age_sex, overwrite = TRUE)
+```
+
+
+N
+
+Now for cultre/smear/xpert positive cases
+
+```{r}
+#estimate overall acf cnrs
+
+acf_culture_cnrs_overall <-  blantyre_tb_cases_2009_2018 %>%
+  filter(tbcases=="Smr/Xpert-positive cases") %>%
+  left_join(acf_pops_overall) %>%
+  rename(cases=n) %>%
+  left_join(acf_pops_overall) %>%
+  arrange(year_q) %>%
+  mutate(q_population = round(population/4)) %>%
+  mutate(cnr = (cases/q_population*100000)) %>%
+  rowwise %>%
+  mutate(xx = list(broom::tidy(binom.test(cases, q_population, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+  
+
+acf_smrpos_cnrs_overall
+
+#Some sanity checks
+acf_smrpos_cnrs_overall %>% ungroup() %>% summarise(cases = sum(cases))
+acf_smrpos_cnrs_overall %>%summarise(cases = sum(cases))
+acf_smrpos_cnrs_overall %>% group_by(year_q) %>%summarise(cases = sum(cases))
+acf_smrpos_cnrs_overall %>% separate(year_q, into = c("year", "quarter")) %>% group_by(year) %>%summarise(cases = sum(cases))
+acf_smrpos_cnrs_overall %>% group_by(year_q, acf) %>%summarise(cases = sum(cases))
+
+
+acf_smrpos_cnrs_overall <- left_join(acf_smrpos_cnrs_overall, acf_period)
+
+use_data(acf_smrpos_cnrs_overall, overwrite = TRUE)
+
+
+
+
+```
+
+
+
+<br>
+
+make an age-sex-quarter-hiv table for regression modelling
+
+```{r}
+
+#merge the HIV pops to the age-sex-quarter groups
+acf_hiv_cnrs1 <- hiv_pops_blantyre_city %>%
+  mutate(hiv = case_when(hiv=="hiv_pos" ~ "b) HIV-positive",
+                         hiv=="hiv_neg" ~ "a) HIV-negative")) %>%
+  filter(year !="2008") %>%
+  mutate(acf="ACF")
+
+acf_hiv_cnrs2 <- hiv_pops_blantyre_city %>%
+  mutate(hiv = case_when(hiv=="hiv_pos" ~ "b) HIV-positive",
+                         hiv=="hiv_neg" ~ "a) HIV-negative")) %>%
+  filter(year !="2008") %>%
+  mutate(acf="Non-ACF")
+
+acf_hiv_cnrs <- bind_rows(acf_hiv_cnrs1, acf_hiv_cnrs2)
+
+#get the age-sex-hiv-quarter specific strata populatins
+hiv_denoms <- acf_pops %>%
+  select(year_q, sex, age, acf, acf_pop = population)
+
+
+acf_hiv_cnrs <- left_join(acf_hiv_cnrs, hiv_denoms)
+
+acf_hiv_cnrs <- acf_hiv_cnrs %>%
+  mutate(hiv_pop = round(acf_pop*hiv_prev))
+
+
+#TODO Here consider multiple imuptation for HIV status
+
+#sort out the TB case notifications by correct age groups and HIV status
+acf_hiv_tb_cases_2011_2018 <-tb_cases_2011_2018 %>%
+  select(year, quarter, year_q, age, sex, hiv, acf) %>%
+  mutate(sex = case_when(sex=="Male" ~ "males",
+                         sex=="Female" ~ "females")) %>%
+  filter(age>15) %>%
+  mutate(age = case_when(age >15 & age <=19 ~ "16-19",
+                         age >=20 & age <=29 ~ "20-29",
+                         age >=30 & age <=39 ~ "30-39",
+                         age >=40 & age <=49 ~ "40-49",
+                         age >=50 ~ "50+")) %>%
+  group_by(year_q, sex, age, hiv, acf) %>%
+  count() %>%
+  ungroup() %>%
+  mutate(hiv = case_when(is.na(hiv) ~ "c) HIV unknown",
+                         TRUE ~ hiv)) %>%
+  separate(year_q, into=c("year", "quarter"), remove = FALSE) %>%
+  filter(year !="2008")
+
+acf_hiv_cnrs <- left_join(acf_hiv_cnrs, acf_hiv_tb_cases_2011_2018, 
+                      by=c("year_q","year", "quarter", "sex", "age", "hiv", "acf"))
+
+#tidy up a bit
+acf_hiv_cnrs <- acf_hiv_cnrs %>%
+  select(-population, -acf_pop) %>%
+  rename(population = hiv_pop)
+
+#estimate cnrs
+acf_hiv_cnrs <- acf_hiv_cnrs %>%
+  mutate(n = case_when(is.na(n) ~ 0L,
+                       TRUE ~ n)) %>%
+  mutate(q_population = round(population/4)) %>%
+  mutate(hiv_cnr = (n/q_population*100000)) %>%
+  rowwise %>%
+  mutate(xx = list(broom::tidy(binom.test(n, q_population, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+
+#add on the acf period
+
+acf_hiv_cnrs <- left_join(acf_hiv_cnrs, acf_period)
+
+use_data(acf_hiv_cnrs, overwrite = TRUE)
+
+```
+
+Make an age-sex-hiv-quarter stratified dataset for smear-positive cases only
+
+```{r}
+
+
+#merge the HIV pops to the age-sex-quarter groups
+acf_hiv_cnrs1 <- hiv_pops_blantyre_city %>%
+  mutate(hiv = case_when(hiv=="hiv_pos" ~ "b) HIV-positive",
+                         hiv=="hiv_neg" ~ "a) HIV-negative")) %>%
+  filter(year !="2008") %>%
+  mutate(acf="ACF")
+
+acf_hiv_cnrs2 <- hiv_pops_blantyre_city %>%
+  mutate(hiv = case_when(hiv=="hiv_pos" ~ "b) HIV-positive",
+                         hiv=="hiv_neg" ~ "a) HIV-negative")) %>%
+  filter(year !="2008") %>%
+  mutate(acf="Non-ACF")
+
+acf_hiv_cnrs <- bind_rows(acf_hiv_cnrs1, acf_hiv_cnrs2)
+
+#get the age-sex-hiv-quarter specific strata populatins
+hiv_denoms <- acf_pops %>%
+  select(year_q, sex, age, acf, acf_pop = population)
+
+
+acf_hiv_cnrs <- left_join(acf_hiv_cnrs, hiv_denoms)
+
+acf_hiv_cnrs <- acf_hiv_cnrs %>%
+  mutate(hiv_pop = round(acf_pop*hiv_prev))
+
+#sort out the TB case notifications by correct age groups and HIV status
+acf_smrpos_hiv_tb_cases_2011_2018 <-tb_cases_2011_2018 %>%
+  select(year, quarter, year_q, age, sex, hiv, acf, smr_any) %>%
+  mutate(sex = case_when(sex=="Male" ~ "males",
+                         sex=="Female" ~ "females")) %>%
+  filter(age>15) %>%
+  filter(smr_any=="b) Smear-positive") %>%
+  mutate(age = case_when(age >15 & age <=19 ~ "16-19",
+                         age >=20 & age <=29 ~ "20-29",
+                         age >=30 & age <=39 ~ "30-39",
+                         age >=40 & age <=49 ~ "40-49",
+                         age >=50 ~ "50+")) %>%
+  group_by(year_q, sex, age, hiv, acf) %>%
+  count() %>%
+  ungroup() %>%
+  mutate(hiv = case_when(is.na(hiv) ~ "c) HIV unknown",
+                         TRUE ~ hiv)) %>%
+  separate(year_q, into=c("year", "quarter"), remove = FALSE) %>%
+  filter(year !="2008")
+
+acf_smrpos_hiv_cnrs <- left_join(acf_hiv_cnrs, acf_smrpos_hiv_tb_cases_2011_2018, 
+                      by=c("year_q","year", "quarter", "sex", "age", "hiv", "acf"))
+
+#tidy up a bit
+acf_smrpos_hiv_cnrs <- acf_smrpos_hiv_cnrs %>%
+  select(-population, -acf_pop) %>%
+  rename(population = hiv_pop)
+
+#estimate cnrs
+acf_smrpos_hiv_cnrs <- acf_smrpos_hiv_cnrs %>%
+  mutate(n = case_when(is.na(n) ~ 0L,
+                       TRUE ~ n)) %>%
+  mutate(q_population = round(population/4)) %>%
+  mutate(hiv_cnr = (n/q_population*100000)) %>%
+  rowwise %>%
+  mutate(xx = list(broom::tidy(binom.test(n, q_population, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+
+#add on the acf period
+
+acf_smrpos_hiv_cnrs <- left_join(acf_smrpos_hiv_cnrs, acf_period)
+
+use_data(acf_smrpos_hiv_cnrs, overwrite = TRUE)
+
+
+```
+
+### Pre- during-, and post-ACF smr-pos CNRs for graph
+
+The 2010 cases are unreliable, so need to bind 2009 to the 2011-2018 cases
+
+```{r}
+#sort out the cases
+temp <- bind_rows(tb_cases_2011_2018, tb_cases_2009)
+
+temp <- temp %>%
+  filter(year_q <= "2016.2") %>%
+  mutate(period = case_when(is.na(period) ~ "Pre-ACF",
+                            TRUE ~ period)) %>%
+  mutate(period2 = case_when(year_q %in% c("2014.3", "2014.4", "2015.1", "2015.2") ~ "Post-ACF: y1",
+                             year_q %in% c("2015.3", "2015.4", "2016.1", "2016.2") ~ "Post-ACF: y2",
+                             TRUE ~ period)) %>%
+  filter(age >=16) %>%
+  mutate(agegp = case_when(age >15 & age <=19 ~ "16-19",
+                         age >=20 & age <=29 ~ "20-29",
+                         age >=30 & age <=39 ~ "30-39",
+                         age >=40 & age <=49 ~ "40-49",
+                         age >=50 ~ "50+")) %>%
+  mutate(smr_xpert_any = case_when(smr_clinic=="b) Smear-positive" ~ "b) Smr/Xpert-positive",
+                                   TRUE ~ smr_xpert_any)) %>%
+  filter(smr_xpert_any=="b) Smr/Xpert-positive")
+
+temp2 <- temp %>%
+  group_by(period2, agegp, sex, acf) %>%
+  count() %>%
+  filter(!is.na(sex))
+
+#sort out the denominators 
+#Here we want to take the mean of the population for the quarters at risk...
+
+temp_denoms <- acf_pops %>%
+  filter(year_q >= "2009.1") %>%
+  filter(year_q <= "2016.2") %>%
+  mutate(period2 = case_when(year_q %in% c("2014.3", "2014.4", "2015.1", "2015.2") ~ "Post-ACF: y1",
+                             year_q %in% c("2015.3", "2015.4", "2016.1", "2016.2") ~ "Post-ACF: y2",
+                             year_q >="2009.2" & year_q <="2011.1" ~ "Pre-ACF",
+                             TRUE ~ "ACF")) %>%
+  filter(year !="2010") %>%
+  group_by(period2, age, sex, acf) %>%
+  summarise(pop2 = round(mean(population))) %>%
+  select(period2, agegp=age, sex, population=pop2, acf) %>%
+  ungroup() %>%
+  mutate(sex = case_when(sex=="females" ~ "Female",
+                         sex=="males" ~ "Male"))
+
+acf_period_cnrs <- left_join(temp2, temp_denoms)
+
+#Now get the case notification rates
+
+acf_period_cnrs <- acf_period_cnrs %>%
+  mutate(q_population = case_when(period2=="Pre-ACF" ~ round(population*1.25),
+                                  period2=="ACF" ~ round(population*3.25),
+                                  period2=="Post-ACF: y1" ~ round(population*1),
+                                  period2=="Post-ACF: y2" ~ round(population*1))) %>%
+  mutate(cnr = (n/q_population*100000)) %>%
+  rowwise %>%
+  mutate(xx = list(broom::tidy(binom.test(n, q_population, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+
+use_data(acf_period_cnrs, overwrite = TRUE)
+
+
+#a check graph
+
+acf_period_cnrs %>%
+  mutate(period2 = factor(period2)) %>%
+  ggplot() +
+  geom_pointrange(aes(x=fct_relevel(period2,
+                               "Pre-ACF", "ACF", "Post-ACF: y1", "Post-ACF: y2"), y=cnr, 
+                      ymin=conf.low, ymax=conf.high,
+                      colour=acf, group=acf), alpha=0.7, position = position_dodge(width = 0.5)) +
+  geom_point(aes(x=fct_relevel(period2,
+                               "Pre-ACF", "ACF", "Post-ACF: y1", "Post-ACF: y2"), y=cnr,
+                      colour=acf, group=acf), position = position_dodge(width = 0.5)) +
+  facet_grid(fct_relevel(sex, "Male", "Female") ~agegp) +
+  theme_bw(base_family = "Open Sans Condensed Light",
+           base_size = 14) +
+  labs(x="",
+       y="Smear/Xpert-positive CNR (per 100,000)\n95% confidence interval") +
+  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  theme(legend.title = element_blank())
+  
+
+```
+

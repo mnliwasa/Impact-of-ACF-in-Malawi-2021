@@ -1,0 +1,286 @@
+---
+title: "Part 4 - CNRs and regression analyses"
+author: "Dr Marriott Nliwasa"
+date: "23/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#install.packages("mice")
+#install.packages("mitml")
+library(mitml)
+library(mice)
+```
+
+#Overall smear or xpert positive TB 
+```{r}
+
+str(all_cases_2009_2018mn2)
+table(all_cases_2009_2018mn2$agegp)
+table(all_cases_2009_2018mn2$period)
+table(all_cases_2009_2018mn2$smr_xpert_any, all_cases_2009_2018mn2$ year, useNA="always")
+
+
+table(acf_pops$age)
+attributes(acf_pops$year)
+attributes(all_cases_2009_2018mn2$year)
+
+attributes(all_cases_2009_2018mn2$agegp)
+attributes(acf_pops$age)
+
+
+#country-level ART coverage
+acf_tb_cases <- all_cases_2009_2018mn2 %>%
+  select(year, quarter, year_q, age=agegp, acf, sex, smr_xpert_any) %>%
+  mutate(sex = case_when(sex=="Male" ~ "males",
+                         sex=="Female" ~ "females")) %>%
+  filter(age>15) %>%
+  mutate(age = case_when(age >15 & age <=19 ~ "16-19",
+                         age >=20 & age <=29 ~ "20-29",
+                         age >=30 & age <=39 ~ "30-39",
+                         age >=40 & age <=49 ~ "40-49",
+                         age >=50 ~ "50+")) %>%
+  group_by(year, quarter, year_q, acf, sex, age, smr_xpert_any, .drop = FALSE)%>%
+  tally() %>%
+  ungroup() %>%
+  separate(year_q, into=c("year", "quarter"), remove = FALSE) %>%
+  filter(year !="2008") %>%
+  filter(smr_xpert_any== "b) Smr/Xpert-positive")%>%
+  select(-year, -quarter) 
+  #%>%
+  #complete(year_q, age, sex, smr_xpert_any, fill = list(n=0))
+
+attributes(acf_pops$year)
+attributes(acf_tb_cases$year)
+
+#Smear and Xpert popsitive TB only
+
+
+smr_xpert_reg <- left_join(acf_tb_cases, acf_pops)
+
+
+
+
+#estimate acf vs. non_acf cnrs
+smr_xpert_reg <- smr_xpert_reg %>%
+  group_by(year, quarter, sex, age, acf, population) %>%
+  summarise(smrxpertcases=sum(n))
+
+#create the period variable
+smr_xpert_reg <- smr_xpert_reg %>%
+  mutate( period = case_when(
+    year %in% c(2009,2010) ~ "apre-ACF",
+    year %in% c(2011) & quarter %in% c(1) ~ "apre-ACF",
+    year %in% c(2011) & quarter %in% c(2,3,4) ~ "bACF",
+    year %in% c(2012,2013) ~ "bACF",
+    year %in% c(2014) & quarter %in% c(1,2,3) ~ "bACF",
+    year %in% c(2014) & quarter %in% c(4) ~ "cpost-ACF",
+    year %in% c(2015,2016,2017,2018) ~ "cpost-ACF"
+  ))
+
+smr_xpert_reg <- smr_xpert_reg%>%
+  mutate(acfperiod=paste0(acf, ".", period))
+    table(smr_xpert_reg$acfperiod) 
+
+#regression
+m1<-glm(smrxpertcases~ sex + age + acfperiod + offset(log((population/4)/100000)), family="poisson",  data=smr_xpert_reg )
+exp(cbind(coefficients(m1), confint(m1)))
+
+smr_xpert_reg2 <- smr_xpert_reg%>%
+  filter(!is.na(smrxpertcases)) %>%
+  filter(year >=2015) %>%
+  mutate(q_population = round(population/4)) %>%
+  mutate(cnr =smrxpertcases/q_population*100000) %>%
+  rowwise() %>%
+  mutate(xx = list(broom::tidy(binom.test(smrxpertcases, q_population, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+
+#factor cnr
+#smrxpert_overall
+smrxpert_overall <- smr_xpert_reg2 %>%
+  summarise(cnr=mean(cnr), conf.low=mean(conf.low), conf.high=mean(conf.high))
+smrxpert_overall
+
+#sex
+sex <- smr_xpert_reg2 %>%
+  group_by(sex) %>%
+  summarise(cnr=mean(cnr), conf.low=mean(conf.low), conf.high=mean(conf.high))
+sex
+
+#acf
+acf <- smr_xpert_reg2 %>%
+  group_by(acf) %>%
+  summarise(cnr=mean(cnr), conf.low=mean(conf.low), conf.high=mean(conf.high))
+acf
+
+#acfperiod
+acfperiod <- smr_xpert_reg %>%
+  group_by(acfperiod) %>%
+  summarise(cnr=mean(cnr), conf.low=mean(conf.low), conf.high=mean(conf.high))
+acfperiod
+
+#age
+age <- smr_xpert_reg2 %>%
+  group_by(age) %>%
+  summarise(cnr=mean(cnr), conf.low=mean(conf.low), conf.high=mean(conf.high))
+age
+
+```
+#HIV status regression
+
+```{r}
+
+hiv_smrregresdata <-all_cases_2009_2018mn2 %>%
+  select(year, year_q, quarter, age, sex, hiv, acf, smr_xpert_any) %>%
+  filter(year>=2015)%>%
+  filter(age>15) %>%
+  filter(smr_xpert_any=="b) Smr/Xpert-positive")
+#%>%
+  #filter(!is.na(hiv)) 
+  #estimate acf vs. non_acf cnrs
+
+table(hiv_smrregresdata$hiv, useNA="always")
+
+hiv_smrregresdata <- hiv_smrregresdata %>%
+  mutate(sex = case_when(sex=="Male" ~ "males",
+                         sex=="Female" ~ "females")) %>%
+  mutate(age = case_when(age >15 & age <=19 ~ "16-19",
+                         age >=20 & age <=29 ~ "20-29",
+                         age >=30 & age <=39 ~ "30-39",
+                         age >=40 & age <=49 ~ "40-49",
+                         age >=50 ~ "50+")) %>%
+ group_by(year, year_q, quarter, sex, age, acf, hiv) %>%
+  count() %>%
+  ungroup() %>%
+  separate(year_q, into=c("year", "quarter"), remove = F)%>%
+  select(-year_q) 
+
+ #%>%
+ # complete(year, quarter, age, sex, hiv, acf, fill = list(n=0))
+
+
+hiv_smrregresdata <- hiv_smrregresdata %>%
+  group_by(year, quarter, sex, age, acf, hiv) %>%
+  summarise(smrxpertcases=sum(n))
+
+
+#create the period variable
+hiv_smrregresdata <- hiv_smrregresdata %>%
+  mutate( period = case_when(
+    year %in% c(2009,2010) ~ "apre-ACF",
+    year %in% c(2011) & quarter %in% c(1) ~ "apre-ACF",
+    year %in% c(2011) & quarter %in% c(2,3,4) ~ "bACF",
+    year %in% c(2012,2013) ~ "bACF",
+    year %in% c(2014) & quarter %in% c(1,2,3) ~ "bACF",
+    year %in% c(2014) & quarter %in% c(4) ~ "cpost-ACF",
+    year %in% c(2015,2016,2017,2018) ~ "cpost-ACF"
+  ))
+
+hiv_smrregresdata <- hiv_smrregresdata%>%
+  mutate(acfperiod=paste0(acf, ".", period))
+    table(hiv_smrregresdata$acfperiod) 
+
+
+hiv_regcomb <- left_join(hiv_smrregresdata, newhivacf_pops,
+                      by=c("year", "quarter", "acf", "sex", "age"))%>%
+                      mutate(newpopulation=case_when(
+                                                    hiv== "b) HIV-positive" ~ hiv_prev*population,
+                                                    hiv== "a) HIV-negative" ~ (1-hiv_prev)*population))
+
+table(hiv_regcomb$hiv, useNA="always")
+
+write.csv(hiv_regcomb,"C:/Users/Marriott Nliwasa/Documents/My R projects/hiv_regcomb.csv", row.names = FALSE, na = "")
+
+#estimate cnrs---complete case
+hiv_regcomb2<-hiv_regcomb%>%
+  filter(!is.na(hiv)) %>%
+  mutate(newpopulation = round(newpopulation)) %>%
+  mutate(hiv_regcomb2 = (smrxpertcases/(newpopulation)*100000), as.integer(NA)) %>%
+  rowwise %>%
+  mutate(xx = list(broom::tidy(binom.test(smrxpertcases, newpopulation, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+
+
+#factor cnr
+#smrxpert_overall
+overall_hiv <- hiv_regcomb2 %>%
+  summarise(cnr=mean(hiv_regcomb2), conf.low=mean(conf.low), conf.high=mean(conf.high))
+overall_hiv
+
+#acf
+sex <- hiv_regcomb2 %>%
+  group_by(sex) %>%
+  summarise(cnr=mean(hiv_regcomb2), conf.low=mean(conf.low), conf.high=mean(conf.high))
+sex
+
+#hiv
+hiv <- hiv_regcomb2%>%
+  group_by(hiv) %>%
+  summarise(hiv_regcomb2=mean(hiv_regcomb2), conf.low=mean(conf.low), conf.high=mean(conf.high))
+hiv
+
+m1<-glm(hiv_regcomb2 ~  hiv + offset(log(newpopulation/100000)), family="poisson",  data=hiv_regcomb2)
+exp(cbind(coefficients(m1), confint(m1)))
+
+
+#acf
+acf <- smr_xpert_reg %>%
+  group_by(acf) %>%
+  summarise(cnr=mean(cnr), conf.low=mean(conf.low), conf.high=mean(conf.high))
+acf
+
+#acfperiod
+acfperiod <- smr_xpert_reg %>%
+  group_by(acfperiod) %>%
+  summarise(cnr=mean(cnr), conf.low=mean(conf.low), conf.high=mean(conf.high))
+acfperiod
+
+#age
+age <- smr_xpert_reg %>%
+  group_by(age) %>%
+  summarise(cnr=mean(cnr), conf.low=mean(conf.low), conf.high=mean(conf.high))
+age
+
+```
+
+#New HIV denominators
+
+```{r}
+#new estimated HIV prevalence 2019/20
+
+newhivprev <- tribble(
+  ~acf, ~sex, ~age, ~hiv_prev,
+  "ACF", "males", "16-19", 0.022,
+  "ACF", "males", "20-29", 0.016,
+  "ACF", "males", "30-39", 0.111,
+  "ACF", "males", "40-49", 0.248,
+  "ACF", "males", "50+", 0.199,
+  "ACF", "females", "16-19", 0.030,
+  "ACF", "females", "20-29", 0.073,
+  "ACF", "females", "30-39", 0.206,
+  "ACF", "females", "40-49", 0.356,
+  "ACF", "females", "50+", 0.184,
+  "Non-ACF", "males", "16-19", 0.019,
+  "Non-ACF", "males", "20-29", 0.017,
+  "Non-ACF", "males", "30-39", 0.145,
+  "Non-ACF", "males", "40-49", 0.24,
+  "Non-ACF", "males", "50+", 0.251,
+  "Non-ACF", "females", "16-19", 0.028,
+  "Non-ACF", "females", "20-29", 0.090,
+  "Non-ACF", "females", "30-39", 0.212,
+  "Non-ACF", "females", "40-49", 0.325,
+  "Non-ACF", "females", "50+", 0.215,
+)
+
+newhivacf_pops <- left_join(acf_pops, newhivprev, by=c("acf", "sex", "age"))
+
+
+
+```

@@ -1,0 +1,864 @@
+---
+title: "graphs"
+author: "Dr Marriott Nliwasa"
+date: "27/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#install.packages("binom")
+library(binom)
+```
+
+
+```{r}
+hivtbprops <- read_xlsx("C:/Users/Marriott Nliwasa/Documents/My R projects/hiv_issues_in_bt1.xlsx")
+
+hivtbprops <-hivtbprops%>%
+  rowwise() %>%
+mutate(xx=list(broom::tidy(prop.test(num, denom, conf.level=0.95))))%>%
+  tidyr::unnest(xx) %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100)) %>%
+  select(-statistic, -method, - p.value,  -alternative, -parameter)
+
+
+ggplot(hivtbprops, aes(year, estimate, group = cat, colour = cat))+
+  geom_line()+
+  geom_point(size=1.5)+
+   geom_errorbar( aes(ymin=conf.low, ymax=conf.high), width=0.1, size=1)+
+  scale_y_continuous(limits=c(0, 100))+
+   scale_x_continuous(breaks=c(2009:2018), minor_breaks =F )+
+   theme_light()
+
+
+#ART coverage in TB patients#
+
+hivtbprops2 <- read_xlsx("C:/Users/Marriott Nliwasa/Documents/My R projects/hiv_issues_in_bt2.xlsx")
+
+hivtbprops2 <-hivtbprops2%>%
+  rowwise() %>%
+mutate(xx=list(broom::tidy(prop.test(num, denom, conf.level=0.95))))%>%
+  tidyr::unnest(xx) %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100)) %>%
+  select(-statistic, -method, - p.value,  -alternative, -parameter)
+
+
+ggplot(hivtbprops2, aes(year, estimate))+
+  geom_bar(stat="identity", width = 0.5)+
+  geom_errorbar( aes(ymin=conf.low, ymax=conf.high), width=0.1, size=1)+
+  scale_y_continuous(limits=c(0, 100))+
+   scale_x_continuous(breaks=c(2009:2018), minor_breaks =F )+
+   theme_light()
+
+
+
+
+
+#country notification and incidence
+incnotif <- read_csv("C:/Users/Marriott Nliwasa/Documents/My R projects/TB-Trends/notification.csv")
+
+ggplot(incnotif, aes(year, rate, group = grp, colour = grp))+
+  geom_line()+
+  geom_point(size=2)+
+  scale_y_continuous(limits=c(0, 500))+
+   #scale_x_continuous(breaks=c(2009:2018), minor_breaks =F )+
+   theme_light()
+
+# country ART coverage
+artperc <- read_csv("C:/Users/Marriott Nliwasa/Documents/My R projects/TB-Trends/art_perc.csv")
+
+ggplot(artperc, aes(year, perc))+
+  geom_bar(stat="identity", width = 0.5)+
+  scale_y_continuous(limits=c(0, 100))+
+   #scale_x_continuous(breaks=c(2009:2018), minor_breaks =F )+
+   theme_light()
+
+
+
+```
+
+
+#hiv prevalence in the general population
+```{r}
+#*****************************************************************************************#
+# HIV prevalence in the general pop-----
+#****************************************************************************************#
+hiv<-read.csv("hiv.csv", stringsAsFactors = F)
+
+hiv$agegp<-factor(hiv$agegp, levels=c(1,2,3,4,5),labels=c("16-19", "20-29", "30-39", "40-49", "50+"))
+hiv$sex<-factor(hiv$sex, levels=c(1,2),labels=c("Men", "Women"))
+hiv$prev2<-hiv$prev*100
+hiv$prev3<-round(hiv$prev2, 1)
+
+limits <- aes(ymax = hiv$upper, ymin=hiv$lower)
+
+ggplot(data = hiv, aes(x=agegp, y = prev2, fill = sex)) +
+  geom_bar(position = "dodge", stat = "identity") + 
+  theme_bw() +
+  theme(panel.grid.minor.x=element_blank(),panel.grid.major.x=element_blank()) +
+  scale_fill_manual(values=c("mediumturquoise","lightsalmon")) +
+  scale_y_continuous(limits=c(0,100), name="HIV prevalence (95% CI)")+
+  theme(legend.title=element_blank()) +
+  theme(legend.position=c(0.1,0.85)) +
+  labs(y = "HIV prevalence (95% CI)") +
+  labs(x = "Age group (years)") + 
+  theme(axis.text.y=element_text(size=13)) +
+  theme(axis.text.x=element_text(size=13)) +
+  theme(axis.title.y=element_text(size=15)) + 
+  theme(axis.title.x=element_text(size=15)) +
+  #geom_text(aes(label=prev3),position=position_dodge(.9), vjust=-1.7, size=4)+
+  geom_errorbar(limits,width=0.25, stat="identity",position=position_dodge(.9), colour="black") 
+
+```
+
+
+#HIV irr by year
+```{r}
+#****************************************************************************************#
+#rate graph
+#----------------------------------------------------------------------------------------#
+rate_year<-read.csv("rate_year.csv", stringsAsFactors=T)
+str(rate_year)
+
+
+ggplot(rate_year, aes(x=year,y=rate)) + 
+  geom_point(size=2)+
+  geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2, size=0.5)+
+  scale_y_continuous(limits =c(0,25), minor_breaks = F)+
+  geom_hline(yintercept=1,  linetype="dashed")+
+  theme_bw()
+
+  
+```
+
+```{r}
+#diagnostic process
+dxmethod<-read_xlsx("dxmethod_stack.xlsx")
+
+str(dxmethod)
+
+ggplot(dxmethod, aes(y = perc, x = year, fill = type)) + 
+  geom_bar(stat ="identity", position = "stack", colour="black", width = 0.5)+
+  scale_y_continuous(limits=c(0,100))+
+  #scale_x_continuous(minor_breaks=T)+
+  scale_fill_manual(values = c("lightgrey","firebrick", "lightsalmon", "black", "palegreen1"))+
+  #theme(axis.title.y=element_text(size=40)) + 
+  theme_bw()
+
+```
+
+
+
+Aggregate TB cases from q2_2011 onwards
+
+```{r}
+cases_2009_2018 <- all_cases_2009_2018mn2 %>%
+  group_by(year_q, acf) %>%
+  count()
+
+smrposcases_2009_2018 <- all_cases_2009_2018mn2 %>%
+  filter(smr_xpert_any=="b) Smr/Xpert-positive") %>%
+  group_by(year_q, acf) %>%
+  count()
+
+smrposcases_2009_2018_mode <- all_cases_2009_2018mn2 %>%
+  filter(smr_xpert_any=="b) Smr/Xpert-positive") %>%
+  group_by(year_q, acf) %>%
+  count()
+
+
+```
+
+
+
+
+Bind the rows together
+
+```{r}
+all_cases_2009_2018 <- bind_rows(cases_2009_2018) %>%
+  arrange(year_q) %>%
+  ungroup() %>%
+  mutate(tbcases = "All cases")
+
+smrpos_cases_2009_2018 <- bind_rows(smrposcases_2009_2018) %>%
+  arrange(year_q) %>%
+  ungroup() %>%
+  mutate(tbcases = "Smr/Xpert-positive cases")
+
+blantyre_tb_cases_2009_2018 <- bind_rows(all_cases_2009_2018, smrpos_cases_2009_2018)
+
+usethis::use_data(blantyre_tb_cases_2009_2018, overwrite = TRUE)
+
+```
+
+
+#ACF graphs----lets get the 2009q1-2011q1 case notifications
+
+```{r}
+
+cases_2010_q12011 <- tribble(~year_q,  ~acf,  ~tbcases,  ~n,
+                      "2010.1", "ACF", "All cases" ,   169,
+                      "2010.2", "ACF",  "All cases",  156,
+                      "2010.3", "ACF",  "All cases",  161,
+                      "2010.4", "ACF",   "All cases", 163,
+                      "2011.1", "ACF",   "All cases", 142,
+                      "2010.1", "Non-ACF",  "All cases",  353,
+                      "2010.2", "Non-ACF",  "All cases",  325,
+                      "2010.3", "Non-ACF", "All cases",   341,
+                      "2010.4", "Non-ACF",   "All cases", 369,
+                      "2011.1", "Non-ACF",  "All cases",  239,
+                      "2010.1", "ACF",  "Smr/Xpert-positive cases" ,  74,
+                      "2010.2", "ACF",  "Smr/Xpert-positive cases" ,  65,
+                      "2010.3", "ACF",  "Smr/Xpert-positive cases" ,  71,
+                      "2010.4", "ACF",  "Smr/Xpert-positive cases" ,  67,
+                      "2011.1", "ACF",  "Smr/Xpert-positive cases" ,  63,
+                      "2010.1", "Non-ACF",  "Smr/Xpert-positive cases" ,  106,
+                      "2010.2", "Non-ACF",   "Smr/Xpert-positive cases" , 92,
+                      "2010.3", "Non-ACF",  "Smr/Xpert-positive cases" ,  101,
+                      "2010.4", "Non-ACF",   "Smr/Xpert-positive cases" , 95,
+                      "2011.1", "Non-ACF",  "Smr/Xpert-positive cases" ,  88
+                        )
+```
+
+```{r}
+
+blantyre_tb_cases_2009_2018_mn<-blantyre_tb_cases_2009_2018 %>%
+  filter(year_q!=2010.1)%>%
+  filter(year_q!=2010.2)%>%
+  filter(year_q!=2010.3)%>%
+  filter(year_q!=2010.4)%>%
+  filter(year_q!=2011.1)
+  
+aggregate_cases_2009_2018_mn <- bind_rows(cases_2010_q12011, blantyre_tb_cases_2009_2018_mn) %>%
+  arrange(year_q) %>%
+  ungroup() 
+
+
+usethis::use_data(aggregate_cases_2009_2018_mn, overwrite = TRUE)
+```
+
+
+```{r}
+
+acf_pops <- read_xlsx("C:/Users/Marriott Nliwasa/Documents/My R projects/TB-Trends/data-raw/acf_pops.xlsx")
+
+acf_pops <- acf_pops %>%
+  mutate(sex = case_when(sex==1 ~ "males",
+                         sex==2 ~ "females")) %>%
+  mutate(area = case_when(area==1 ~ "ACF",
+                          area==2 ~ "Non-ACF")) %>%
+  mutate(age =  case_when(agegp==1 ~ "16-19",
+                          agegp==2 ~ "20-29",
+                          agegp==3 ~ "30-39",
+                          agegp==4 ~ "40-49",
+                          agegp==5 ~ "50+")) %>%
+  select(-agegp) %>%
+  mutate(population = round(population)) %>%
+  filter(area == "ACF") %>%
+  mutate(year = as.character(year)) %>%
+  mutate(quarter="1") %>%
+  mutate(year_q = paste(year, quarter, sep=".")) %>%
+  filter(year=="2009")
+
+
+yq <- hiv_cnrs %>%
+  ungroup() %>%
+  select(year, quarter, year_q, sex, age) %>%
+  distinct()
+  
+acf_pops <- left_join(yq, acf_pops, by=c("year", "quarter", "year_q", "sex", "age"))
+
+#get population group growth rates
+growth_rates <- blantyre_census_by_q %>%
+  mutate(new_age = case_when(age=="15-19" ~ "16-19",
+                                age=="20-24" ~ "20-29",
+                                age=="25-29" ~ "20-29",
+                                age=="30-34" ~ "30-39",
+                                age=="35-39" ~ "30-39",
+                                age=="40-44" ~ "40-49",
+                                age=="45-49" ~ "40-49",
+                                age=="50-54" ~ "50+",
+                                age=="55-59" ~ "50+",
+                                age=="60-64" ~ "50+",
+                                age=="65-69" ~ "50+",
+                                age=="70-74" ~ "50+",
+                                age=="75+" ~ "50+",
+                         TRUE ~ NA_character_)) %>%
+  filter(!is.na(new_age)) %>%
+  filter(sex !="total") %>%
+  filter(district=="Blantyre City") %>%
+  filter(year>=2009) %>%
+  mutate(year = as.character(year),
+         quarter = as.character(quarter)) %>%
+  group_by(year_q, new_age, sex) %>%
+  summarise(population = sum(population)) %>%
+  ungroup()
+
+#Check that worked
+growth_rates %>%
+  filter(year_q=="2009.1") %>%
+  summarise(sum=sum(population))
+
+growth_rates %>%
+  filter(year_q=="2018.4") %>%
+  summarise(sum=sum(population))
+  
+
+#now estimate the change per quarter for each age-sex group
+growth_rates <- growth_rates %>%
+  arrange(new_age, sex, year_q) %>%
+  group_by(new_age, sex) %>%
+  mutate(pct_change = (population/ lag(population))) %>%
+  rename(age = new_age, total_pop=population)
+
+acf_pops <- left_join(growth_rates, acf_pops, by=c("year_q", "sex", "age"))
+
+#now project forwards to get the quarterly estimated acf population  
+
+acf_pops <- acf_pops %>%
+  mutate(acf_pop = population)
+
+
+p <- progress_estimated(nrow(acf_pops))
+for(i in 1:nrow(acf_pops)) {
+  acf_pops %>%
+    mutate(acf_pop = if_else(is.na(acf_pop), lag(acf_pop)*pct_change, acf_pop)) -> acf_pops
+  p$tick()$print()
+}
+
+#tidyup a bit
+acf_pops <- acf_pops %>%
+  select(year_q, year, quarter, sex, age, total_pop, acf_pop) %>%
+  mutate(acf_pop = round(acf_pop)) %>%
+  ungroup()
+
+
+# Check these totals
+acf_pops %>%
+  ungroup() %>%
+  filter(year_q=="2009.1") %>%
+  summarise(acf_pop = sum(acf_pop))
+
+acf_pops %>%
+  ungroup() %>%
+  filter(year_q=="2018.4") %>%
+  summarise(acf_pop = sum(acf_pop))
+
+# acf_pops %>%
+#   ungroup() %>%
+#   group_by(acf) %>%
+#   filter(year_q=="2009.1") %>%
+#   summarise(acf_pop = sum(acf_pop))
+
+# acf_pops %>%
+#   ungroup() %>%
+#   group_by(acf) %>%
+#   filter(year_q=="2018.4") %>%
+#   summarise(acf_pop = sum(acf_pop))
+
+# #some graphical checks
+# acf_pops %>%
+#   ggplot() +
+#   geom_line(aes(x=year_q, y=acf_pop, group=age, colour=age)) +
+#   facet_wrap(acf ~ sex + age) +
+#   theme_classic(base_family = "Open Sans Condensed Light") +
+#   theme(axis.text.x=element_text(angle=45, hjust=1))
+# 
+# acf_pops %>%
+#   mutate(percent_acf = acf_pop/total_pop) %>%
+#   ggplot() +
+#   geom_line(aes(x=year_q, y=percent_acf, group=age, colour=age)) +
+#   facet_wrap(sex~age) +
+#   theme_classic(base_family = "Open Sans Condensed Light") +
+#   theme(axis.text.x=element_text(angle=45, hjust=1))
+# 
+# acf_pops %>% 
+#   mutate(non_acf_pop = total_pop -acf_pop) %>%
+#   select(year, year_q, age, sex, acf_pop, non_acf_pop, quarter) %>%
+#   gather(acf, population, -year_q, -age, -sex, -year, -quarter) %>%
+#   mutate(acf = case_when(acf=="acf_pop"~ "ACF",
+#                          acf=="non_acf_pop" ~ "Non-ACF")) %>%
+#   filter(quarter==1) %>%
+#   group_by(year, acf) %>%
+#   summarise(population = sum(population))
+# 
+acf_pops <- acf_pops %>%
+   ungroup() %>%
+   mutate(non_acf_pop = total_pop - acf_pop) %>%
+   gather(acf, population, -year_q, -year, -quarter, -age, -sex) %>%
+   mutate(acf = case_when(acf=="total_pop" ~ "total",
+                          acf=="acf_pop" ~ "ACF",
+                          acf=="non_acf_pop" ~ "Non-ACF")) %>%
+   filter(acf != "total")
+
+
+use_data(acf_pops, overwrite = TRUE)
+```
+
+
+Get overall case notification rates
+
+```{r}
+#estimate overall acf CNRS (all cases)
+
+acf_pops_overall <- acf_pops %>%
+  group_by(year_q, acf) %>%
+  summarise(population=sum(population))
+
+overall_cnr_q<- aggregate_cases_2009_2018_mn%>%
+  filter(tbcases=="All cases")%>%
+  filter(year_q<=2018.4)
+  
+overall_cnr_q <- overall_cnr_q%>%
+  left_join(acf_pops_overall) %>%
+  rename(cases=n) %>%
+  left_join(acf_pops_overall) %>%
+  arrange(year_q) %>%
+  mutate(q_population = round(population/4)) %>%
+  mutate(cnr = (cases/q_population*100000)) %>%
+  rowwise %>%
+  mutate(xx = list(broom::tidy(binom.test(cases, q_population, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+
+overall_cnr_q
+
+
+```
+6. Case notification rates
+
+Overall TB case notification rates stratified by ACF area
+
+```{r, fig.height=6, fig.width=10}
+
+#Here are the data
+overall_cnr_q%>% arrange(year_q)
+
+ggplot(overall_cnr_q, aes(x=year_q, y=cnr, group=acf, colour=acf)) +
+  ylim(0,1000) +
+  theme_bw()+
+  geom_line(size=0.1, position = position_dodge(width = 0.2))+
+  geom_point(size=4, fill="white", position = position_dodge(width = 0.2))+
+  geom_vline(xintercept=10, linetype="dotted")+
+  geom_vline(xintercept=24, linetype="dotted")+
+  #annotate("text", label="Active case finding period", x = 16, y = 30, size = 4) +
+  geom_pointrange(aes(ymin=conf.low, ymax=conf.high), width=.5, position = position_dodge(width = 0.2))+
+  scale_x_discrete(breaks=c("2009.1","2010.1", "2011.1", "2012.1", 
+                            "2013.1", "2014.1", "2015.1", "2016.1",
+                            "2017.1", "2018.1"),
+                   labels=c("2009","2010", "2011", "2012", 
+                            "2013", "2014", "2015", "2016", "2017", "2018")) +
+   theme(legend.title = element_blank(), legend.position=c(.9,.9))
+  
+```
+
+
+
+Smear Positive TB case notifications (by age and sex first)
+
+```{r}
+#estimate overall acf CNRS (all cases)
+
+acf_pops_overall <- acf_pops %>%
+  group_by(year_q, acf) %>%
+  summarise(population=sum(population))
+
+smrxpert_cnr_q<- aggregate_cases_2009_2018_mn%>%
+  filter(tbcases=="Smr/Xpert-positive cases")%>%
+  filter(year_q<=2018.4)
+
+smrxpert_cnr_q <- smrxpert_cnr_q%>%
+  left_join(acf_pops_overall) %>%
+  rename(cases=n) %>%
+  left_join(acf_pops_overall) %>%
+  arrange(year_q) %>%
+  mutate(q_population = round(population/4)) %>%
+  mutate(cnr = (cases/q_population*100000)) %>%
+  rowwise %>%
+  mutate(xx = list(broom::tidy(binom.test(cases, q_population, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+
+
+
+
+```
+
+```{r, fig.height=6, fig.width=10}
+
+#Here are the data
+smrxpert_cnr_q%>% arrange(year_q)
+
+
+
+ggplot(smrxpert_cnr_q, aes(x=year_q, y=cnr, group=acf, colour=acf)) +
+  ylim(0,550) +
+  theme_bw()+
+  geom_line(size=0.1, position = position_dodge(width = 0.2))+
+  geom_point(size=4, fill="white", position = position_dodge(width = 0.2))+
+  geom_vline(xintercept=10, linetype="dotted")+
+  geom_vline(xintercept=24, linetype="dotted")+
+  #annotate("text", label="Active case finding period", x = 16, y = 30, size = 4) +
+  geom_pointrange(aes(ymin=conf.low, ymax=conf.high), width=.5, position = position_dodge(width = 0.2))+
+  scale_x_discrete(breaks=c("2009.1","2010.1", "2011.1", "2012.1", 
+                            "2013.1", "2014.1", "2015.1", "2016.1",
+                            "2017.1", "2018.1"),
+                   labels=c("2009","2010", "2011", "2012", 
+                            "2013", "2014", "2015", "2016", "2017", "2018")) +
+   theme(legend.title = element_blank(), legend.position=c(.9,.9))
+
+ 
+
+
+```
+
+issues on mode
+
+```{r}
+
+smrxpert_cnr_q<- aggregate_cases_2009_2018_mn%>%
+  filter(tbcases=="Smr/Xpert-positive cases")%>%
+  filter(year_q<=2018.4)
+
+mode <- all_cases_2009_2018mn2 %>%
+  filter(smr_xpert_any=="b) Smr/Xpert-positive")%>%
+  filter(new_mode==3)%>%
+  filter(acf=="ACF")%>%
+  group_by(year_q, acf, tbcases=smr_xpert_any)%>%
+  count()%>%
+  ungroup()%>%
+  mutate(tbcases = "diff")%>%
+  select(year_q, acf, case=n)
+  
+
+
+#add zero anchors for the mode
+
+quarter_year_label<- aggregate_cases_2009_2018_mn%>%
+  filter(tbcases=="Smr/Xpert-positive cases")%>%
+  filter(year_q<=2018.4)%>%
+  select(year_q, acf)
+
+mode_labels<- left_join(quarter_year_label, mode)%>%
+arrange(year_q) %>%
+  ungroup()%>%
+  mutate_if(is.integer, ~replace(case, is.na(case), 0))
+  
+
+mode_cnr<- left_join(mode_labels, smrxpert_cnr_q) %>%
+  ungroup()%>%
+  mutate(cases=n-case)%>%
+  select(year_q, acf,  n=cases)%>%
+  filter(acf=="ACF")
+
+
+
+mode_cnr <- mode_cnr%>%
+  left_join(acf_pops_overall) %>%
+  rename(cases=n) %>%
+  left_join(acf_pops_overall) %>%
+  arrange(year_q) %>%
+  mutate(q_population = round(population/4)) %>%
+  mutate(cnr = (cases/q_population*100000)) %>%
+  rowwise %>%
+  mutate(xx = list(broom::tidy(binom.test(cases, q_population, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+
+
+#mode_line
+mode_cnr%>% 
+  arrange(year_q)
+  
+
+
+
+ggplot(mode_cnr, aes(x=year_q, y=cnr, group=acf))+
+  ylim(0,550) +
+  geom_line()+
+  theme_bw()+
+  geom_area()+
+  #geom_point(size=4)+
+ theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+  
+  
+
+```
+
+
+
+
+```{r}
+
+
+acf_tb_cases <- all_cases_2009_2018mn2 %>%
+  select(year, quarter, year_q, age, sex, acf) %>%
+  mutate(sex = case_when(sex=="Male" ~ "males",
+                         sex=="Female" ~ "females")) %>%
+  filter(age>15) %>%
+  mutate(age = case_when(age >15 & age <=19 ~ "16-19",
+                         age >=20 & age <=29 ~ "20-29",
+                         age >=30 & age <=39 ~ "30-39",
+                         age >=40 & age <=49 ~ "40-49",
+                         age >=50 ~ "50+")) %>%
+  group_by(year_q, sex, age, acf, .drop = FALSE) %>%
+  tally() %>%
+  ungroup() %>%
+  separate(year_q, into=c("year", "quarter"), remove = FALSE) %>%
+  filter(year !="2008") %>%
+  select(-year, -quarter) %>%
+  complete(year_q, age, sex, acf, fill = list(n=0))
+
+acf_cnrs_age_sex <- full_join(acf_pops, acf_tb_cases)
+
+#estimate acf vs. non_acf cnrs
+acf_cnrs_age_sex <- acf_cnrs_age_sex %>%
+  filter(!is.na(n)) %>%
+  mutate(q_population = round(population/4)) %>%
+  mutate(cnr = n/q_population*100000) %>%
+  rowwise() %>%
+  mutate(xx = list(broom::tidy(binom.test(n, q_population, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+
+acf_cnrs_age_sex
+
+use_data(acf_cnrs_age_sex, overwrite = TRUE)
+```
+
+
+Now for cultre/smear/xpert positive cases
+
+```{r}
+#estimate overall acf cnrs
+
+acf_smrpos_cnrs <-  blantyre_tb_cases_2009_2018 %>%
+  filter(tbcases=="Smr/Xpert-positive cases") %>%
+  left_join(acf_pops_overall) %>%
+  rename(cases=n) %>%
+  left_join(acf_pops_overall) %>%
+  arrange(year_q) %>%
+  mutate(q_population = round(population/4)) %>%
+  mutate(cnr = (cases/q_population*100000)) %>%
+  rowwise %>%
+  mutate(xx = list(broom::tidy(binom.test(cases, q_population, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+  
+
+acf_smrpos_cnrs
+
+use_data(acf_smrpos_cnrs, overwrite = TRUE)
+
+```
+### Pre- during-, and post-ACF smr-pos CNRs for graph
+
+The 2010 cases are unreliable, so need to bind 2009 to the 2011-2018 cases
+
+```{r}
+#sort out the cases
+temp <- all_cases_2009_2018mn2
+table(temp$period, useNA="always")
+
+temp <- temp %>%
+  filter(year_q<="2016.3")%>%
+  mutate(period2 = case_when(year_q %in% c("2014.4", "2015.1", "2015.2", "2015.3") ~ "Post-ACF: y1",
+                             year_q %in% c("2015.4", "2016.1", "2016.2", "2016.3") ~ "Post-ACF: y2",
+                             TRUE ~ period)) %>%
+   filter(smr_xpert_any=="b) Smr/Xpert-positive")
+
+
+temp2 <- temp %>%
+  group_by(period2, agegp, sex, acf) %>%
+  count() %>%
+  filter(!is.na(sex))
+
+#sort out the denominators 
+#Here we want to take the mean of the population for the quarters at risk...
+
+temp_denoms <- acf_pops %>%
+  filter(year_q<="2016.3")%>%
+  mutate(period2 = case_when(year_q %in% c("2014.4", "2015.1", "2015.2", "2015.3") ~ "Post-ACF: y1",
+                             year_q %in% c("2015.4", "2016.1", "2016.2", "2016.3") ~ "Post-ACF: y2",
+                             year_q >="2009.1" & year_q <="2011.1" ~ "pre-ACF",
+                             TRUE ~ "ACF")) %>%
+  group_by(period2, age, sex, acf) %>%
+  summarise(pop2 = round(mean(population))) %>%
+  select(period2, agegp=age, sex, population=pop2, acf) %>%
+  ungroup() %>%
+  mutate(sex = case_when(sex=="females" ~ "Female",
+                         sex=="males" ~ "Male"))
+
+acf_period_cnrs <- left_join(temp2, temp_denoms)
+
+#Now get the case notification rates
+
+acf_period_cnrs <- acf_period_cnrs %>%
+  mutate(q_population = case_when(period2=="pre-ACF" ~ round(population*2.25),
+                                  period2=="ACF" ~ round(population*3.25),
+                                  period2=="Post-ACF: y1" ~ round(population*1),
+                                  period2=="Post-ACF: y2" ~ round(population*1))) %>%
+  mutate(cnr = (n/q_population*100000)) %>%
+  rowwise %>%
+  mutate(xx = list(broom::tidy(binom.test(n, q_population, conf.level=0.95)))) %>%
+  tidyr::unnest(xx) %>%
+  ungroup() %>%
+  mutate_at(vars(estimate, conf.low, conf.high), funs(.*100000)) %>%
+  select(-estimate, -statistic, - p.value, -method, -alternative, -parameter)
+
+use_data(acf_period_cnrs, overwrite = TRUE)
+
+
+#a check graph
+
+acf_period_cnrs %>%
+  mutate(period2 = factor(period2)) %>%
+  ggplot() +
+  geom_pointrange(aes(x=fct_relevel(period2,
+                               "pre-ACF", "ACF", "Post-ACF: y1", "Post-ACF: y2"), y=cnr, 
+                      ymin=conf.low, ymax=conf.high,
+                      colour=acf, group=acf), alpha=0.7, position = position_dodge(width = 0.5)) +
+  geom_point(aes(x=fct_relevel(period2,
+                               "pre-ACF", "ACF", "Post-ACF: y1", "Post-ACF: y2"), y=cnr,
+                      colour=acf, group=acf), position = position_dodge(width = 0.5)) +
+  facet_grid(fct_relevel(sex, "Male", "Female") ~agegp) +
+  theme_bw(base_family = "Open Sans Condensed Light",
+           base_size = 14) +
+  labs(x="",
+       y="Smear/Xpert-positive CNR (per 100,000)\n95% confidence interval") +
+  theme(axis.text.x=element_text(angle=45, hjust=1)) +
+  theme(legend.title = element_blank())
+  
+
+```
+Import the required datasets from the package (note these were cleaned and created in the `data-raw` folder)
+
+```{r}
+#numerators - TB cases
+tb_cases_2011_2018 <- tb_cases_2011_2018
+acf_cnrs_overall <- acf_cnrs_overall
+acf_smrpos_cnrs_overall <- acf_smrpos_cnrs_overall
+blantyre_census_by_q <- blantyre_census_by_q
+acf_period_cnrs <- acf_period_cnrs
+blantyre_census_2008_2018 <- blantyre_census_2008_2018 
+
+```
+
+Sputum smear positive case notification rates
+
+```{r, fig.height=6, fig.width=10}
+
+
+#Here are the data
+acf_smrpos_cnrs_overall<-read.csv("C:/Users/Marriott Nliwasa/Documents/My R projects/TB-Trends/data/acf_cnrs_overall.csv")
+
+acf_smrpos_cnrs2<-acf_smrpos_cnrs_overall
+filter(tbcases )
+acf_smrpos_cnrs2 %>% arrange(year_q)
+
+
+ggplot(acf_smrpos_cnrs, aes(x=year_q, y=cnr, group=acf, colour=acf, linetype=acf, shape=acf)) +
+geom_point()+
+geom_line()+
+geom_vline(aes(xintercept =  24), linetype=4) +
+geom_vline(aes(xintercept =  10), linetype=4) +
+theme_bw()
+
+  
+  acf_cnrs_overall %>%
+  ggplot() +
+  geom_vline(aes(xintercept =  24), linetype=4) +
+  geom_vline(aes(xintercept =  10), linetype=4) +
+  annotate("text", label="Active case finding period", x = 16, y = 30, size = 4) +
+  geom_line(aes(x=year_q, y=cnr, 
+                      ymin=conf.low, ymax=conf.high, 
+                      group=acf, colour=acf), alpha=0.3, position = position_dodge(width = 0.2), linetype="dashed") +
+  geom_pointrange(aes(x=year_q, y=cnr, 
+                      ymin=conf.low, ymax=conf.high, 
+                      group=acf, colour=acf), alpha=0.7, position = position_dodge(width = 0.2)) +
+  geom_segment(data = acf, aes(x="2011.2", xend="2014.3", y=acf_tag, yend=acf_tag),
+               size=2)+
+  theme_bw(base_family = "Open Sans Condensed Light",
+           base_size = 16) +
+  theme(axis.text.x=element_text(angle=90, hjust=1)) +
+  labs(title = "All TB cases notification rates in Blantyre City, Malawi",
+       subtitle = "By active case finding area and quarter, 2009-2018",
+       x="",
+       y="TB case notification rate (per 100,000)\n95% confidence interval") +
+  scale_x_discrete(breaks=c("2009.1","2010.1", "2011.1", "2012.1", 
+                            "2013.1", "2014.1", "2015.1", "2016.1",
+                            "2017.1", "2018.1"),
+                   labels=c("2009","2010", "2011", "2012", 
+                            "2013", "2014", "2015", "2016", "2017", "2018")) +
+  scale_color_brewer(type="qual", palette = "Set1") +
+  theme(legend.title = element_blank(),
+      legend.position=c(.9,.9))
+  
+ggsave(here::here("plots/fig5a.pdf"), height=6, width=8, device = cairo_pdf, dpi=600)
+```
+Overall TB case notification rates stratified by ACF area
+
+```{r, fig.height=6, fig.width=10}
+
+acf_cnrs_overall <- acf_cnrs_overall
+
+write.csv(acf_cnrs_overall, "acf_cnrs_overall.csv")
+
+#get the ACF period
+acf <- tb_cases_2011_2018 %>%
+  select(year_q, period) %>%
+  distinct() %>%
+  arrange(year_q) %>%
+  mutate(acf_tag = case_when(period=="pre-ACF" ~ NA_real_,
+                             period=="ACF" ~ 0))
+
+#Here are the data
+acf_cnrs_overall %>% arrange(year_q)
+
+acf_cnrs_overall %>%
+  ggplot() +
+  geom_vline(aes(xintercept =  22.95), linetype=4) +
+  geom_vline(aes(xintercept =  10), linetype=4) +
+  annotate("text", label="Active case finding period", x = 16, y = 30, size = 4) +
+  geom_line(aes(x=year_q, y=cnr, 
+                      ymin=conf.low, ymax=conf.high, 
+                      group=acf, colour=acf), alpha=0.3, position = position_dodge(width = 0.2), linetype="dashed")
+
++
+  geom_segment(data = acf, aes(x="2011.2", xend="2014.3", y=acf_tag, yend=acf_tag),
+               size=2)+
+  theme_bw(base_family = "Open Sans Condensed Light",
+           base_size = 16)+
+theme(axis.text.x=element_text(angle=90, hjust=1)) +
+  labs(title = "All TB cases notification rates in Blantyre City, Malawi",
+       subtitle = "By active case finding area and quarter, 2009-2018",
+       x="",
+       y="TB case notification rate (per 100,000)\n95% confidence interval") +
+  scale_x_discrete(breaks=c("2009.1","2010.1", "2011.1", "2012.1", 
+                            "2013.1", "2014.1", "2015.1", "2016.1",
+                            "2017.1", "2018.1"),
+                   labels=c("2009","2010", "2011", "2012", 
+                            "2013", "2014", "2015", "2016", "2017", "2018")) +
+  scale_color_brewer(type="qual", palette = "Set1") +
+  theme(legend.title = element_blank(),
+      legend.position=c(.9,.9))
+  
+ggsave(here::here("plots/fig5a.pdf"), height=6, width=8, device = cairo_pdf, dpi=600)
+
+```
+
+
+
+

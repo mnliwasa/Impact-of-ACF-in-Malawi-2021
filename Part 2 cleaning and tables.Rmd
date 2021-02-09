@@ -1,0 +1,242 @@
+---
+title: "Part 2 cleaning and tables"
+author: "Dr Marriott Nliwasa"
+date: "20/10/2020"
+output: word document
+    css: style.css
+---
+```{r}
+
+#install.packages("table1")
+#install.packages("merTools", lib="C:/Users/Marriott Nliwasa/Documents/R/win-library/3.4")
+require(devtools)
+devtools::install_github("benjaminrich/table1")
+library(tidyverse)
+library(tidyr)
+library(boot)
+library(rvest)
+library(table1)
+
+library(dplyr)
+library(haven)
+
+#sex
+table(sex=all_cases_2009_2018mn$sex)
+table(sex=all_cases_2009_2018mn$smr_clinic)
+table(sex=all_cases_2009_2018mn$hiv)
+table(sex=all_cases_2009_2018mn$acf)
+
+#age categories
+all_cases_2009_2018mn<- all_cases_2009_2018mn  %>%
+mutate(agegp = case_when(age >15 & age <=19 ~ "16-19",
+                         age >=20 & age <=29 ~ "20-29",
+                         age >=30 & age <=39 ~ "30-39",
+                         age >=40 & age <=49 ~ "40-49",
+                         age >=50 ~ "50+"))
+#HIV tested
+table(sex=all_cases_2009_2018mn$hiv)
+all_cases_2009_2018mn<- all_cases_2009_2018mn  %>%
+  mutate(hivtested = case_when(hiv=="a) HIV-negative" | hiv=="b) HIV-positive"  ~ "aHIV tested",
+                         TRUE ~ "tested"))
+#ART
+all_cases_2009_2018mn<- all_cases_2009_2018mn  %>%
+  mutate(art=x21art) %>%
+  mutate(art = case_when(art==1 ~ "b) Taking ART",
+                         art==2 ~ "a) Not taking ART"))
+  
+table(hiv=all_cases_2009_2018mn$hiv, art=all_cases_2009_2018mn$art, all_cases_2009_2018mn$acf, useNA="always") 
+
+all_cases_2009_2018mn <- all_cases_2009_2018mn %>%
+mutate(hiv_art = case_when(
+  hiv=="b) HIV-positive" & art == "b) Taking ART"  ~ "aHIV-positive on ART",
+  hiv=="b) HIV-positive" & art == "a) Not taking ART"  ~ "bHIV-positive NOT on ART", 
+  hiv=="a) HIV-negative"  ~ "cHIV-Negative",
+  TRUE ~ "dNotdone")) 
+
+#facility
+table(all_cases_2009_2018mn$fac_code)
+all_cases_2009_2018mn <- all_cases_2009_2018mn %>%
+  mutate( facility = case_when(
+    fac_code %in% c("BTQE") ~ "Central hospital",
+    fac_code  %in% c("BTBG","BTCH","BTLB","BTND","BTSL","BTZG","BTGW")  ~ "Health centre",
+    fac_code %in% c("BTBAH", "BTCH", "BTMB", "BTMW") ~ "private hospital",
+  ))
+
+#period
+all_cases_2009_2018mn <- all_cases_2009_2018mn %>%
+  mutate( period = case_when(
+    year %in% c(2009,2010) ~ "pre-ACF",
+    year %in% c(2011) & quarter %in% c(1) ~ "pre-ACF",
+    year %in% c(2011) & quarter %in% c(2,3,4) ~ "ACF",
+    year %in% c(2012,2013) ~ "ACF",
+    year %in% c(2014) & quarter %in% c(1,2,3) ~ "ACF",
+    year %in% c(2014) & quarter %in% c(4) ~ "post-ACF",
+    year %in% c(2015,2016,2017,2018) ~ "post-ACF"
+  ))
+
+ 
+         
+```
+
+```{r}
+#clinic smear from X01
+table(all_cases_2009_2018mn$x15smr, useNA = "always")
+
+#Lab smear from culture request form
+table(tolower(all_cases_2009_2018mn$l28smear), useNA = "always")
+
+#Xpert
+table(all_cases_2009_2018mn$x15xpert, useNA = "always")
+table(all_cases_2009_2018mn$smr_clinic, useNA = "always")
+
+all_cases_2009_2018mn <- all_cases_2009_2018mn %>%
+ mutate(smr_lab = case_when(
+    tolower(l28smear) %in% c("pos","sca","scant","scanty") ~ 1,
+    tolower(l28smear) %in% c("neg") ~ 0,
+    TRUE ~ NA_real_))
+
+
+all_cases_2009_2018mn <- all_cases_2009_2018mn %>%
+  mutate(xpert_clinic = case_when(x15xpert==1 ~ 1,
+                                  x15xpert==2 ~ 0,
+                                  x15xpert==3 ~ NA_real_, 
+                                  TRUE ~ NA_real_))
+
+all_cases_2009_2018mn <- all_cases_2009_2018mn %>%
+mutate(xpert_clinic = case_when(xpert_clinic==1 ~ "b) Xpert-positive",
+                                  xpert_clinic==0 ~ "a) Xpert-negative"))%>%
+  mutate(smr_lab = case_when(smr_lab==0 ~ "a) Smear-negative",
+                             smr_lab==1 ~ "b) Smear-positive"))%>%
+
+mutate(smr_any = case_when(smr_lab=="b) Smear-positive" | smr_clinic=="b) Smear-positive" ~ "b) Smear-positive",
+                             smr_lab=="a) Smear-negative" & smr_clinic=="a) Smear-negative" ~ "a) Smear-negative",
+                             smr_lab=="a) Smear-negative" & is.na(smr_clinic) ~ "a) Smear-negative",
+                             is.na(smr_lab) & smr_clinic=="a) Smear-negative" ~ "a) Smear-negative")) %>%
+
+mutate(smr_xpert_any = case_when(smr_any == "b) Smear-positive" | xpert_clinic=="b) Xpert-positive" ~ "b) Smr/Xpert-positive",
+                                   smr_any == "a) Smear-negative" & (is.na(xpert_clinic) | xpert_clinic=="a) Xpert-negative") ~ "a) Smr/Xpert-negative",
+                                   is.na(smr_any) & xpert_clinic=="a) Xpert-negative" ~ "a) Smr/Xpert-negative"))
+
+cnrs_mn <- read_dta("cnr_cleaned_MN.dta")
+
+
+#Keep those where Xpert reported as positive, but xpert_corrected was negative.
+keep_mn <- cnrs_mn %>%
+  select(unique_id, xpert, xpert_corrected, x05regdate) %>%
+  filter(!is.na(xpert_corrected)) %>%
+  mutate(keep = case_when(xpert==1 & xpert_corrected==0 ~ "keep",
+                          TRUE ~ "dont keep")) %>%
+  filter(keep=="keep")
+dim(keep_mn)
+table(keep_mn$xpert_corrected)
+
+attributes(keep_mn$xpert_corrected)
+
+
+attributes(keep_mn$unique_id)
+attributes(all_cases_2009_2018mn$unique_id)
+
+
+attributes(keep_mn$unique_id)<- NULL
+
+all_cases_2009_2018mn<- all_cases_2009_2018mn %>%
+  select(-xpert_corrected)
+
+table(all_cases_2009_2018mn$xpert_clinic)
+
+all_cases_2009_2018mn2 <- all_cases_2009_2018mn %>%
+  left_join(keep_mn, by="unique_id")%>%
+  mutate(xpert_clinic = case_when(xpert_clinic=="b) Xpert-positive" & xpert_corrected==0 ~
+                                    "a) Xpert-negative",
+                                  TRUE ~ as.character(xpert_clinic)))%>%
+  
+  
+   mutate(smr_xpert_any = case_when(smr_any == "b) Smear-positive" | xpert_clinic=="b) Xpert-positive" ~ "b) Smr/Xpert-positive",
+                                   smr_any == "a) Smear-negative" & (is.na(xpert_clinic) | xpert_clinic=="a) Xpert-negative") ~ "a) Smr/Xpert-negative",
+                                   is.na(smr_any) & xpert_clinic=="a) Xpert-negative" ~ "a) Smr/Xpert-negative")) 
+
+
+#MNeeting with Liz C and Marriott Nliwasa 2019-12-03 to clean these data
+#Now, we are still not convinced by the 135 2014 Xpert clinic positive results
+#there was an issue with the QECH lab here
+#convert all xpert-Positive results in 2014 to missing, and base micro classification on smear (clinic or lab)
+#also need to c onvert Q1 and Q2 of 2015
+
+all_cases_2009_2018mn2 <- all_cases_2009_2018mn2 %>%
+  mutate(xpert_clinic = case_when(year==2014 & xpert_clinic=="b) Xpert-positive" ~ NA_character_,
+                                  TRUE ~ xpert_clinic)) %>%
+  mutate(xpert_clinic = case_when(year_q=="2015.1" & xpert_clinic=="b) Xpert-positive" ~ NA_character_,
+                                  TRUE ~ xpert_clinic)) %>%
+  mutate(xpert_clinic = case_when(year_q=="2015.2" & xpert_clinic=="b) Xpert-positive" ~ NA_character_,
+                                  TRUE ~ xpert_clinic)) %>%
+  mutate(smr_xpert_any = case_when(smr_any == "b) Smear-positive" | xpert_clinic=="b) Xpert-positive" ~ "b) Smr/Xpert-positive",
+                                   smr_any == "a) Smear-negative" & (is.na(xpert_clinic) | xpert_clinic=="a) Xpert-negative") ~ "a) Smr/Xpert-negative",
+                                   is.na(smr_any) & xpert_clinic=="a) Xpert-negative" ~ "a) Smr/Xpert-negative"))
+
+all_cases_2009_2018mn2 <- all_cases_2009_2018mn2 %>%
+mutate(xpert_clinic=if_else(year %in% c(2011:2014), NA_character_, xpert_clinic ))
+table(all_cases_2009_2018mn2$xpert_clinic, all_cases_2009_2018mn2$year, useNA="always" )
+
+dim(all_cases_2009_2018mn2)
+
+
+```
+
+
+```{r}
+#dxmethod
+
+all_cases_2009_2018mn2 <- all_cases_2009_2018mn2 %>%
+ mutate(lab_culture=l32id)%>%
+ mutate(lab_culture = case_when(lab_culture=="MTB" ~ "MTB culture-positive",
+                                 lab_culture=="" ~ "MTB culture-negative",
+                                 lab_culture=="Non TB mycobacteria" ~ "NTM",
+                                 lab_culture=="Non TB mycobateria" ~ "NTM",
+                                 lab_culture=="Unidentified ZN +ve" ~ "NTM",
+                                 TRUE ~ NA_character_)) 
+
+  table(all_cases_2009_2018mn2$xpert_clinic, all_cases_2009_2018mn2$year, useNA="always")
+
+
+table(all_cases_2009_2018mn2$smr_clinic)
+
+all_cases_2009_2018mn2<-all_cases_2009_2018mn2%>%
+mutate(dxmethod = case_when(smr_clinic == "b) Smear-positive" ~ "afacility smear", 
+xpert_clinic=="b) Xpert-positive" & year >=2015~ "bxpert only",
+smr_lab == "b) Smear-positive" ~ "clab smear only",
+lab_culture == "MTB culture-positive" ~ "dculture only",
+TRUE ~ "eClinically diagnosed"
+))
+
+table(all_cases_2009_2018mn2$dxmethod, all_cases_2009_2018mn2$year,  useNA="always" )
+
+
+#pre-treatmet status
+table(all_cases_2009_2018mn2$dxmethod)
+
+all_cases_2009_2018mn2 <- all_cases_2009_2018mn2 %>%
+mutate(pretreat = case_when(
+  dxmethod=="afacility smear" | dxmethod=="bxpert only"  ~ "aPretreatbact",
+  TRUE ~ "clinical")) 
+table(all_cases_2009_2018mn2$pretreat)
+table(all_cases_2009_2018mn2$pretreat, all_cases_2009_2018mn2$year, useNA="always")
+
+
+#bacteriological
+table(all_cases_2009_2018mn2$dxmethod)
+
+all_cases_2009_2018mn2 <- all_cases_2009_2018mn2 %>%
+mutate(bact = case_when(
+  dxmethod=="afacility smear" | dxmethod=="bxpert only" | dxmethod=="clab smear only" | dxmethod=="dculture only" ~ "aBacteriological",
+  TRUE ~ "clinical")) 
+table(all_cases_2009_2018mn2$bact)
+table(all_cases_2009_2018mn2$bact, all_cases_2009_2018mn2$year, useNA="always")
+
+table1 (~ sex + agegp +hiv+ hivtested + hiv_art + facility + dxmethod + pretreat + bact | acf, data=all_cases_2009_2018mn2, topclass="Rtable1-zebra Rtable1-grid")
+
+#bacteriological confirmation over time
+table(all_cases_2009_2018mn2$dxmethod, all_cases_2009_2018mn2$year, useNA = "always")
+
+
+```
+

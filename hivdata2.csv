@@ -1,0 +1,1771 @@
+year,quarter,sex,age,acf,population,hiv,n,hiv_prev,hivpop,period,acfperiod
+2009,1,females,16-19,ACF,8843,a) HIV-negative,2,0.032,8560.024,apre-ACF,ACF.apre-ACF
+2009,2,females,16-19,ACF,8909,,2,0.032,,apre-ACF,ACF.apre-ACF
+2009,2,females,16-19,ACF,8909,a) HIV-negative,3,0.032,8623.912,apre-ACF,ACF.apre-ACF
+2009,3,females,16-19,ACF,8976,,,0.032,,apre-ACF,ACF.apre-ACF
+2009,4,females,16-19,ACF,9042,,1,0.032,,apre-ACF,ACF.apre-ACF
+2009,4,females,16-19,ACF,9042,a) HIV-negative,1,0.032,8752.656,apre-ACF,ACF.apre-ACF
+2009,4,females,16-19,ACF,9042,b) HIV-positive,1,0.032,289.344,apre-ACF,ACF.apre-ACF
+2010,1,females,16-19,ACF,9109,,1,0.032,,apre-ACF,ACF.apre-ACF
+2010,1,females,16-19,ACF,9109,b) HIV-positive,1,0.032,291.488,apre-ACF,ACF.apre-ACF
+2010,2,females,16-19,ACF,9175,,,0.032,,apre-ACF,ACF.apre-ACF
+2010,3,females,16-19,ACF,9242,a) HIV-negative,2,0.032,8946.256,apre-ACF,ACF.apre-ACF
+2010,4,females,16-19,ACF,9309,,1,0.032,,apre-ACF,ACF.apre-ACF
+2010,4,females,16-19,ACF,9309,a) HIV-negative,1,0.032,9011.112,apre-ACF,ACF.apre-ACF
+2011,1,females,16-19,ACF,9375,b) HIV-positive,2,0.032,300,apre-ACF,ACF.apre-ACF
+2011,2,females,16-19,ACF,9441,,1,0.032,,bACF,ACF.bACF
+2011,2,females,16-19,ACF,9441,a) HIV-negative,1,0.032,9138.888,bACF,ACF.bACF
+2011,2,females,16-19,ACF,9441,b) HIV-positive,1,0.032,302.112,bACF,ACF.bACF
+2011,3,females,16-19,ACF,9508,a) HIV-negative,2,0.032,9203.744,bACF,ACF.bACF
+2011,3,females,16-19,ACF,9508,b) HIV-positive,1,0.032,304.256,bACF,ACF.bACF
+2011,4,females,16-19,ACF,9574,a) HIV-negative,1,0.032,9267.632,bACF,ACF.bACF
+2011,4,females,16-19,ACF,9574,b) HIV-positive,2,0.032,306.368,bACF,ACF.bACF
+2012,1,females,16-19,ACF,9641,a) HIV-negative,3,0.032,9332.488,bACF,ACF.bACF
+2012,1,females,16-19,ACF,9641,b) HIV-positive,2,0.032,308.512,bACF,ACF.bACF
+2012,2,females,16-19,ACF,9707,a) HIV-negative,1,0.032,9396.376,bACF,ACF.bACF
+2012,2,females,16-19,ACF,9707,b) HIV-positive,1,0.032,310.624,bACF,ACF.bACF
+2012,3,females,16-19,ACF,9774,,,0.032,,bACF,ACF.bACF
+2012,4,females,16-19,ACF,9840,,1,0.032,,bACF,ACF.bACF
+2012,4,females,16-19,ACF,9840,a) HIV-negative,4,0.032,9525.12,bACF,ACF.bACF
+2013,1,females,16-19,ACF,9907,a) HIV-negative,1,0.032,9589.976,bACF,ACF.bACF
+2013,2,females,16-19,ACF,9973,a) HIV-negative,1,0.032,9653.864,bACF,ACF.bACF
+2013,2,females,16-19,ACF,9973,b) HIV-positive,1,0.032,319.136,bACF,ACF.bACF
+2013,3,females,16-19,ACF,10040,a) HIV-negative,2,0.032,9718.72,bACF,ACF.bACF
+2013,4,females,16-19,ACF,10106,,2,0.032,,bACF,ACF.bACF
+2013,4,females,16-19,ACF,10106,a) HIV-negative,1,0.032,9782.608,bACF,ACF.bACF
+2013,4,females,16-19,ACF,10106,b) HIV-positive,2,0.032,323.392,bACF,ACF.bACF
+2014,1,females,16-19,ACF,10173,a) HIV-negative,5,0.032,9847.464,bACF,ACF.bACF
+2014,1,females,16-19,ACF,10173,b) HIV-positive,1,0.032,325.536,bACF,ACF.bACF
+2014,2,females,16-19,ACF,10239,b) HIV-positive,2,0.032,327.648,bACF,ACF.bACF
+2014,3,females,16-19,ACF,10306,a) HIV-negative,2,0.032,9976.208,bACF,ACF.bACF
+2014,4,females,16-19,ACF,10372,a) HIV-negative,1,0.032,10040.096,cpost-ACF,ACF.cpost-ACF
+2014,4,females,16-19,ACF,10372,b) HIV-positive,2,0.032,331.904,cpost-ACF,ACF.cpost-ACF
+2015,1,females,16-19,ACF,10439,,2,0.032,,cpost-ACF,ACF.cpost-ACF
+2015,1,females,16-19,ACF,10439,a) HIV-negative,4,0.032,10104.952,cpost-ACF,ACF.cpost-ACF
+2015,2,females,16-19,ACF,10505,a) HIV-negative,1,0.032,10168.84,cpost-ACF,ACF.cpost-ACF
+2015,3,females,16-19,ACF,10572,,,0.032,,cpost-ACF,ACF.cpost-ACF
+2015,4,females,16-19,ACF,10638,a) HIV-negative,1,0.032,10297.584,cpost-ACF,ACF.cpost-ACF
+2016,1,females,16-19,ACF,10705,a) HIV-negative,1,0.032,10362.44,cpost-ACF,ACF.cpost-ACF
+2016,1,females,16-19,ACF,10705,b) HIV-positive,1,0.032,342.56,cpost-ACF,ACF.cpost-ACF
+2016,2,females,16-19,ACF,10771,a) HIV-negative,2,0.032,10426.328,cpost-ACF,ACF.cpost-ACF
+2016,2,females,16-19,ACF,10771,b) HIV-positive,4,0.032,344.672,cpost-ACF,ACF.cpost-ACF
+2016,3,females,16-19,ACF,10838,b) HIV-positive,1,0.032,346.816,cpost-ACF,ACF.cpost-ACF
+2016,4,females,16-19,ACF,10904,a) HIV-negative,1,0.032,10555.072,cpost-ACF,ACF.cpost-ACF
+2016,4,females,16-19,ACF,10904,b) HIV-positive,1,0.032,348.928,cpost-ACF,ACF.cpost-ACF
+2017,1,females,16-19,ACF,10971,,,0.032,,cpost-ACF,ACF.cpost-ACF
+2017,2,females,16-19,ACF,11037,a) HIV-negative,1,0.032,10683.816,cpost-ACF,ACF.cpost-ACF
+2017,2,females,16-19,ACF,11037,b) HIV-positive,3,0.032,353.184,cpost-ACF,ACF.cpost-ACF
+2017,3,females,16-19,ACF,11104,a) HIV-negative,1,0.032,10748.672,cpost-ACF,ACF.cpost-ACF
+2017,4,females,16-19,ACF,11170,a) HIV-negative,1,0.032,10812.56,cpost-ACF,ACF.cpost-ACF
+2018,1,females,16-19,ACF,11237,b) HIV-positive,1,0.032,359.584,cpost-ACF,ACF.cpost-ACF
+2018,2,females,16-19,ACF,11303,a) HIV-negative,3,0.032,10941.304,cpost-ACF,ACF.cpost-ACF
+2018,3,females,16-19,ACF,11368,a) HIV-negative,1,0.032,11004.224,cpost-ACF,ACF.cpost-ACF
+2018,3,females,16-19,ACF,11368,b) HIV-positive,1,0.032,363.776,cpost-ACF,ACF.cpost-ACF
+2018,4,females,16-19,ACF,11433,a) HIV-negative,2,0.032,11067.144,cpost-ACF,ACF.cpost-ACF
+2018,4,females,16-19,ACF,11433,b) HIV-positive,1,0.032,365.856,cpost-ACF,ACF.cpost-ACF
+2009,1,males,16-19,ACF,9204,b) HIV-positive,1,0.019,174.876,apre-ACF,ACF.apre-ACF
+2009,2,males,16-19,ACF,9292,,1,0.019,,apre-ACF,ACF.apre-ACF
+2009,2,males,16-19,ACF,9292,a) HIV-negative,1,0.019,9115.452,apre-ACF,ACF.apre-ACF
+2009,3,males,16-19,ACF,9380,a) HIV-negative,1,0.019,9201.78,apre-ACF,ACF.apre-ACF
+2009,3,males,16-19,ACF,9380,b) HIV-positive,1,0.019,178.22,apre-ACF,ACF.apre-ACF
+2009,4,males,16-19,ACF,9467,a) HIV-negative,1,0.019,9287.127,apre-ACF,ACF.apre-ACF
+2009,4,males,16-19,ACF,9467,b) HIV-positive,1,0.019,179.873,apre-ACF,ACF.apre-ACF
+2010,1,males,16-19,ACF,9555,,2,0.019,,apre-ACF,ACF.apre-ACF
+2010,1,males,16-19,ACF,9555,a) HIV-negative,1,0.019,9373.455,apre-ACF,ACF.apre-ACF
+2010,1,males,16-19,ACF,9555,b) HIV-positive,1,0.019,181.545,apre-ACF,ACF.apre-ACF
+2010,2,males,16-19,ACF,9642,a) HIV-negative,2,0.019,9458.802,apre-ACF,ACF.apre-ACF
+2010,2,males,16-19,ACF,9642,b) HIV-positive,1,0.019,183.198,apre-ACF,ACF.apre-ACF
+2010,3,males,16-19,ACF,9730,,2,0.019,,apre-ACF,ACF.apre-ACF
+2010,4,males,16-19,ACF,9818,a) HIV-negative,2,0.019,9631.458,apre-ACF,ACF.apre-ACF
+2010,4,males,16-19,ACF,9818,b) HIV-positive,1,0.019,186.542,apre-ACF,ACF.apre-ACF
+2011,1,males,16-19,ACF,9905,a) HIV-negative,1,0.019,9716.805,apre-ACF,ACF.apre-ACF
+2011,2,males,16-19,ACF,9993,,1,0.019,,bACF,ACF.bACF
+2011,3,males,16-19,ACF,10081,b) HIV-positive,1,0.019,191.539,bACF,ACF.bACF
+2011,4,males,16-19,ACF,10168,a) HIV-negative,3,0.019,9974.808,bACF,ACF.bACF
+2012,1,males,16-19,ACF,10256,,1,0.019,,bACF,ACF.bACF
+2012,1,males,16-19,ACF,10256,a) HIV-negative,2,0.019,10061.136,bACF,ACF.bACF
+2012,2,males,16-19,ACF,10343,a) HIV-negative,1,0.019,10146.483,bACF,ACF.bACF
+2012,3,males,16-19,ACF,10431,a) HIV-negative,3,0.019,10232.811,bACF,ACF.bACF
+2012,4,males,16-19,ACF,10519,a) HIV-negative,1,0.019,10319.139,bACF,ACF.bACF
+2012,4,males,16-19,ACF,10519,b) HIV-positive,1,0.019,199.861,bACF,ACF.bACF
+2013,1,males,16-19,ACF,10606,a) HIV-negative,1,0.019,10404.486,bACF,ACF.bACF
+2013,2,males,16-19,ACF,10694,a) HIV-negative,2,0.019,10490.814,bACF,ACF.bACF
+2013,3,males,16-19,ACF,10782,a) HIV-negative,2,0.019,10577.142,bACF,ACF.bACF
+2013,3,males,16-19,ACF,10782,b) HIV-positive,1,0.019,204.858,bACF,ACF.bACF
+2013,4,males,16-19,ACF,10869,a) HIV-negative,3,0.019,10662.489,bACF,ACF.bACF
+2014,1,males,16-19,ACF,10957,a) HIV-negative,3,0.019,10748.817,bACF,ACF.bACF
+2014,1,males,16-19,ACF,10957,b) HIV-positive,1,0.019,208.183,bACF,ACF.bACF
+2014,2,males,16-19,ACF,11044,a) HIV-negative,1,0.019,10834.164,bACF,ACF.bACF
+2014,3,males,16-19,ACF,11132,,1,0.019,,bACF,ACF.bACF
+2014,3,males,16-19,ACF,11132,a) HIV-negative,3,0.019,10920.492,bACF,ACF.bACF
+2014,4,males,16-19,ACF,11220,,,0.019,,cpost-ACF,ACF.cpost-ACF
+2015,1,males,16-19,ACF,11307,b) HIV-positive,1,0.019,214.833,cpost-ACF,ACF.cpost-ACF
+2015,2,males,16-19,ACF,11395,a) HIV-negative,2,0.019,11178.495,cpost-ACF,ACF.cpost-ACF
+2015,3,males,16-19,ACF,11483,a) HIV-negative,2,0.019,11264.823,cpost-ACF,ACF.cpost-ACF
+2015,4,males,16-19,ACF,11570,a) HIV-negative,1,0.019,11350.17,cpost-ACF,ACF.cpost-ACF
+2015,4,males,16-19,ACF,11570,b) HIV-positive,1,0.019,219.83,cpost-ACF,ACF.cpost-ACF
+2016,1,males,16-19,ACF,11658,a) HIV-negative,2,0.019,11436.498,cpost-ACF,ACF.cpost-ACF
+2016,2,males,16-19,ACF,11745,b) HIV-positive,3,0.019,223.155,cpost-ACF,ACF.cpost-ACF
+2016,3,males,16-19,ACF,11833,a) HIV-negative,2,0.019,11608.173,cpost-ACF,ACF.cpost-ACF
+2016,4,males,16-19,ACF,11921,a) HIV-negative,2,0.019,11694.501,cpost-ACF,ACF.cpost-ACF
+2016,4,males,16-19,ACF,11921,b) HIV-positive,2,0.019,226.499,cpost-ACF,ACF.cpost-ACF
+2017,1,males,16-19,ACF,12008,a) HIV-negative,2,0.019,11779.848,cpost-ACF,ACF.cpost-ACF
+2017,1,males,16-19,ACF,12008,b) HIV-positive,1,0.019,228.152,cpost-ACF,ACF.cpost-ACF
+2017,2,males,16-19,ACF,12096,,,0.019,,cpost-ACF,ACF.cpost-ACF
+2017,3,males,16-19,ACF,12184,a) HIV-negative,1,0.019,11952.504,cpost-ACF,ACF.cpost-ACF
+2017,3,males,16-19,ACF,12184,b) HIV-positive,1,0.019,231.496,cpost-ACF,ACF.cpost-ACF
+2017,4,males,16-19,ACF,12271,a) HIV-negative,1,0.019,12037.851,cpost-ACF,ACF.cpost-ACF
+2018,1,males,16-19,ACF,12359,,,0.019,,cpost-ACF,ACF.cpost-ACF
+2018,2,males,16-19,ACF,12446,a) HIV-negative,1,0.019,12209.526,cpost-ACF,ACF.cpost-ACF
+2018,3,males,16-19,ACF,12532,a) HIV-negative,3,0.019,12293.892,cpost-ACF,ACF.cpost-ACF
+2018,4,males,16-19,ACF,12618,a) HIV-negative,2,0.019,12378.258,cpost-ACF,ACF.cpost-ACF
+2009,1,females,20-29,ACF,25015,,2,0.1,,apre-ACF,ACF.apre-ACF
+2009,1,females,20-29,ACF,25015,a) HIV-negative,5,0.1,22513.5,apre-ACF,ACF.apre-ACF
+2009,1,females,20-29,ACF,25015,b) HIV-positive,9,0.1,2501.5,apre-ACF,ACF.apre-ACF
+2009,2,females,20-29,ACF,25053,,2,0.1,,apre-ACF,ACF.apre-ACF
+2009,2,females,20-29,ACF,25053,a) HIV-negative,4,0.1,22547.7,apre-ACF,ACF.apre-ACF
+2009,2,females,20-29,ACF,25053,b) HIV-positive,7,0.1,2505.3,apre-ACF,ACF.apre-ACF
+2009,3,females,20-29,ACF,25090,,3,0.1,,apre-ACF,ACF.apre-ACF
+2009,3,females,20-29,ACF,25090,a) HIV-negative,3,0.1,22581,apre-ACF,ACF.apre-ACF
+2009,3,females,20-29,ACF,25090,b) HIV-positive,4,0.1,2509,apre-ACF,ACF.apre-ACF
+2009,4,females,20-29,ACF,25127,,1,0.1,,apre-ACF,ACF.apre-ACF
+2009,4,females,20-29,ACF,25127,a) HIV-negative,3,0.1,22614.3,apre-ACF,ACF.apre-ACF
+2009,4,females,20-29,ACF,25127,b) HIV-positive,5,0.1,2512.7,apre-ACF,ACF.apre-ACF
+2010,1,females,20-29,ACF,25165,,3,0.1,,apre-ACF,ACF.apre-ACF
+2010,1,females,20-29,ACF,25165,a) HIV-negative,2,0.1,22648.5,apre-ACF,ACF.apre-ACF
+2010,1,females,20-29,ACF,25165,b) HIV-positive,9,0.1,2516.5,apre-ACF,ACF.apre-ACF
+2010,2,females,20-29,ACF,25202,,2,0.1,,apre-ACF,ACF.apre-ACF
+2010,2,females,20-29,ACF,25202,a) HIV-negative,1,0.1,22681.8,apre-ACF,ACF.apre-ACF
+2010,2,females,20-29,ACF,25202,b) HIV-positive,2,0.1,2520.2,apre-ACF,ACF.apre-ACF
+2010,3,females,20-29,ACF,25239,,6,0.1,,apre-ACF,ACF.apre-ACF
+2010,3,females,20-29,ACF,25239,a) HIV-negative,7,0.1,22715.1,apre-ACF,ACF.apre-ACF
+2010,3,females,20-29,ACF,25239,b) HIV-positive,11,0.1,2523.9,apre-ACF,ACF.apre-ACF
+2010,4,females,20-29,ACF,25277,,2,0.1,,apre-ACF,ACF.apre-ACF
+2010,4,females,20-29,ACF,25277,a) HIV-negative,6,0.1,22749.3,apre-ACF,ACF.apre-ACF
+2010,4,females,20-29,ACF,25277,b) HIV-positive,9,0.1,2527.7,apre-ACF,ACF.apre-ACF
+2011,1,females,20-29,ACF,25315,,3,0.1,,apre-ACF,ACF.apre-ACF
+2011,1,females,20-29,ACF,25315,a) HIV-negative,1,0.1,22783.5,apre-ACF,ACF.apre-ACF
+2011,1,females,20-29,ACF,25315,b) HIV-positive,5,0.1,2531.5,apre-ACF,ACF.apre-ACF
+2011,2,females,20-29,ACF,25352,,1,0.1,,bACF,ACF.bACF
+2011,2,females,20-29,ACF,25352,a) HIV-negative,4,0.1,22816.8,bACF,ACF.bACF
+2011,2,females,20-29,ACF,25352,b) HIV-positive,15,0.1,2535.2,bACF,ACF.bACF
+2011,3,females,20-29,ACF,25390,,2,0.1,,bACF,ACF.bACF
+2011,3,females,20-29,ACF,25390,a) HIV-negative,4,0.1,22851,bACF,ACF.bACF
+2011,3,females,20-29,ACF,25390,b) HIV-positive,19,0.1,2539,bACF,ACF.bACF
+2011,4,females,20-29,ACF,25427,a) HIV-negative,4,0.1,22884.3,bACF,ACF.bACF
+2011,4,females,20-29,ACF,25427,b) HIV-positive,7,0.1,2542.7,bACF,ACF.bACF
+2012,1,females,20-29,ACF,25465,,1,0.1,,bACF,ACF.bACF
+2012,1,females,20-29,ACF,25465,a) HIV-negative,3,0.1,22918.5,bACF,ACF.bACF
+2012,1,females,20-29,ACF,25465,b) HIV-positive,14,0.1,2546.5,bACF,ACF.bACF
+2012,2,females,20-29,ACF,25502,,1,0.1,,bACF,ACF.bACF
+2012,2,females,20-29,ACF,25502,a) HIV-negative,2,0.1,22951.8,bACF,ACF.bACF
+2012,2,females,20-29,ACF,25502,b) HIV-positive,17,0.1,2550.2,bACF,ACF.bACF
+2012,3,females,20-29,ACF,25539,a) HIV-negative,3,0.1,22985.1,bACF,ACF.bACF
+2012,3,females,20-29,ACF,25539,b) HIV-positive,6,0.1,2553.9,bACF,ACF.bACF
+2012,4,females,20-29,ACF,25577,,1,0.1,,bACF,ACF.bACF
+2012,4,females,20-29,ACF,25577,a) HIV-negative,2,0.1,23019.3,bACF,ACF.bACF
+2012,4,females,20-29,ACF,25577,b) HIV-positive,11,0.1,2557.7,bACF,ACF.bACF
+2013,1,females,20-29,ACF,25614,a) HIV-negative,3,0.1,23052.6,bACF,ACF.bACF
+2013,1,females,20-29,ACF,25614,b) HIV-positive,8,0.1,2561.4,bACF,ACF.bACF
+2013,2,females,20-29,ACF,25652,,2,0.1,,bACF,ACF.bACF
+2013,2,females,20-29,ACF,25652,a) HIV-negative,4,0.1,23086.8,bACF,ACF.bACF
+2013,2,females,20-29,ACF,25652,b) HIV-positive,6,0.1,2565.2,bACF,ACF.bACF
+2013,3,females,20-29,ACF,25689,a) HIV-negative,5,0.1,23120.1,bACF,ACF.bACF
+2013,3,females,20-29,ACF,25689,b) HIV-positive,9,0.1,2568.9,bACF,ACF.bACF
+2013,4,females,20-29,ACF,25726,a) HIV-negative,3,0.1,23153.4,bACF,ACF.bACF
+2013,4,females,20-29,ACF,25726,b) HIV-positive,4,0.1,2572.6,bACF,ACF.bACF
+2014,1,females,20-29,ACF,25764,,3,0.1,,bACF,ACF.bACF
+2014,1,females,20-29,ACF,25764,a) HIV-negative,10,0.1,23187.6,bACF,ACF.bACF
+2014,1,females,20-29,ACF,25764,b) HIV-positive,20,0.1,2576.4,bACF,ACF.bACF
+2014,2,females,20-29,ACF,25801,,1,0.1,,bACF,ACF.bACF
+2014,2,females,20-29,ACF,25801,a) HIV-negative,7,0.1,23220.9,bACF,ACF.bACF
+2014,2,females,20-29,ACF,25801,b) HIV-positive,14,0.1,2580.1,bACF,ACF.bACF
+2014,3,females,20-29,ACF,25839,a) HIV-negative,2,0.1,23255.1,bACF,ACF.bACF
+2014,3,females,20-29,ACF,25839,b) HIV-positive,12,0.1,2583.9,bACF,ACF.bACF
+2014,4,females,20-29,ACF,25876,a) HIV-negative,9,0.1,23288.4,cpost-ACF,ACF.cpost-ACF
+2014,4,females,20-29,ACF,25876,b) HIV-positive,12,0.1,2587.6,cpost-ACF,ACF.cpost-ACF
+2015,1,females,20-29,ACF,25913,,2,0.1,,cpost-ACF,ACF.cpost-ACF
+2015,1,females,20-29,ACF,25913,a) HIV-negative,1,0.1,23321.7,cpost-ACF,ACF.cpost-ACF
+2015,1,females,20-29,ACF,25913,b) HIV-positive,9,0.1,2591.3,cpost-ACF,ACF.cpost-ACF
+2015,2,females,20-29,ACF,25951,a) HIV-negative,5,0.1,23355.9,cpost-ACF,ACF.cpost-ACF
+2015,2,females,20-29,ACF,25951,b) HIV-positive,12,0.1,2595.1,cpost-ACF,ACF.cpost-ACF
+2015,3,females,20-29,ACF,25988,a) HIV-negative,3,0.1,23389.2,cpost-ACF,ACF.cpost-ACF
+2015,3,females,20-29,ACF,25988,b) HIV-positive,3,0.1,2598.8,cpost-ACF,ACF.cpost-ACF
+2015,4,females,20-29,ACF,26026,a) HIV-negative,6,0.1,23423.4,cpost-ACF,ACF.cpost-ACF
+2015,4,females,20-29,ACF,26026,b) HIV-positive,6,0.1,2602.6,cpost-ACF,ACF.cpost-ACF
+2016,1,females,20-29,ACF,26064,a) HIV-negative,3,0.1,23457.6,cpost-ACF,ACF.cpost-ACF
+2016,1,females,20-29,ACF,26064,b) HIV-positive,4,0.1,2606.4,cpost-ACF,ACF.cpost-ACF
+2016,2,females,20-29,ACF,26101,a) HIV-negative,4,0.1,23490.9,cpost-ACF,ACF.cpost-ACF
+2016,2,females,20-29,ACF,26101,b) HIV-positive,6,0.1,2610.1,cpost-ACF,ACF.cpost-ACF
+2016,3,females,20-29,ACF,26138,a) HIV-negative,2,0.1,23524.2,cpost-ACF,ACF.cpost-ACF
+2016,3,females,20-29,ACF,26138,b) HIV-positive,9,0.1,2613.8,cpost-ACF,ACF.cpost-ACF
+2016,4,females,20-29,ACF,26176,,1,0.1,,cpost-ACF,ACF.cpost-ACF
+2016,4,females,20-29,ACF,26176,a) HIV-negative,7,0.1,23558.4,cpost-ACF,ACF.cpost-ACF
+2016,4,females,20-29,ACF,26176,b) HIV-positive,3,0.1,2617.6,cpost-ACF,ACF.cpost-ACF
+2017,1,females,20-29,ACF,26213,,1,0.1,,cpost-ACF,ACF.cpost-ACF
+2017,1,females,20-29,ACF,26213,a) HIV-negative,5,0.1,23591.7,cpost-ACF,ACF.cpost-ACF
+2017,1,females,20-29,ACF,26213,b) HIV-positive,5,0.1,2621.3,cpost-ACF,ACF.cpost-ACF
+2017,2,females,20-29,ACF,26251,a) HIV-negative,2,0.1,23625.9,cpost-ACF,ACF.cpost-ACF
+2017,2,females,20-29,ACF,26251,b) HIV-positive,5,0.1,2625.1,cpost-ACF,ACF.cpost-ACF
+2017,3,females,20-29,ACF,26288,a) HIV-negative,5,0.1,23659.2,cpost-ACF,ACF.cpost-ACF
+2017,3,females,20-29,ACF,26288,b) HIV-positive,5,0.1,2628.8,cpost-ACF,ACF.cpost-ACF
+2017,4,females,20-29,ACF,26325,a) HIV-negative,5,0.1,23692.5,cpost-ACF,ACF.cpost-ACF
+2017,4,females,20-29,ACF,26325,b) HIV-positive,5,0.1,2632.5,cpost-ACF,ACF.cpost-ACF
+2018,1,females,20-29,ACF,26363,a) HIV-negative,2,0.1,23726.7,cpost-ACF,ACF.cpost-ACF
+2018,1,females,20-29,ACF,26363,b) HIV-positive,4,0.1,2636.3,cpost-ACF,ACF.cpost-ACF
+2018,2,females,20-29,ACF,26400,a) HIV-negative,4,0.1,23760,cpost-ACF,ACF.cpost-ACF
+2018,2,females,20-29,ACF,26400,b) HIV-positive,1,0.1,2640,cpost-ACF,ACF.cpost-ACF
+2018,3,females,20-29,ACF,26437,a) HIV-negative,5,0.1,23793.3,cpost-ACF,ACF.cpost-ACF
+2018,3,females,20-29,ACF,26437,b) HIV-positive,2,0.1,2643.7,cpost-ACF,ACF.cpost-ACF
+2018,4,females,20-29,ACF,26473,a) HIV-negative,3,0.1,23825.7,cpost-ACF,ACF.cpost-ACF
+2018,4,females,20-29,ACF,26473,b) HIV-positive,2,0.1,2647.3,cpost-ACF,ACF.cpost-ACF
+2009,1,males,20-29,ACF,26036,,5,0.038,,apre-ACF,ACF.apre-ACF
+2009,1,males,20-29,ACF,26036,a) HIV-negative,2,0.038,25046.632,apre-ACF,ACF.apre-ACF
+2009,1,males,20-29,ACF,26036,b) HIV-positive,4,0.038,989.368,apre-ACF,ACF.apre-ACF
+2009,2,males,20-29,ACF,26056,,10,0.038,,apre-ACF,ACF.apre-ACF
+2009,2,males,20-29,ACF,26056,a) HIV-negative,3,0.038,25065.872,apre-ACF,ACF.apre-ACF
+2009,2,males,20-29,ACF,26056,b) HIV-positive,6,0.038,990.128,apre-ACF,ACF.apre-ACF
+2009,3,males,20-29,ACF,26076,,5,0.038,,apre-ACF,ACF.apre-ACF
+2009,3,males,20-29,ACF,26076,a) HIV-negative,4,0.038,25085.112,apre-ACF,ACF.apre-ACF
+2009,3,males,20-29,ACF,26076,b) HIV-positive,5,0.038,990.888,apre-ACF,ACF.apre-ACF
+2009,4,males,20-29,ACF,26096,,2,0.038,,apre-ACF,ACF.apre-ACF
+2009,4,males,20-29,ACF,26096,a) HIV-negative,5,0.038,25104.352,apre-ACF,ACF.apre-ACF
+2009,4,males,20-29,ACF,26096,b) HIV-positive,6,0.038,991.648,apre-ACF,ACF.apre-ACF
+2010,1,males,20-29,ACF,26117,,6,0.038,,apre-ACF,ACF.apre-ACF
+2010,1,males,20-29,ACF,26117,a) HIV-negative,6,0.038,25124.554,apre-ACF,ACF.apre-ACF
+2010,1,males,20-29,ACF,26117,b) HIV-positive,11,0.038,992.446,apre-ACF,ACF.apre-ACF
+2010,2,males,20-29,ACF,26137,,4,0.038,,apre-ACF,ACF.apre-ACF
+2010,2,males,20-29,ACF,26137,a) HIV-negative,4,0.038,25143.794,apre-ACF,ACF.apre-ACF
+2010,2,males,20-29,ACF,26137,b) HIV-positive,8,0.038,993.206,apre-ACF,ACF.apre-ACF
+2010,3,males,20-29,ACF,26157,,13,0.038,,apre-ACF,ACF.apre-ACF
+2010,3,males,20-29,ACF,26157,a) HIV-negative,4,0.038,25163.034,apre-ACF,ACF.apre-ACF
+2010,3,males,20-29,ACF,26157,b) HIV-positive,9,0.038,993.966,apre-ACF,ACF.apre-ACF
+2010,4,males,20-29,ACF,26177,,4,0.038,,apre-ACF,ACF.apre-ACF
+2010,4,males,20-29,ACF,26177,a) HIV-negative,7,0.038,25182.274,apre-ACF,ACF.apre-ACF
+2010,4,males,20-29,ACF,26177,b) HIV-positive,12,0.038,994.726,apre-ACF,ACF.apre-ACF
+2011,1,males,20-29,ACF,26197,,6,0.038,,apre-ACF,ACF.apre-ACF
+2011,1,males,20-29,ACF,26197,a) HIV-negative,2,0.038,25201.514,apre-ACF,ACF.apre-ACF
+2011,1,males,20-29,ACF,26197,b) HIV-positive,1,0.038,995.486,apre-ACF,ACF.apre-ACF
+2011,2,males,20-29,ACF,26217,,4,0.038,,bACF,ACF.bACF
+2011,2,males,20-29,ACF,26217,a) HIV-negative,12,0.038,25220.754,bACF,ACF.bACF
+2011,2,males,20-29,ACF,26217,b) HIV-positive,4,0.038,996.246,bACF,ACF.bACF
+2011,3,males,20-29,ACF,26237,,4,0.038,,bACF,ACF.bACF
+2011,3,males,20-29,ACF,26237,a) HIV-negative,7,0.038,25239.994,bACF,ACF.bACF
+2011,3,males,20-29,ACF,26237,b) HIV-positive,18,0.038,997.006,bACF,ACF.bACF
+2011,4,males,20-29,ACF,26257,,3,0.038,,bACF,ACF.bACF
+2011,4,males,20-29,ACF,26257,a) HIV-negative,6,0.038,25259.234,bACF,ACF.bACF
+2011,4,males,20-29,ACF,26257,b) HIV-positive,9,0.038,997.766,bACF,ACF.bACF
+2012,1,males,20-29,ACF,26278,,2,0.038,,bACF,ACF.bACF
+2012,1,males,20-29,ACF,26278,a) HIV-negative,8,0.038,25279.436,bACF,ACF.bACF
+2012,1,males,20-29,ACF,26278,b) HIV-positive,9,0.038,998.564,bACF,ACF.bACF
+2012,2,males,20-29,ACF,26298,,2,0.038,,bACF,ACF.bACF
+2012,2,males,20-29,ACF,26298,a) HIV-negative,5,0.038,25298.676,bACF,ACF.bACF
+2012,2,males,20-29,ACF,26298,b) HIV-positive,12,0.038,999.324,bACF,ACF.bACF
+2012,3,males,20-29,ACF,26318,,1,0.038,,bACF,ACF.bACF
+2012,3,males,20-29,ACF,26318,a) HIV-negative,7,0.038,25317.916,bACF,ACF.bACF
+2012,3,males,20-29,ACF,26318,b) HIV-positive,11,0.038,1000.084,bACF,ACF.bACF
+2012,4,males,20-29,ACF,26338,a) HIV-negative,12,0.038,25337.156,bACF,ACF.bACF
+2012,4,males,20-29,ACF,26338,b) HIV-positive,7,0.038,1000.844,bACF,ACF.bACF
+2013,1,males,20-29,ACF,26358,,2,0.038,,bACF,ACF.bACF
+2013,1,males,20-29,ACF,26358,a) HIV-negative,6,0.038,25356.396,bACF,ACF.bACF
+2013,1,males,20-29,ACF,26358,b) HIV-positive,6,0.038,1001.604,bACF,ACF.bACF
+2013,2,males,20-29,ACF,26378,,2,0.038,,bACF,ACF.bACF
+2013,2,males,20-29,ACF,26378,a) HIV-negative,5,0.038,25375.636,bACF,ACF.bACF
+2013,2,males,20-29,ACF,26378,b) HIV-positive,5,0.038,1002.364,bACF,ACF.bACF
+2013,3,males,20-29,ACF,26398,a) HIV-negative,12,0.038,25394.876,bACF,ACF.bACF
+2013,3,males,20-29,ACF,26398,b) HIV-positive,4,0.038,1003.124,bACF,ACF.bACF
+2013,4,males,20-29,ACF,26418,,2,0.038,,bACF,ACF.bACF
+2013,4,males,20-29,ACF,26418,a) HIV-negative,7,0.038,25414.116,bACF,ACF.bACF
+2013,4,males,20-29,ACF,26418,b) HIV-positive,7,0.038,1003.884,bACF,ACF.bACF
+2014,1,males,20-29,ACF,26438,,3,0.038,,bACF,ACF.bACF
+2014,1,males,20-29,ACF,26438,a) HIV-negative,13,0.038,25433.356,bACF,ACF.bACF
+2014,1,males,20-29,ACF,26438,b) HIV-positive,5,0.038,1004.644,bACF,ACF.bACF
+2014,2,males,20-29,ACF,26458,,3,0.038,,bACF,ACF.bACF
+2014,2,males,20-29,ACF,26458,a) HIV-negative,9,0.038,25452.596,bACF,ACF.bACF
+2014,2,males,20-29,ACF,26458,b) HIV-positive,10,0.038,1005.404,bACF,ACF.bACF
+2014,3,males,20-29,ACF,26479,a) HIV-negative,15,0.038,25472.798,bACF,ACF.bACF
+2014,3,males,20-29,ACF,26479,b) HIV-positive,6,0.038,1006.202,bACF,ACF.bACF
+2014,4,males,20-29,ACF,26499,a) HIV-negative,9,0.038,25492.038,cpost-ACF,ACF.cpost-ACF
+2014,4,males,20-29,ACF,26499,b) HIV-positive,12,0.038,1006.962,cpost-ACF,ACF.cpost-ACF
+2015,1,males,20-29,ACF,26519,,2,0.038,,cpost-ACF,ACF.cpost-ACF
+2015,1,males,20-29,ACF,26519,a) HIV-negative,12,0.038,25511.278,cpost-ACF,ACF.cpost-ACF
+2015,1,males,20-29,ACF,26519,b) HIV-positive,9,0.038,1007.722,cpost-ACF,ACF.cpost-ACF
+2015,2,males,20-29,ACF,26539,,2,0.038,,cpost-ACF,ACF.cpost-ACF
+2015,2,males,20-29,ACF,26539,a) HIV-negative,7,0.038,25530.518,cpost-ACF,ACF.cpost-ACF
+2015,2,males,20-29,ACF,26539,b) HIV-positive,11,0.038,1008.482,cpost-ACF,ACF.cpost-ACF
+2015,3,males,20-29,ACF,26559,,1,0.038,,cpost-ACF,ACF.cpost-ACF
+2015,3,males,20-29,ACF,26559,a) HIV-negative,7,0.038,25549.758,cpost-ACF,ACF.cpost-ACF
+2015,3,males,20-29,ACF,26559,b) HIV-positive,9,0.038,1009.242,cpost-ACF,ACF.cpost-ACF
+2015,4,males,20-29,ACF,26579,,1,0.038,,cpost-ACF,ACF.cpost-ACF
+2015,4,males,20-29,ACF,26579,a) HIV-negative,6,0.038,25568.998,cpost-ACF,ACF.cpost-ACF
+2015,4,males,20-29,ACF,26579,b) HIV-positive,4,0.038,1010.002,cpost-ACF,ACF.cpost-ACF
+2016,1,males,20-29,ACF,26599,a) HIV-negative,9,0.038,25588.238,cpost-ACF,ACF.cpost-ACF
+2016,1,males,20-29,ACF,26599,b) HIV-positive,4,0.038,1010.762,cpost-ACF,ACF.cpost-ACF
+2016,2,males,20-29,ACF,26619,a) HIV-negative,4,0.038,25607.478,cpost-ACF,ACF.cpost-ACF
+2016,2,males,20-29,ACF,26619,b) HIV-positive,9,0.038,1011.522,cpost-ACF,ACF.cpost-ACF
+2016,3,males,20-29,ACF,26640,a) HIV-negative,10,0.038,25627.68,cpost-ACF,ACF.cpost-ACF
+2016,3,males,20-29,ACF,26640,b) HIV-positive,9,0.038,1012.32,cpost-ACF,ACF.cpost-ACF
+2016,4,males,20-29,ACF,26660,a) HIV-negative,14,0.038,25646.92,cpost-ACF,ACF.cpost-ACF
+2016,4,males,20-29,ACF,26660,b) HIV-positive,8,0.038,1013.08,cpost-ACF,ACF.cpost-ACF
+2017,1,males,20-29,ACF,26680,a) HIV-negative,13,0.038,25666.16,cpost-ACF,ACF.cpost-ACF
+2017,1,males,20-29,ACF,26680,b) HIV-positive,6,0.038,1013.84,cpost-ACF,ACF.cpost-ACF
+2017,2,males,20-29,ACF,26700,a) HIV-negative,10,0.038,25685.4,cpost-ACF,ACF.cpost-ACF
+2017,2,males,20-29,ACF,26700,b) HIV-positive,2,0.038,1014.6,cpost-ACF,ACF.cpost-ACF
+2017,3,males,20-29,ACF,26720,,1,0.038,,cpost-ACF,ACF.cpost-ACF
+2017,3,males,20-29,ACF,26720,a) HIV-negative,12,0.038,25704.64,cpost-ACF,ACF.cpost-ACF
+2017,3,males,20-29,ACF,26720,b) HIV-positive,12,0.038,1015.36,cpost-ACF,ACF.cpost-ACF
+2017,4,males,20-29,ACF,26740,a) HIV-negative,6,0.038,25723.88,cpost-ACF,ACF.cpost-ACF
+2017,4,males,20-29,ACF,26740,b) HIV-positive,1,0.038,1016.12,cpost-ACF,ACF.cpost-ACF
+2018,1,males,20-29,ACF,26760,a) HIV-negative,8,0.038,25743.12,cpost-ACF,ACF.cpost-ACF
+2018,1,males,20-29,ACF,26760,b) HIV-positive,2,0.038,1016.88,cpost-ACF,ACF.cpost-ACF
+2018,2,males,20-29,ACF,26781,a) HIV-negative,9,0.038,25763.322,cpost-ACF,ACF.cpost-ACF
+2018,2,males,20-29,ACF,26781,b) HIV-positive,5,0.038,1017.678,cpost-ACF,ACF.cpost-ACF
+2018,3,males,20-29,ACF,26800,a) HIV-negative,6,0.038,25781.6,cpost-ACF,ACF.cpost-ACF
+2018,3,males,20-29,ACF,26800,b) HIV-positive,3,0.038,1018.4,cpost-ACF,ACF.cpost-ACF
+2018,4,males,20-29,ACF,26820,a) HIV-negative,5,0.038,25800.84,cpost-ACF,ACF.cpost-ACF
+2018,4,males,20-29,ACF,26820,b) HIV-positive,5,0.038,1019.16,cpost-ACF,ACF.cpost-ACF
+2009,1,females,30-39,ACF,15683,,1,0.287,,apre-ACF,ACF.apre-ACF
+2009,1,females,30-39,ACF,15683,a) HIV-negative,2,0.287,11181.979,apre-ACF,ACF.apre-ACF
+2009,1,females,30-39,ACF,15683,b) HIV-positive,3,0.287,4501.021,apre-ACF,ACF.apre-ACF
+2009,2,females,30-39,ACF,15935,,4,0.287,,apre-ACF,ACF.apre-ACF
+2009,2,females,30-39,ACF,15935,a) HIV-negative,4,0.287,11361.655,apre-ACF,ACF.apre-ACF
+2009,2,females,30-39,ACF,15935,b) HIV-positive,5,0.287,4573.345,apre-ACF,ACF.apre-ACF
+2009,3,females,30-39,ACF,16186,,2,0.287,,apre-ACF,ACF.apre-ACF
+2009,3,females,30-39,ACF,16186,a) HIV-negative,1,0.287,11540.618,apre-ACF,ACF.apre-ACF
+2009,3,females,30-39,ACF,16186,b) HIV-positive,5,0.287,4645.382,apre-ACF,ACF.apre-ACF
+2009,4,females,30-39,ACF,16437,,1,0.287,,apre-ACF,ACF.apre-ACF
+2009,4,females,30-39,ACF,16437,a) HIV-negative,2,0.287,11719.581,apre-ACF,ACF.apre-ACF
+2009,4,females,30-39,ACF,16437,b) HIV-positive,6,0.287,4717.419,apre-ACF,ACF.apre-ACF
+2010,1,females,30-39,ACF,16688,,2,0.287,,apre-ACF,ACF.apre-ACF
+2010,1,females,30-39,ACF,16688,b) HIV-positive,4,0.287,4789.456,apre-ACF,ACF.apre-ACF
+2010,2,females,30-39,ACF,16939,,2,0.287,,apre-ACF,ACF.apre-ACF
+2010,2,females,30-39,ACF,16939,a) HIV-negative,5,0.287,12077.507,apre-ACF,ACF.apre-ACF
+2010,2,females,30-39,ACF,16939,b) HIV-positive,7,0.287,4861.493,apre-ACF,ACF.apre-ACF
+2010,3,females,30-39,ACF,17190,,3,0.287,,apre-ACF,ACF.apre-ACF
+2010,3,females,30-39,ACF,17190,a) HIV-negative,1,0.287,12256.47,apre-ACF,ACF.apre-ACF
+2010,3,females,30-39,ACF,17190,b) HIV-positive,9,0.287,4933.53,apre-ACF,ACF.apre-ACF
+2010,4,females,30-39,ACF,17442,a) HIV-negative,2,0.287,12436.146,apre-ACF,ACF.apre-ACF
+2010,4,females,30-39,ACF,17442,b) HIV-positive,7,0.287,5005.854,apre-ACF,ACF.apre-ACF
+2011,1,females,30-39,ACF,17693,,3,0.287,,apre-ACF,ACF.apre-ACF
+2011,1,females,30-39,ACF,17693,a) HIV-negative,2,0.287,12615.109,apre-ACF,ACF.apre-ACF
+2011,1,females,30-39,ACF,17693,b) HIV-positive,8,0.287,5077.891,apre-ACF,ACF.apre-ACF
+2011,2,females,30-39,ACF,17944,,1,0.287,,bACF,ACF.bACF
+2011,2,females,30-39,ACF,17944,a) HIV-negative,5,0.287,12794.072,bACF,ACF.bACF
+2011,2,females,30-39,ACF,17944,b) HIV-positive,12,0.287,5149.928,bACF,ACF.bACF
+2011,3,females,30-39,ACF,18195,a) HIV-negative,2,0.287,12973.035,bACF,ACF.bACF
+2011,3,females,30-39,ACF,18195,b) HIV-positive,14,0.287,5221.965,bACF,ACF.bACF
+2011,4,females,30-39,ACF,18446,,4,0.287,,bACF,ACF.bACF
+2011,4,females,30-39,ACF,18446,a) HIV-negative,2,0.287,13151.998,bACF,ACF.bACF
+2011,4,females,30-39,ACF,18446,b) HIV-positive,15,0.287,5294.002,bACF,ACF.bACF
+2012,1,females,30-39,ACF,18697,,1,0.287,,bACF,ACF.bACF
+2012,1,females,30-39,ACF,18697,a) HIV-negative,4,0.287,13330.961,bACF,ACF.bACF
+2012,1,females,30-39,ACF,18697,b) HIV-positive,19,0.287,5366.039,bACF,ACF.bACF
+2012,2,females,30-39,ACF,18949,a) HIV-negative,4,0.287,13510.637,bACF,ACF.bACF
+2012,2,females,30-39,ACF,18949,b) HIV-positive,12,0.287,5438.363,bACF,ACF.bACF
+2012,3,females,30-39,ACF,19200,,1,0.287,,bACF,ACF.bACF
+2012,3,females,30-39,ACF,19200,b) HIV-positive,15,0.287,5510.4,bACF,ACF.bACF
+2012,4,females,30-39,ACF,19451,a) HIV-negative,4,0.287,13868.563,bACF,ACF.bACF
+2012,4,females,30-39,ACF,19451,b) HIV-positive,10,0.287,5582.437,bACF,ACF.bACF
+2013,1,females,30-39,ACF,19703,,1,0.287,,bACF,ACF.bACF
+2013,1,females,30-39,ACF,19703,b) HIV-positive,10,0.287,5654.761,bACF,ACF.bACF
+2013,2,females,30-39,ACF,19954,,1,0.287,,bACF,ACF.bACF
+2013,2,females,30-39,ACF,19954,a) HIV-negative,2,0.287,14227.202,bACF,ACF.bACF
+2013,2,females,30-39,ACF,19954,b) HIV-positive,8,0.287,5726.798,bACF,ACF.bACF
+2013,3,females,30-39,ACF,20205,a) HIV-negative,2,0.287,14406.165,bACF,ACF.bACF
+2013,3,females,30-39,ACF,20205,b) HIV-positive,14,0.287,5798.835,bACF,ACF.bACF
+2013,4,females,30-39,ACF,20456,,2,0.287,,bACF,ACF.bACF
+2013,4,females,30-39,ACF,20456,a) HIV-negative,3,0.287,14585.128,bACF,ACF.bACF
+2013,4,females,30-39,ACF,20456,b) HIV-positive,8,0.287,5870.872,bACF,ACF.bACF
+2014,1,females,30-39,ACF,20707,,2,0.287,,bACF,ACF.bACF
+2014,1,females,30-39,ACF,20707,a) HIV-negative,4,0.287,14764.091,bACF,ACF.bACF
+2014,1,females,30-39,ACF,20707,b) HIV-positive,19,0.287,5942.909,bACF,ACF.bACF
+2014,2,females,30-39,ACF,20959,,3,0.287,,bACF,ACF.bACF
+2014,2,females,30-39,ACF,20959,a) HIV-negative,3,0.287,14943.767,bACF,ACF.bACF
+2014,2,females,30-39,ACF,20959,b) HIV-positive,16,0.287,6015.233,bACF,ACF.bACF
+2014,3,females,30-39,ACF,21210,,2,0.287,,bACF,ACF.bACF
+2014,3,females,30-39,ACF,21210,a) HIV-negative,4,0.287,15122.73,bACF,ACF.bACF
+2014,3,females,30-39,ACF,21210,b) HIV-positive,13,0.287,6087.27,bACF,ACF.bACF
+2014,4,females,30-39,ACF,21461,b) HIV-positive,14,0.287,6159.307,cpost-ACF,ACF.cpost-ACF
+2015,1,females,30-39,ACF,21712,,2,0.287,,cpost-ACF,ACF.cpost-ACF
+2015,1,females,30-39,ACF,21712,a) HIV-negative,4,0.287,15480.656,cpost-ACF,ACF.cpost-ACF
+2015,1,females,30-39,ACF,21712,b) HIV-positive,10,0.287,6231.344,cpost-ACF,ACF.cpost-ACF
+2015,2,females,30-39,ACF,21963,a) HIV-negative,4,0.287,15659.619,cpost-ACF,ACF.cpost-ACF
+2015,2,females,30-39,ACF,21963,b) HIV-positive,9,0.287,6303.381,cpost-ACF,ACF.cpost-ACF
+2015,3,females,30-39,ACF,22214,a) HIV-negative,5,0.287,15838.582,cpost-ACF,ACF.cpost-ACF
+2015,3,females,30-39,ACF,22214,b) HIV-positive,8,0.287,6375.418,cpost-ACF,ACF.cpost-ACF
+2015,4,females,30-39,ACF,22466,a) HIV-negative,1,0.287,16018.258,cpost-ACF,ACF.cpost-ACF
+2015,4,females,30-39,ACF,22466,b) HIV-positive,9,0.287,6447.742,cpost-ACF,ACF.cpost-ACF
+2016,1,females,30-39,ACF,22717,a) HIV-negative,2,0.287,16197.221,cpost-ACF,ACF.cpost-ACF
+2016,1,females,30-39,ACF,22717,b) HIV-positive,17,0.287,6519.779,cpost-ACF,ACF.cpost-ACF
+2016,2,females,30-39,ACF,22968,a) HIV-negative,2,0.287,16376.184,cpost-ACF,ACF.cpost-ACF
+2016,2,females,30-39,ACF,22968,b) HIV-positive,5,0.287,6591.816,cpost-ACF,ACF.cpost-ACF
+2016,3,females,30-39,ACF,23219,a) HIV-negative,1,0.287,16555.147,cpost-ACF,ACF.cpost-ACF
+2016,3,females,30-39,ACF,23219,b) HIV-positive,9,0.287,6663.853,cpost-ACF,ACF.cpost-ACF
+2016,4,females,30-39,ACF,23470,a) HIV-negative,5,0.287,16734.11,cpost-ACF,ACF.cpost-ACF
+2016,4,females,30-39,ACF,23470,b) HIV-positive,15,0.287,6735.89,cpost-ACF,ACF.cpost-ACF
+2017,1,females,30-39,ACF,23722,a) HIV-negative,4,0.287,16913.786,cpost-ACF,ACF.cpost-ACF
+2017,1,females,30-39,ACF,23722,b) HIV-positive,11,0.287,6808.214,cpost-ACF,ACF.cpost-ACF
+2017,2,females,30-39,ACF,23973,a) HIV-negative,1,0.287,17092.749,cpost-ACF,ACF.cpost-ACF
+2017,2,females,30-39,ACF,23973,b) HIV-positive,11,0.287,6880.251,cpost-ACF,ACF.cpost-ACF
+2017,3,females,30-39,ACF,24224,a) HIV-negative,1,0.287,17271.712,cpost-ACF,ACF.cpost-ACF
+2017,3,females,30-39,ACF,24224,b) HIV-positive,11,0.287,6952.288,cpost-ACF,ACF.cpost-ACF
+2017,4,females,30-39,ACF,24476,b) HIV-positive,6,0.287,7024.612,cpost-ACF,ACF.cpost-ACF
+2018,1,females,30-39,ACF,24726,a) HIV-negative,6,0.287,17629.638,cpost-ACF,ACF.cpost-ACF
+2018,1,females,30-39,ACF,24726,b) HIV-positive,3,0.287,7096.362,cpost-ACF,ACF.cpost-ACF
+2018,2,females,30-39,ACF,24978,a) HIV-negative,1,0.287,17809.314,cpost-ACF,ACF.cpost-ACF
+2018,2,females,30-39,ACF,24978,b) HIV-positive,3,0.287,7168.686,cpost-ACF,ACF.cpost-ACF
+2018,3,females,30-39,ACF,25223,a) HIV-negative,5,0.287,17983.999,cpost-ACF,ACF.cpost-ACF
+2018,3,females,30-39,ACF,25223,b) HIV-positive,7,0.287,7239.001,cpost-ACF,ACF.cpost-ACF
+2018,4,females,30-39,ACF,25471,a) HIV-negative,1,0.287,18160.823,cpost-ACF,ACF.cpost-ACF
+2018,4,females,30-39,ACF,25471,b) HIV-positive,2,0.287,7310.177,cpost-ACF,ACF.cpost-ACF
+2009,1,males,30-39,ACF,16323,,7,0.166,,apre-ACF,ACF.apre-ACF
+2009,1,males,30-39,ACF,16323,a) HIV-negative,1,0.166,13613.382,apre-ACF,ACF.apre-ACF
+2009,1,males,30-39,ACF,16323,b) HIV-positive,11,0.166,2709.618,apre-ACF,ACF.apre-ACF
+2009,2,males,30-39,ACF,16419,,4,0.166,,apre-ACF,ACF.apre-ACF
+2009,2,males,30-39,ACF,16419,b) HIV-positive,10,0.166,2725.554,apre-ACF,ACF.apre-ACF
+2009,3,males,30-39,ACF,16515,,5,0.166,,apre-ACF,ACF.apre-ACF
+2009,3,males,30-39,ACF,16515,a) HIV-negative,2,0.166,13773.51,apre-ACF,ACF.apre-ACF
+2009,3,males,30-39,ACF,16515,b) HIV-positive,6,0.166,2741.49,apre-ACF,ACF.apre-ACF
+2009,4,males,30-39,ACF,16612,,1,0.166,,apre-ACF,ACF.apre-ACF
+2009,4,males,30-39,ACF,16612,a) HIV-negative,5,0.166,13854.408,apre-ACF,ACF.apre-ACF
+2009,4,males,30-39,ACF,16612,b) HIV-positive,5,0.166,2757.592,apre-ACF,ACF.apre-ACF
+2010,1,males,30-39,ACF,16708,,6,0.166,,apre-ACF,ACF.apre-ACF
+2010,1,males,30-39,ACF,16708,a) HIV-negative,5,0.166,13934.472,apre-ACF,ACF.apre-ACF
+2010,1,males,30-39,ACF,16708,b) HIV-positive,7,0.166,2773.528,apre-ACF,ACF.apre-ACF
+2010,2,males,30-39,ACF,16804,,6,0.166,,apre-ACF,ACF.apre-ACF
+2010,2,males,30-39,ACF,16804,b) HIV-positive,10,0.166,2789.464,apre-ACF,ACF.apre-ACF
+2010,3,males,30-39,ACF,16900,,17,0.166,,apre-ACF,ACF.apre-ACF
+2010,3,males,30-39,ACF,16900,a) HIV-negative,6,0.166,14094.6,apre-ACF,ACF.apre-ACF
+2010,3,males,30-39,ACF,16900,b) HIV-positive,13,0.166,2805.4,apre-ACF,ACF.apre-ACF
+2010,4,males,30-39,ACF,16997,,6,0.166,,apre-ACF,ACF.apre-ACF
+2010,4,males,30-39,ACF,16997,a) HIV-negative,4,0.166,14175.498,apre-ACF,ACF.apre-ACF
+2010,4,males,30-39,ACF,16997,b) HIV-positive,15,0.166,2821.502,apre-ACF,ACF.apre-ACF
+2011,1,males,30-39,ACF,17093,,8,0.166,,apre-ACF,ACF.apre-ACF
+2011,1,males,30-39,ACF,17093,a) HIV-negative,3,0.166,14255.562,apre-ACF,ACF.apre-ACF
+2011,1,males,30-39,ACF,17093,b) HIV-positive,10,0.166,2837.438,apre-ACF,ACF.apre-ACF
+2011,2,males,30-39,ACF,17189,,9,0.166,,bACF,ACF.bACF
+2011,2,males,30-39,ACF,17189,a) HIV-negative,4,0.166,14335.626,bACF,ACF.bACF
+2011,2,males,30-39,ACF,17189,b) HIV-positive,27,0.166,2853.374,bACF,ACF.bACF
+2011,3,males,30-39,ACF,17285,,7,0.166,,bACF,ACF.bACF
+2011,3,males,30-39,ACF,17285,a) HIV-negative,9,0.166,14415.69,bACF,ACF.bACF
+2011,3,males,30-39,ACF,17285,b) HIV-positive,25,0.166,2869.31,bACF,ACF.bACF
+2011,4,males,30-39,ACF,17381,,4,0.166,,bACF,ACF.bACF
+2011,4,males,30-39,ACF,17381,a) HIV-negative,11,0.166,14495.754,bACF,ACF.bACF
+2011,4,males,30-39,ACF,17381,b) HIV-positive,24,0.166,2885.246,bACF,ACF.bACF
+2012,1,males,30-39,ACF,17478,,4,0.166,,bACF,ACF.bACF
+2012,1,males,30-39,ACF,17478,a) HIV-negative,7,0.166,14576.652,bACF,ACF.bACF
+2012,1,males,30-39,ACF,17478,b) HIV-positive,17,0.166,2901.348,bACF,ACF.bACF
+2012,2,males,30-39,ACF,17573,,8,0.166,,bACF,ACF.bACF
+2012,2,males,30-39,ACF,17573,a) HIV-negative,9,0.166,14655.882,bACF,ACF.bACF
+2012,2,males,30-39,ACF,17573,b) HIV-positive,21,0.166,2917.118,bACF,ACF.bACF
+2012,3,males,30-39,ACF,17670,,2,0.166,,bACF,ACF.bACF
+2012,3,males,30-39,ACF,17670,a) HIV-negative,9,0.166,14736.78,bACF,ACF.bACF
+2012,3,males,30-39,ACF,17670,b) HIV-positive,13,0.166,2933.22,bACF,ACF.bACF
+2012,4,males,30-39,ACF,17766,,4,0.166,,bACF,ACF.bACF
+2012,4,males,30-39,ACF,17766,a) HIV-negative,5,0.166,14816.844,bACF,ACF.bACF
+2012,4,males,30-39,ACF,17766,b) HIV-positive,13,0.166,2949.156,bACF,ACF.bACF
+2013,1,males,30-39,ACF,17862,,1,0.166,,bACF,ACF.bACF
+2013,1,males,30-39,ACF,17862,a) HIV-negative,3,0.166,14896.908,bACF,ACF.bACF
+2013,1,males,30-39,ACF,17862,b) HIV-positive,13,0.166,2965.092,bACF,ACF.bACF
+2013,2,males,30-39,ACF,17959,a) HIV-negative,7,0.166,14977.806,bACF,ACF.bACF
+2013,2,males,30-39,ACF,17959,b) HIV-positive,19,0.166,2981.194,bACF,ACF.bACF
+2013,3,males,30-39,ACF,18055,,2,0.166,,bACF,ACF.bACF
+2013,3,males,30-39,ACF,18055,a) HIV-negative,6,0.166,15057.87,bACF,ACF.bACF
+2013,3,males,30-39,ACF,18055,b) HIV-positive,25,0.166,2997.13,bACF,ACF.bACF
+2013,4,males,30-39,ACF,18151,,1,0.166,,bACF,ACF.bACF
+2013,4,males,30-39,ACF,18151,a) HIV-negative,3,0.166,15137.934,bACF,ACF.bACF
+2013,4,males,30-39,ACF,18151,b) HIV-positive,19,0.166,3013.066,bACF,ACF.bACF
+2014,1,males,30-39,ACF,18247,,4,0.166,,bACF,ACF.bACF
+2014,1,males,30-39,ACF,18247,a) HIV-negative,6,0.166,15217.998,bACF,ACF.bACF
+2014,1,males,30-39,ACF,18247,b) HIV-positive,24,0.166,3029.002,bACF,ACF.bACF
+2014,2,males,30-39,ACF,18344,,3,0.166,,bACF,ACF.bACF
+2014,2,males,30-39,ACF,18344,a) HIV-negative,11,0.166,15298.896,bACF,ACF.bACF
+2014,2,males,30-39,ACF,18344,b) HIV-positive,22,0.166,3045.104,bACF,ACF.bACF
+2014,3,males,30-39,ACF,18439,,7,0.166,,bACF,ACF.bACF
+2014,3,males,30-39,ACF,18439,a) HIV-negative,4,0.166,15378.126,bACF,ACF.bACF
+2014,3,males,30-39,ACF,18439,b) HIV-positive,22,0.166,3060.874,bACF,ACF.bACF
+2014,4,males,30-39,ACF,18536,,3,0.166,,cpost-ACF,ACF.cpost-ACF
+2014,4,males,30-39,ACF,18536,a) HIV-negative,9,0.166,15459.024,cpost-ACF,ACF.cpost-ACF
+2014,4,males,30-39,ACF,18536,b) HIV-positive,29,0.166,3076.976,cpost-ACF,ACF.cpost-ACF
+2015,1,males,30-39,ACF,18632,,6,0.166,,cpost-ACF,ACF.cpost-ACF
+2015,1,males,30-39,ACF,18632,a) HIV-negative,11,0.166,15539.088,cpost-ACF,ACF.cpost-ACF
+2015,1,males,30-39,ACF,18632,b) HIV-positive,24,0.166,3092.912,cpost-ACF,ACF.cpost-ACF
+2015,2,males,30-39,ACF,18728,,4,0.166,,cpost-ACF,ACF.cpost-ACF
+2015,2,males,30-39,ACF,18728,a) HIV-negative,6,0.166,15619.152,cpost-ACF,ACF.cpost-ACF
+2015,2,males,30-39,ACF,18728,b) HIV-positive,18,0.166,3108.848,cpost-ACF,ACF.cpost-ACF
+2015,3,males,30-39,ACF,18824,,1,0.166,,cpost-ACF,ACF.cpost-ACF
+2015,3,males,30-39,ACF,18824,a) HIV-negative,4,0.166,15699.216,cpost-ACF,ACF.cpost-ACF
+2015,3,males,30-39,ACF,18824,b) HIV-positive,16,0.166,3124.784,cpost-ACF,ACF.cpost-ACF
+2015,4,males,30-39,ACF,18921,,1,0.166,,cpost-ACF,ACF.cpost-ACF
+2015,4,males,30-39,ACF,18921,a) HIV-negative,10,0.166,15780.114,cpost-ACF,ACF.cpost-ACF
+2015,4,males,30-39,ACF,18921,b) HIV-positive,14,0.166,3140.886,cpost-ACF,ACF.cpost-ACF
+2016,1,males,30-39,ACF,19017,,1,0.166,,cpost-ACF,ACF.cpost-ACF
+2016,1,males,30-39,ACF,19017,a) HIV-negative,11,0.166,15860.178,cpost-ACF,ACF.cpost-ACF
+2016,1,males,30-39,ACF,19017,b) HIV-positive,20,0.166,3156.822,cpost-ACF,ACF.cpost-ACF
+2016,2,males,30-39,ACF,19113,,2,0.166,,cpost-ACF,ACF.cpost-ACF
+2016,2,males,30-39,ACF,19113,a) HIV-negative,10,0.166,15940.242,cpost-ACF,ACF.cpost-ACF
+2016,2,males,30-39,ACF,19113,b) HIV-positive,18,0.166,3172.758,cpost-ACF,ACF.cpost-ACF
+2016,3,males,30-39,ACF,19209,,1,0.166,,cpost-ACF,ACF.cpost-ACF
+2016,3,males,30-39,ACF,19209,a) HIV-negative,12,0.166,16020.306,cpost-ACF,ACF.cpost-ACF
+2016,3,males,30-39,ACF,19209,b) HIV-positive,18,0.166,3188.694,cpost-ACF,ACF.cpost-ACF
+2016,4,males,30-39,ACF,19305,,1,0.166,,cpost-ACF,ACF.cpost-ACF
+2016,4,males,30-39,ACF,19305,a) HIV-negative,10,0.166,16100.37,cpost-ACF,ACF.cpost-ACF
+2016,4,males,30-39,ACF,19305,b) HIV-positive,16,0.166,3204.63,cpost-ACF,ACF.cpost-ACF
+2017,1,males,30-39,ACF,19402,,2,0.166,,cpost-ACF,ACF.cpost-ACF
+2017,1,males,30-39,ACF,19402,a) HIV-negative,10,0.166,16181.268,cpost-ACF,ACF.cpost-ACF
+2017,1,males,30-39,ACF,19402,b) HIV-positive,24,0.166,3220.732,cpost-ACF,ACF.cpost-ACF
+2017,2,males,30-39,ACF,19498,,1,0.166,,cpost-ACF,ACF.cpost-ACF
+2017,2,males,30-39,ACF,19498,a) HIV-negative,7,0.166,16261.332,cpost-ACF,ACF.cpost-ACF
+2017,2,males,30-39,ACF,19498,b) HIV-positive,12,0.166,3236.668,cpost-ACF,ACF.cpost-ACF
+2017,3,males,30-39,ACF,19594,a) HIV-negative,4,0.166,16341.396,cpost-ACF,ACF.cpost-ACF
+2017,3,males,30-39,ACF,19594,b) HIV-positive,13,0.166,3252.604,cpost-ACF,ACF.cpost-ACF
+2017,4,males,30-39,ACF,19690,a) HIV-negative,6,0.166,16421.46,cpost-ACF,ACF.cpost-ACF
+2017,4,males,30-39,ACF,19690,b) HIV-positive,14,0.166,3268.54,cpost-ACF,ACF.cpost-ACF
+2018,1,males,30-39,ACF,19786,a) HIV-negative,7,0.166,16501.524,cpost-ACF,ACF.cpost-ACF
+2018,1,males,30-39,ACF,19786,b) HIV-positive,16,0.166,3284.476,cpost-ACF,ACF.cpost-ACF
+2018,2,males,30-39,ACF,19883,a) HIV-negative,8,0.166,16582.422,cpost-ACF,ACF.cpost-ACF
+2018,2,males,30-39,ACF,19883,b) HIV-positive,9,0.166,3300.578,cpost-ACF,ACF.cpost-ACF
+2018,3,males,30-39,ACF,19977,a) HIV-negative,10,0.166,16660.818,cpost-ACF,ACF.cpost-ACF
+2018,3,males,30-39,ACF,19977,b) HIV-positive,15,0.166,3316.182,cpost-ACF,ACF.cpost-ACF
+2018,4,males,30-39,ACF,20072,a) HIV-negative,6,0.166,16740.048,cpost-ACF,ACF.cpost-ACF
+2018,4,males,30-39,ACF,20072,b) HIV-positive,10,0.166,3331.952,cpost-ACF,ACF.cpost-ACF
+2009,1,females,40-49,ACF,5611,,1,0.32,,apre-ACF,ACF.apre-ACF
+2009,1,females,40-49,ACF,5611,b) HIV-positive,3,0.32,1795.52,apre-ACF,ACF.apre-ACF
+2009,2,females,40-49,ACF,5700,b) HIV-positive,2,0.32,1824,apre-ACF,ACF.apre-ACF
+2009,3,females,40-49,ACF,5789,,,0.32,,apre-ACF,ACF.apre-ACF
+2009,4,females,40-49,ACF,5877,a) HIV-negative,1,0.32,3996.36,apre-ACF,ACF.apre-ACF
+2009,4,females,40-49,ACF,5877,b) HIV-positive,1,0.32,1880.64,apre-ACF,ACF.apre-ACF
+2010,1,females,40-49,ACF,5966,b) HIV-positive,3,0.32,1909.12,apre-ACF,ACF.apre-ACF
+2010,2,females,40-49,ACF,6055,a) HIV-negative,2,0.32,4117.4,apre-ACF,ACF.apre-ACF
+2010,2,females,40-49,ACF,6055,b) HIV-positive,1,0.32,1937.6,apre-ACF,ACF.apre-ACF
+2010,3,females,40-49,ACF,6144,,1,0.32,,apre-ACF,ACF.apre-ACF
+2010,3,females,40-49,ACF,6144,b) HIV-positive,2,0.32,1966.08,apre-ACF,ACF.apre-ACF
+2010,4,females,40-49,ACF,6233,a) HIV-negative,1,0.32,4238.44,apre-ACF,ACF.apre-ACF
+2010,4,females,40-49,ACF,6233,b) HIV-positive,3,0.32,1994.56,apre-ACF,ACF.apre-ACF
+2011,1,females,40-49,ACF,6321,,1,0.32,,apre-ACF,ACF.apre-ACF
+2011,1,females,40-49,ACF,6321,b) HIV-positive,1,0.32,2022.72,apre-ACF,ACF.apre-ACF
+2011,2,females,40-49,ACF,6410,,1,0.32,,bACF,ACF.bACF
+2011,2,females,40-49,ACF,6410,b) HIV-positive,6,0.32,2051.2,bACF,ACF.bACF
+2011,3,females,40-49,ACF,6499,,3,0.32,,bACF,ACF.bACF
+2011,3,females,40-49,ACF,6499,a) HIV-negative,1,0.32,4419.32,bACF,ACF.bACF
+2011,3,females,40-49,ACF,6499,b) HIV-positive,2,0.32,2079.68,bACF,ACF.bACF
+2011,4,females,40-49,ACF,6588,,2,0.32,,bACF,ACF.bACF
+2011,4,females,40-49,ACF,6588,a) HIV-negative,1,0.32,4479.84,bACF,ACF.bACF
+2011,4,females,40-49,ACF,6588,b) HIV-positive,3,0.32,2108.16,bACF,ACF.bACF
+2012,1,females,40-49,ACF,6676,,1,0.32,,bACF,ACF.bACF
+2012,1,females,40-49,ACF,6676,b) HIV-positive,2,0.32,2136.32,bACF,ACF.bACF
+2012,2,females,40-49,ACF,6765,a) HIV-negative,2,0.32,4600.2,bACF,ACF.bACF
+2012,2,females,40-49,ACF,6765,b) HIV-positive,5,0.32,2164.8,bACF,ACF.bACF
+2012,3,females,40-49,ACF,6854,,1,0.32,,bACF,ACF.bACF
+2012,3,females,40-49,ACF,6854,b) HIV-positive,7,0.32,2193.28,bACF,ACF.bACF
+2012,4,females,40-49,ACF,6943,a) HIV-negative,2,0.32,4721.24,bACF,ACF.bACF
+2012,4,females,40-49,ACF,6943,b) HIV-positive,1,0.32,2221.76,bACF,ACF.bACF
+2013,1,females,40-49,ACF,7031,,2,0.32,,bACF,ACF.bACF
+2013,1,females,40-49,ACF,7031,a) HIV-negative,1,0.32,4781.08,bACF,ACF.bACF
+2013,1,females,40-49,ACF,7031,b) HIV-positive,4,0.32,2249.92,bACF,ACF.bACF
+2013,2,females,40-49,ACF,7121,a) HIV-negative,1,0.32,4842.28,bACF,ACF.bACF
+2013,2,females,40-49,ACF,7121,b) HIV-positive,4,0.32,2278.72,bACF,ACF.bACF
+2013,3,females,40-49,ACF,7209,b) HIV-positive,4,0.32,2306.88,bACF,ACF.bACF
+2013,4,females,40-49,ACF,7298,,1,0.32,,bACF,ACF.bACF
+2013,4,females,40-49,ACF,7298,a) HIV-negative,1,0.32,4962.64,bACF,ACF.bACF
+2013,4,females,40-49,ACF,7298,b) HIV-positive,3,0.32,2335.36,bACF,ACF.bACF
+2014,1,females,40-49,ACF,7387,a) HIV-negative,2,0.32,5023.16,bACF,ACF.bACF
+2014,1,females,40-49,ACF,7387,b) HIV-positive,8,0.32,2363.84,bACF,ACF.bACF
+2014,2,females,40-49,ACF,7476,a) HIV-negative,1,0.32,5083.68,bACF,ACF.bACF
+2014,2,females,40-49,ACF,7476,b) HIV-positive,5,0.32,2392.32,bACF,ACF.bACF
+2014,3,females,40-49,ACF,7564,a) HIV-negative,5,0.32,5143.52,bACF,ACF.bACF
+2014,3,females,40-49,ACF,7564,b) HIV-positive,5,0.32,2420.48,bACF,ACF.bACF
+2014,4,females,40-49,ACF,7653,b) HIV-positive,3,0.32,2448.96,cpost-ACF,ACF.cpost-ACF
+2015,1,females,40-49,ACF,7742,b) HIV-positive,6,0.32,2477.44,cpost-ACF,ACF.cpost-ACF
+2015,2,females,40-49,ACF,7831,a) HIV-negative,1,0.32,5325.08,cpost-ACF,ACF.cpost-ACF
+2015,2,females,40-49,ACF,7831,b) HIV-positive,3,0.32,2505.92,cpost-ACF,ACF.cpost-ACF
+2015,3,females,40-49,ACF,7919,a) HIV-negative,1,0.32,5384.92,cpost-ACF,ACF.cpost-ACF
+2015,3,females,40-49,ACF,7919,b) HIV-positive,7,0.32,2534.08,cpost-ACF,ACF.cpost-ACF
+2015,4,females,40-49,ACF,8008,b) HIV-positive,7,0.32,2562.56,cpost-ACF,ACF.cpost-ACF
+2016,1,females,40-49,ACF,8097,a) HIV-negative,1,0.32,5505.96,cpost-ACF,ACF.cpost-ACF
+2016,1,females,40-49,ACF,8097,b) HIV-positive,3,0.32,2591.04,cpost-ACF,ACF.cpost-ACF
+2016,2,females,40-49,ACF,8186,b) HIV-positive,4,0.32,2619.52,cpost-ACF,ACF.cpost-ACF
+2016,3,females,40-49,ACF,8274,a) HIV-negative,1,0.32,5626.32,cpost-ACF,ACF.cpost-ACF
+2016,3,females,40-49,ACF,8274,b) HIV-positive,6,0.32,2647.68,cpost-ACF,ACF.cpost-ACF
+2016,4,females,40-49,ACF,8363,a) HIV-negative,1,0.32,5686.84,cpost-ACF,ACF.cpost-ACF
+2016,4,females,40-49,ACF,8363,b) HIV-positive,1,0.32,2676.16,cpost-ACF,ACF.cpost-ACF
+2017,1,females,40-49,ACF,8452,b) HIV-positive,2,0.32,2704.64,cpost-ACF,ACF.cpost-ACF
+2017,2,females,40-49,ACF,8541,a) HIV-negative,1,0.32,5807.88,cpost-ACF,ACF.cpost-ACF
+2017,2,females,40-49,ACF,8541,b) HIV-positive,2,0.32,2733.12,cpost-ACF,ACF.cpost-ACF
+2017,3,females,40-49,ACF,8630,b) HIV-positive,6,0.32,2761.6,cpost-ACF,ACF.cpost-ACF
+2017,4,females,40-49,ACF,8719,b) HIV-positive,2,0.32,2790.08,cpost-ACF,ACF.cpost-ACF
+2018,1,females,40-49,ACF,8807,b) HIV-positive,1,0.32,2818.24,cpost-ACF,ACF.cpost-ACF
+2018,2,females,40-49,ACF,8896,a) HIV-negative,3,0.32,6049.28,cpost-ACF,ACF.cpost-ACF
+2018,2,females,40-49,ACF,8896,b) HIV-positive,5,0.32,2846.72,cpost-ACF,ACF.cpost-ACF
+2018,3,females,40-49,ACF,8983,b) HIV-positive,2,0.32,2874.56,cpost-ACF,ACF.cpost-ACF
+2018,4,females,40-49,ACF,9070,b) HIV-positive,3,0.32,2902.4,cpost-ACF,ACF.cpost-ACF
+2009,1,males,40-49,ACF,5840,,4,0.22,,apre-ACF,ACF.apre-ACF
+2009,1,males,40-49,ACF,5840,b) HIV-positive,2,0.22,1284.8,apre-ACF,ACF.apre-ACF
+2009,2,males,40-49,ACF,5953,,3,0.22,,apre-ACF,ACF.apre-ACF
+2009,2,males,40-49,ACF,5953,a) HIV-negative,1,0.22,4643.34,apre-ACF,ACF.apre-ACF
+2009,2,males,40-49,ACF,5953,b) HIV-positive,5,0.22,1309.66,apre-ACF,ACF.apre-ACF
+2009,3,males,40-49,ACF,6065,,3,0.22,,apre-ACF,ACF.apre-ACF
+2009,3,males,40-49,ACF,6065,a) HIV-negative,1,0.22,4730.7,apre-ACF,ACF.apre-ACF
+2009,3,males,40-49,ACF,6065,b) HIV-positive,2,0.22,1334.3,apre-ACF,ACF.apre-ACF
+2009,4,males,40-49,ACF,6178,a) HIV-negative,1,0.22,4818.84,apre-ACF,ACF.apre-ACF
+2009,4,males,40-49,ACF,6178,b) HIV-positive,6,0.22,1359.16,apre-ACF,ACF.apre-ACF
+2010,1,males,40-49,ACF,6291,,1,0.22,,apre-ACF,ACF.apre-ACF
+2010,1,males,40-49,ACF,6291,a) HIV-negative,2,0.22,4906.98,apre-ACF,ACF.apre-ACF
+2010,1,males,40-49,ACF,6291,b) HIV-positive,6,0.22,1384.02,apre-ACF,ACF.apre-ACF
+2010,2,males,40-49,ACF,6403,,1,0.22,,apre-ACF,ACF.apre-ACF
+2010,2,males,40-49,ACF,6403,b) HIV-positive,4,0.22,1408.66,apre-ACF,ACF.apre-ACF
+2010,3,males,40-49,ACF,6516,,2,0.22,,apre-ACF,ACF.apre-ACF
+2010,3,males,40-49,ACF,6516,b) HIV-positive,8,0.22,1433.52,apre-ACF,ACF.apre-ACF
+2010,4,males,40-49,ACF,6629,,2,0.22,,apre-ACF,ACF.apre-ACF
+2010,4,males,40-49,ACF,6629,a) HIV-negative,1,0.22,5170.62,apre-ACF,ACF.apre-ACF
+2010,4,males,40-49,ACF,6629,b) HIV-positive,2,0.22,1458.38,apre-ACF,ACF.apre-ACF
+2011,1,males,40-49,ACF,6742,b) HIV-positive,1,0.22,1483.24,apre-ACF,ACF.apre-ACF
+2011,2,males,40-49,ACF,6854,,1,0.22,,bACF,ACF.bACF
+2011,2,males,40-49,ACF,6854,a) HIV-negative,3,0.22,5346.12,bACF,ACF.bACF
+2011,2,males,40-49,ACF,6854,b) HIV-positive,7,0.22,1507.88,bACF,ACF.bACF
+2011,3,males,40-49,ACF,6967,b) HIV-positive,8,0.22,1532.74,bACF,ACF.bACF
+2011,4,males,40-49,ACF,7080,b) HIV-positive,5,0.22,1557.6,bACF,ACF.bACF
+2012,1,males,40-49,ACF,7192,a) HIV-negative,1,0.22,5609.76,bACF,ACF.bACF
+2012,1,males,40-49,ACF,7192,b) HIV-positive,10,0.22,1582.24,bACF,ACF.bACF
+2012,2,males,40-49,ACF,7305,,3,0.22,,bACF,ACF.bACF
+2012,2,males,40-49,ACF,7305,a) HIV-negative,2,0.22,5697.9,bACF,ACF.bACF
+2012,2,males,40-49,ACF,7305,b) HIV-positive,8,0.22,1607.1,bACF,ACF.bACF
+2012,3,males,40-49,ACF,7418,a) HIV-negative,5,0.22,5786.04,bACF,ACF.bACF
+2012,3,males,40-49,ACF,7418,b) HIV-positive,10,0.22,1631.96,bACF,ACF.bACF
+2012,4,males,40-49,ACF,7531,,1,0.22,,bACF,ACF.bACF
+2012,4,males,40-49,ACF,7531,a) HIV-negative,2,0.22,5874.18,bACF,ACF.bACF
+2012,4,males,40-49,ACF,7531,b) HIV-positive,10,0.22,1656.82,bACF,ACF.bACF
+2013,1,males,40-49,ACF,7643,,1,0.22,,bACF,ACF.bACF
+2013,1,males,40-49,ACF,7643,a) HIV-negative,2,0.22,5961.54,bACF,ACF.bACF
+2013,1,males,40-49,ACF,7643,b) HIV-positive,8,0.22,1681.46,bACF,ACF.bACF
+2013,2,males,40-49,ACF,7756,a) HIV-negative,2,0.22,6049.68,bACF,ACF.bACF
+2013,2,males,40-49,ACF,7756,b) HIV-positive,5,0.22,1706.32,bACF,ACF.bACF
+2013,3,males,40-49,ACF,7869,,2,0.22,,bACF,ACF.bACF
+2013,3,males,40-49,ACF,7869,a) HIV-negative,1,0.22,6137.82,bACF,ACF.bACF
+2013,3,males,40-49,ACF,7869,b) HIV-positive,1,0.22,1731.18,bACF,ACF.bACF
+2013,4,males,40-49,ACF,7981,,1,0.22,,bACF,ACF.bACF
+2013,4,males,40-49,ACF,7981,a) HIV-negative,1,0.22,6225.18,bACF,ACF.bACF
+2013,4,males,40-49,ACF,7981,b) HIV-positive,3,0.22,1755.82,bACF,ACF.bACF
+2014,1,males,40-49,ACF,8094,,2,0.22,,bACF,ACF.bACF
+2014,1,males,40-49,ACF,8094,a) HIV-negative,2,0.22,6313.32,bACF,ACF.bACF
+2014,1,males,40-49,ACF,8094,b) HIV-positive,10,0.22,1780.68,bACF,ACF.bACF
+2014,2,males,40-49,ACF,8207,,1,0.22,,bACF,ACF.bACF
+2014,2,males,40-49,ACF,8207,a) HIV-negative,2,0.22,6401.46,bACF,ACF.bACF
+2014,2,males,40-49,ACF,8207,b) HIV-positive,9,0.22,1805.54,bACF,ACF.bACF
+2014,3,males,40-49,ACF,8319,,3,0.22,,bACF,ACF.bACF
+2014,3,males,40-49,ACF,8319,a) HIV-negative,3,0.22,6488.82,bACF,ACF.bACF
+2014,3,males,40-49,ACF,8319,b) HIV-positive,12,0.22,1830.18,bACF,ACF.bACF
+2014,4,males,40-49,ACF,8432,,1,0.22,,cpost-ACF,ACF.cpost-ACF
+2014,4,males,40-49,ACF,8432,a) HIV-negative,2,0.22,6576.96,cpost-ACF,ACF.cpost-ACF
+2014,4,males,40-49,ACF,8432,b) HIV-positive,6,0.22,1855.04,cpost-ACF,ACF.cpost-ACF
+2015,1,males,40-49,ACF,8545,,2,0.22,,cpost-ACF,ACF.cpost-ACF
+2015,1,males,40-49,ACF,8545,a) HIV-negative,3,0.22,6665.1,cpost-ACF,ACF.cpost-ACF
+2015,1,males,40-49,ACF,8545,b) HIV-positive,6,0.22,1879.9,cpost-ACF,ACF.cpost-ACF
+2015,2,males,40-49,ACF,8657,,1,0.22,,cpost-ACF,ACF.cpost-ACF
+2015,2,males,40-49,ACF,8657,a) HIV-negative,4,0.22,6752.46,cpost-ACF,ACF.cpost-ACF
+2015,2,males,40-49,ACF,8657,b) HIV-positive,7,0.22,1904.54,cpost-ACF,ACF.cpost-ACF
+2015,3,males,40-49,ACF,8770,,1,0.22,,cpost-ACF,ACF.cpost-ACF
+2015,3,males,40-49,ACF,8770,a) HIV-negative,5,0.22,6840.6,cpost-ACF,ACF.cpost-ACF
+2015,3,males,40-49,ACF,8770,b) HIV-positive,11,0.22,1929.4,cpost-ACF,ACF.cpost-ACF
+2015,4,males,40-49,ACF,8883,a) HIV-negative,1,0.22,6928.74,cpost-ACF,ACF.cpost-ACF
+2015,4,males,40-49,ACF,8883,b) HIV-positive,7,0.22,1954.26,cpost-ACF,ACF.cpost-ACF
+2016,1,males,40-49,ACF,8996,a) HIV-negative,3,0.22,7016.88,cpost-ACF,ACF.cpost-ACF
+2016,1,males,40-49,ACF,8996,b) HIV-positive,8,0.22,1979.12,cpost-ACF,ACF.cpost-ACF
+2016,2,males,40-49,ACF,9108,,1,0.22,,cpost-ACF,ACF.cpost-ACF
+2016,2,males,40-49,ACF,9108,a) HIV-negative,2,0.22,7104.24,cpost-ACF,ACF.cpost-ACF
+2016,2,males,40-49,ACF,9108,b) HIV-positive,15,0.22,2003.76,cpost-ACF,ACF.cpost-ACF
+2016,3,males,40-49,ACF,9221,a) HIV-negative,2,0.22,7192.38,cpost-ACF,ACF.cpost-ACF
+2016,3,males,40-49,ACF,9221,b) HIV-positive,3,0.22,2028.62,cpost-ACF,ACF.cpost-ACF
+2016,4,males,40-49,ACF,9334,b) HIV-positive,11,0.22,2053.48,cpost-ACF,ACF.cpost-ACF
+2017,1,males,40-49,ACF,9446,a) HIV-negative,6,0.22,7367.88,cpost-ACF,ACF.cpost-ACF
+2017,1,males,40-49,ACF,9446,b) HIV-positive,11,0.22,2078.12,cpost-ACF,ACF.cpost-ACF
+2017,2,males,40-49,ACF,9559,,1,0.22,,cpost-ACF,ACF.cpost-ACF
+2017,2,males,40-49,ACF,9559,a) HIV-negative,5,0.22,7456.02,cpost-ACF,ACF.cpost-ACF
+2017,2,males,40-49,ACF,9559,b) HIV-positive,13,0.22,2102.98,cpost-ACF,ACF.cpost-ACF
+2017,3,males,40-49,ACF,9672,a) HIV-negative,2,0.22,7544.16,cpost-ACF,ACF.cpost-ACF
+2017,3,males,40-49,ACF,9672,b) HIV-positive,7,0.22,2127.84,cpost-ACF,ACF.cpost-ACF
+2017,4,males,40-49,ACF,9784,a) HIV-negative,3,0.22,7631.52,cpost-ACF,ACF.cpost-ACF
+2017,4,males,40-49,ACF,9784,b) HIV-positive,11,0.22,2152.48,cpost-ACF,ACF.cpost-ACF
+2018,1,males,40-49,ACF,9897,a) HIV-negative,3,0.22,7719.66,cpost-ACF,ACF.cpost-ACF
+2018,1,males,40-49,ACF,9897,b) HIV-positive,6,0.22,2177.34,cpost-ACF,ACF.cpost-ACF
+2018,2,males,40-49,ACF,10010,a) HIV-negative,4,0.22,7807.8,cpost-ACF,ACF.cpost-ACF
+2018,2,males,40-49,ACF,10010,b) HIV-positive,4,0.22,2202.2,cpost-ACF,ACF.cpost-ACF
+2018,3,males,40-49,ACF,10120,a) HIV-negative,3,0.22,7893.6,cpost-ACF,ACF.cpost-ACF
+2018,3,males,40-49,ACF,10120,b) HIV-positive,11,0.22,2226.4,cpost-ACF,ACF.cpost-ACF
+2018,4,males,40-49,ACF,10231,a) HIV-negative,3,0.22,7980.18,cpost-ACF,ACF.cpost-ACF
+2018,4,males,40-49,ACF,10231,b) HIV-positive,7,0.22,2250.82,cpost-ACF,ACF.cpost-ACF
+2009,1,females,50+,ACF,5194,,1,0.162,,apre-ACF,ACF.apre-ACF
+2009,1,females,50+,ACF,5194,b) HIV-positive,3,0.162,841.428,apre-ACF,ACF.apre-ACF
+2009,2,females,50+,ACF,5263,,1,0.162,,apre-ACF,ACF.apre-ACF
+2009,2,females,50+,ACF,5263,a) HIV-negative,1,0.162,4410.394,apre-ACF,ACF.apre-ACF
+2009,2,females,50+,ACF,5263,b) HIV-positive,3,0.162,852.606,apre-ACF,ACF.apre-ACF
+2009,3,females,50+,ACF,5332,,1,0.162,,apre-ACF,ACF.apre-ACF
+2009,4,females,50+,ACF,5402,,,0.162,,apre-ACF,ACF.apre-ACF
+2010,1,females,50+,ACF,5471,b) HIV-positive,1,0.162,886.302,apre-ACF,ACF.apre-ACF
+2010,2,females,50+,ACF,5541,,,0.162,,apre-ACF,ACF.apre-ACF
+2010,3,females,50+,ACF,5610,a) HIV-negative,1,0.162,4701.18,apre-ACF,ACF.apre-ACF
+2010,3,females,50+,ACF,5610,b) HIV-positive,2,0.162,908.82,apre-ACF,ACF.apre-ACF
+2010,4,females,50+,ACF,5680,b) HIV-positive,1,0.162,920.16,apre-ACF,ACF.apre-ACF
+2011,1,females,50+,ACF,5749,b) HIV-positive,1,0.162,931.338,apre-ACF,ACF.apre-ACF
+2011,2,females,50+,ACF,5818,,1,0.162,,bACF,ACF.bACF
+2011,2,females,50+,ACF,5818,a) HIV-negative,3,0.162,4875.484,bACF,ACF.bACF
+2011,2,females,50+,ACF,5818,b) HIV-positive,1,0.162,942.516,bACF,ACF.bACF
+2011,3,females,50+,ACF,5888,b) HIV-positive,2,0.162,953.856,bACF,ACF.bACF
+2011,4,females,50+,ACF,5957,a) HIV-negative,1,0.162,4991.966,bACF,ACF.bACF
+2012,1,females,50+,ACF,6027,,1,0.162,,bACF,ACF.bACF
+2012,1,females,50+,ACF,6027,a) HIV-negative,1,0.162,5050.626,bACF,ACF.bACF
+2012,2,females,50+,ACF,6096,a) HIV-negative,4,0.162,5108.448,bACF,ACF.bACF
+2012,2,females,50+,ACF,6096,b) HIV-positive,1,0.162,987.552,bACF,ACF.bACF
+2012,3,females,50+,ACF,6166,a) HIV-negative,2,0.162,5167.108,bACF,ACF.bACF
+2012,3,females,50+,ACF,6166,b) HIV-positive,1,0.162,998.892,bACF,ACF.bACF
+2012,4,females,50+,ACF,6235,,1,0.162,,bACF,ACF.bACF
+2012,4,females,50+,ACF,6235,b) HIV-positive,3,0.162,1010.07,bACF,ACF.bACF
+2013,1,females,50+,ACF,6304,b) HIV-positive,5,0.162,1021.248,bACF,ACF.bACF
+2013,2,females,50+,ACF,6373,,2,0.162,,bACF,ACF.bACF
+2013,3,females,50+,ACF,6443,a) HIV-negative,1,0.162,5399.234,bACF,ACF.bACF
+2013,3,females,50+,ACF,6443,b) HIV-positive,5,0.162,1043.766,bACF,ACF.bACF
+2013,4,females,50+,ACF,6512,,2,0.162,,bACF,ACF.bACF
+2013,4,females,50+,ACF,6512,b) HIV-positive,2,0.162,1054.944,bACF,ACF.bACF
+2014,1,females,50+,ACF,6582,a) HIV-negative,4,0.162,5515.716,bACF,ACF.bACF
+2014,1,females,50+,ACF,6582,b) HIV-positive,3,0.162,1066.284,bACF,ACF.bACF
+2014,2,females,50+,ACF,6651,a) HIV-negative,2,0.162,5573.538,bACF,ACF.bACF
+2014,2,females,50+,ACF,6651,b) HIV-positive,2,0.162,1077.462,bACF,ACF.bACF
+2014,3,females,50+,ACF,6721,a) HIV-negative,3,0.162,5632.198,bACF,ACF.bACF
+2014,3,females,50+,ACF,6721,b) HIV-positive,3,0.162,1088.802,bACF,ACF.bACF
+2014,4,females,50+,ACF,6790,b) HIV-positive,2,0.162,1099.98,cpost-ACF,ACF.cpost-ACF
+2015,1,females,50+,ACF,6859,,1,0.162,,cpost-ACF,ACF.cpost-ACF
+2015,1,females,50+,ACF,6859,a) HIV-negative,1,0.162,5747.842,cpost-ACF,ACF.cpost-ACF
+2015,1,females,50+,ACF,6859,b) HIV-positive,4,0.162,1111.158,cpost-ACF,ACF.cpost-ACF
+2015,2,females,50+,ACF,6928,a) HIV-negative,1,0.162,5805.664,cpost-ACF,ACF.cpost-ACF
+2015,2,females,50+,ACF,6928,b) HIV-positive,3,0.162,1122.336,cpost-ACF,ACF.cpost-ACF
+2015,3,females,50+,ACF,6998,a) HIV-negative,3,0.162,5864.324,cpost-ACF,ACF.cpost-ACF
+2015,3,females,50+,ACF,6998,b) HIV-positive,1,0.162,1133.676,cpost-ACF,ACF.cpost-ACF
+2015,4,females,50+,ACF,7068,a) HIV-negative,1,0.162,5922.984,cpost-ACF,ACF.cpost-ACF
+2015,4,females,50+,ACF,7068,b) HIV-positive,1,0.162,1145.016,cpost-ACF,ACF.cpost-ACF
+2016,1,females,50+,ACF,7137,a) HIV-negative,1,0.162,5980.806,cpost-ACF,ACF.cpost-ACF
+2016,2,females,50+,ACF,7206,b) HIV-positive,1,0.162,1167.372,cpost-ACF,ACF.cpost-ACF
+2016,3,females,50+,ACF,7276,a) HIV-negative,1,0.162,6097.288,cpost-ACF,ACF.cpost-ACF
+2016,3,females,50+,ACF,7276,b) HIV-positive,2,0.162,1178.712,cpost-ACF,ACF.cpost-ACF
+2016,4,females,50+,ACF,7346,a) HIV-negative,2,0.162,6155.948,cpost-ACF,ACF.cpost-ACF
+2016,4,females,50+,ACF,7346,b) HIV-positive,1,0.162,1190.052,cpost-ACF,ACF.cpost-ACF
+2017,1,females,50+,ACF,7415,a) HIV-negative,1,0.162,6213.77,cpost-ACF,ACF.cpost-ACF
+2017,2,females,50+,ACF,7484,a) HIV-negative,1,0.162,6271.592,cpost-ACF,ACF.cpost-ACF
+2017,3,females,50+,ACF,7553,a) HIV-negative,1,0.162,6329.414,cpost-ACF,ACF.cpost-ACF
+2017,3,females,50+,ACF,7553,b) HIV-positive,1,0.162,1223.586,cpost-ACF,ACF.cpost-ACF
+2017,4,females,50+,ACF,7623,b) HIV-positive,1,0.162,1234.926,cpost-ACF,ACF.cpost-ACF
+2018,1,females,50+,ACF,7692,a) HIV-negative,1,0.162,6445.896,cpost-ACF,ACF.cpost-ACF
+2018,1,females,50+,ACF,7692,b) HIV-positive,2,0.162,1246.104,cpost-ACF,ACF.cpost-ACF
+2018,2,females,50+,ACF,7762,b) HIV-positive,1,0.162,1257.444,cpost-ACF,ACF.cpost-ACF
+2018,3,females,50+,ACF,7830,a) HIV-negative,4,0.162,6561.54,cpost-ACF,ACF.cpost-ACF
+2018,3,females,50+,ACF,7830,b) HIV-positive,1,0.162,1268.46,cpost-ACF,ACF.cpost-ACF
+2018,4,females,50+,ACF,7898,a) HIV-negative,1,0.162,6618.524,cpost-ACF,ACF.cpost-ACF
+2018,4,females,50+,ACF,7898,b) HIV-positive,3,0.162,1279.476,cpost-ACF,ACF.cpost-ACF
+2009,1,males,50+,ACF,5406,b) HIV-positive,1,0.174,940.644,apre-ACF,ACF.apre-ACF
+2009,2,males,50+,ACF,5453,,1,0.174,,apre-ACF,ACF.apre-ACF
+2009,2,males,50+,ACF,5453,b) HIV-positive,4,0.174,948.822,apre-ACF,ACF.apre-ACF
+2009,3,males,50+,ACF,5500,b) HIV-positive,1,0.174,957,apre-ACF,ACF.apre-ACF
+2009,4,males,50+,ACF,5548,a) HIV-negative,2,0.174,4582.648,apre-ACF,ACF.apre-ACF
+2009,4,males,50+,ACF,5548,b) HIV-positive,1,0.174,965.352,apre-ACF,ACF.apre-ACF
+2010,1,males,50+,ACF,5595,,2,0.174,,apre-ACF,ACF.apre-ACF
+2010,1,males,50+,ACF,5595,b) HIV-positive,1,0.174,973.53,apre-ACF,ACF.apre-ACF
+2010,2,males,50+,ACF,5642,,1,0.174,,apre-ACF,ACF.apre-ACF
+2010,2,males,50+,ACF,5642,a) HIV-negative,3,0.174,4660.292,apre-ACF,ACF.apre-ACF
+2010,3,males,50+,ACF,5689,,2,0.174,,apre-ACF,ACF.apre-ACF
+2010,3,males,50+,ACF,5689,a) HIV-negative,2,0.174,4699.114,apre-ACF,ACF.apre-ACF
+2010,3,males,50+,ACF,5689,b) HIV-positive,5,0.174,989.886,apre-ACF,ACF.apre-ACF
+2010,4,males,50+,ACF,5736,b) HIV-positive,4,0.174,998.064,apre-ACF,ACF.apre-ACF
+2011,1,males,50+,ACF,5783,,1,0.174,,apre-ACF,ACF.apre-ACF
+2011,1,males,50+,ACF,5783,a) HIV-negative,1,0.174,4776.758,apre-ACF,ACF.apre-ACF
+2011,1,males,50+,ACF,5783,b) HIV-positive,2,0.174,1006.242,apre-ACF,ACF.apre-ACF
+2011,2,males,50+,ACF,5830,a) HIV-negative,1,0.174,4815.58,bACF,ACF.bACF
+2011,2,males,50+,ACF,5830,b) HIV-positive,7,0.174,1014.42,bACF,ACF.bACF
+2011,3,males,50+,ACF,5878,a) HIV-negative,2,0.174,4855.228,bACF,ACF.bACF
+2011,3,males,50+,ACF,5878,b) HIV-positive,5,0.174,1022.772,bACF,ACF.bACF
+2011,4,males,50+,ACF,5925,,2,0.174,,bACF,ACF.bACF
+2011,4,males,50+,ACF,5925,a) HIV-negative,4,0.174,4894.05,bACF,ACF.bACF
+2011,4,males,50+,ACF,5925,b) HIV-positive,3,0.174,1030.95,bACF,ACF.bACF
+2012,1,males,50+,ACF,5972,a) HIV-negative,1,0.174,4932.872,bACF,ACF.bACF
+2012,1,males,50+,ACF,5972,b) HIV-positive,3,0.174,1039.128,bACF,ACF.bACF
+2012,2,males,50+,ACF,6020,a) HIV-negative,3,0.174,4972.52,bACF,ACF.bACF
+2012,2,males,50+,ACF,6020,b) HIV-positive,5,0.174,1047.48,bACF,ACF.bACF
+2012,3,males,50+,ACF,6067,a) HIV-negative,3,0.174,5011.342,bACF,ACF.bACF
+2012,3,males,50+,ACF,6067,b) HIV-positive,3,0.174,1055.658,bACF,ACF.bACF
+2012,4,males,50+,ACF,6114,,1,0.174,,bACF,ACF.bACF
+2012,4,males,50+,ACF,6114,a) HIV-negative,2,0.174,5050.164,bACF,ACF.bACF
+2012,4,males,50+,ACF,6114,b) HIV-positive,3,0.174,1063.836,bACF,ACF.bACF
+2013,1,males,50+,ACF,6161,b) HIV-positive,4,0.174,1072.014,bACF,ACF.bACF
+2013,2,males,50+,ACF,6209,b) HIV-positive,5,0.174,1080.366,bACF,ACF.bACF
+2013,3,males,50+,ACF,6255,a) HIV-negative,2,0.174,5166.63,bACF,ACF.bACF
+2013,3,males,50+,ACF,6255,b) HIV-positive,2,0.174,1088.37,bACF,ACF.bACF
+2013,4,males,50+,ACF,6303,,2,0.174,,bACF,ACF.bACF
+2013,4,males,50+,ACF,6303,a) HIV-negative,4,0.174,5206.278,bACF,ACF.bACF
+2014,1,males,50+,ACF,6350,,2,0.174,,bACF,ACF.bACF
+2014,1,males,50+,ACF,6350,a) HIV-negative,3,0.174,5245.1,bACF,ACF.bACF
+2014,1,males,50+,ACF,6350,b) HIV-positive,1,0.174,1104.9,bACF,ACF.bACF
+2014,2,males,50+,ACF,6397,,1,0.174,,bACF,ACF.bACF
+2014,2,males,50+,ACF,6397,a) HIV-negative,2,0.174,5283.922,bACF,ACF.bACF
+2014,2,males,50+,ACF,6397,b) HIV-positive,1,0.174,1113.078,bACF,ACF.bACF
+2014,3,males,50+,ACF,6444,,3,0.174,,bACF,ACF.bACF
+2014,3,males,50+,ACF,6444,a) HIV-negative,4,0.174,5322.744,bACF,ACF.bACF
+2014,3,males,50+,ACF,6444,b) HIV-positive,10,0.174,1121.256,bACF,ACF.bACF
+2014,4,males,50+,ACF,6491,a) HIV-negative,2,0.174,5361.566,cpost-ACF,ACF.cpost-ACF
+2014,4,males,50+,ACF,6491,b) HIV-positive,2,0.174,1129.434,cpost-ACF,ACF.cpost-ACF
+2015,1,males,50+,ACF,6539,a) HIV-negative,3,0.174,5401.214,cpost-ACF,ACF.cpost-ACF
+2015,1,males,50+,ACF,6539,b) HIV-positive,4,0.174,1137.786,cpost-ACF,ACF.cpost-ACF
+2015,2,males,50+,ACF,6586,,1,0.174,,cpost-ACF,ACF.cpost-ACF
+2015,2,males,50+,ACF,6586,a) HIV-negative,2,0.174,5440.036,cpost-ACF,ACF.cpost-ACF
+2015,2,males,50+,ACF,6586,b) HIV-positive,3,0.174,1145.964,cpost-ACF,ACF.cpost-ACF
+2015,3,males,50+,ACF,6633,,1,0.174,,cpost-ACF,ACF.cpost-ACF
+2015,3,males,50+,ACF,6633,a) HIV-negative,1,0.174,5478.858,cpost-ACF,ACF.cpost-ACF
+2015,3,males,50+,ACF,6633,b) HIV-positive,3,0.174,1154.142,cpost-ACF,ACF.cpost-ACF
+2015,4,males,50+,ACF,6680,a) HIV-negative,1,0.174,5517.68,cpost-ACF,ACF.cpost-ACF
+2015,4,males,50+,ACF,6680,b) HIV-positive,2,0.174,1162.32,cpost-ACF,ACF.cpost-ACF
+2016,1,males,50+,ACF,6727,b) HIV-positive,2,0.174,1170.498,cpost-ACF,ACF.cpost-ACF
+2016,2,males,50+,ACF,6774,a) HIV-negative,3,0.174,5595.324,cpost-ACF,ACF.cpost-ACF
+2016,2,males,50+,ACF,6774,b) HIV-positive,5,0.174,1178.676,cpost-ACF,ACF.cpost-ACF
+2016,3,males,50+,ACF,6822,a) HIV-negative,2,0.174,5634.972,cpost-ACF,ACF.cpost-ACF
+2016,3,males,50+,ACF,6822,b) HIV-positive,7,0.174,1187.028,cpost-ACF,ACF.cpost-ACF
+2016,4,males,50+,ACF,6869,a) HIV-negative,5,0.174,5673.794,cpost-ACF,ACF.cpost-ACF
+2016,4,males,50+,ACF,6869,b) HIV-positive,5,0.174,1195.206,cpost-ACF,ACF.cpost-ACF
+2017,1,males,50+,ACF,6916,a) HIV-negative,2,0.174,5712.616,cpost-ACF,ACF.cpost-ACF
+2017,1,males,50+,ACF,6916,b) HIV-positive,3,0.174,1203.384,cpost-ACF,ACF.cpost-ACF
+2017,2,males,50+,ACF,6964,b) HIV-positive,2,0.174,1211.736,cpost-ACF,ACF.cpost-ACF
+2017,3,males,50+,ACF,7010,a) HIV-negative,5,0.174,5790.26,cpost-ACF,ACF.cpost-ACF
+2017,4,males,50+,ACF,7058,b) HIV-positive,3,0.174,1228.092,cpost-ACF,ACF.cpost-ACF
+2018,1,males,50+,ACF,7105,b) HIV-positive,4,0.174,1236.27,cpost-ACF,ACF.cpost-ACF
+2018,2,males,50+,ACF,7152,a) HIV-negative,4,0.174,5907.552,cpost-ACF,ACF.cpost-ACF
+2018,2,males,50+,ACF,7152,b) HIV-positive,2,0.174,1244.448,cpost-ACF,ACF.cpost-ACF
+2018,3,males,50+,ACF,7198,,1,0.174,,cpost-ACF,ACF.cpost-ACF
+2018,3,males,50+,ACF,7198,a) HIV-negative,4,0.174,5945.548,cpost-ACF,ACF.cpost-ACF
+2018,3,males,50+,ACF,7198,b) HIV-positive,4,0.174,1252.452,cpost-ACF,ACF.cpost-ACF
+2018,4,males,50+,ACF,7245,a) HIV-negative,3,0.174,5984.37,cpost-ACF,ACF.cpost-ACF
+2009,1,females,16-19,Non-ACF,28311,a) HIV-negative,1,0.032,27405.048,apre-ACF,Non-ACF.apre-ACF
+2009,1,females,16-19,Non-ACF,28311,b) HIV-positive,1,0.032,905.952,apre-ACF,Non-ACF.apre-ACF
+2009,2,females,16-19,Non-ACF,28524,a) HIV-negative,1,0.032,27611.232,apre-ACF,Non-ACF.apre-ACF
+2009,3,females,16-19,Non-ACF,28737,a) HIV-negative,2,0.032,27817.416,apre-ACF,Non-ACF.apre-ACF
+2009,3,females,16-19,Non-ACF,28737,b) HIV-positive,1,0.032,919.584,apre-ACF,Non-ACF.apre-ACF
+2009,4,females,16-19,Non-ACF,28950,,1,0.032,,apre-ACF,Non-ACF.apre-ACF
+2009,4,females,16-19,Non-ACF,28950,a) HIV-negative,1,0.032,28023.6,apre-ACF,Non-ACF.apre-ACF
+2010,1,females,16-19,Non-ACF,29162,a) HIV-negative,3,0.032,28228.816,apre-ACF,Non-ACF.apre-ACF
+2010,1,females,16-19,Non-ACF,29162,b) HIV-positive,1,0.032,933.184,apre-ACF,Non-ACF.apre-ACF
+2010,2,females,16-19,Non-ACF,29376,,3,0.032,,apre-ACF,Non-ACF.apre-ACF
+2010,2,females,16-19,Non-ACF,29376,a) HIV-negative,1,0.032,28435.968,apre-ACF,Non-ACF.apre-ACF
+2010,3,females,16-19,Non-ACF,29588,,4,0.032,,apre-ACF,Non-ACF.apre-ACF
+2010,3,females,16-19,Non-ACF,29588,b) HIV-positive,1,0.032,946.816,apre-ACF,Non-ACF.apre-ACF
+2010,4,females,16-19,Non-ACF,29801,a) HIV-negative,1,0.032,28847.368,apre-ACF,Non-ACF.apre-ACF
+2010,4,females,16-19,Non-ACF,29801,b) HIV-positive,2,0.032,953.632,apre-ACF,Non-ACF.apre-ACF
+2011,1,females,16-19,Non-ACF,30014,a) HIV-negative,3,0.032,29053.552,apre-ACF,Non-ACF.apre-ACF
+2011,2,females,16-19,Non-ACF,30227,,1,0.032,,bACF,Non-ACF.bACF
+2011,2,females,16-19,Non-ACF,30227,a) HIV-negative,2,0.032,29259.736,bACF,Non-ACF.bACF
+2011,2,females,16-19,Non-ACF,30227,b) HIV-positive,1,0.032,967.264,bACF,Non-ACF.bACF
+2011,3,females,16-19,Non-ACF,30440,,,0.032,,bACF,Non-ACF.bACF
+2011,4,females,16-19,Non-ACF,30653,b) HIV-positive,2,0.032,980.896,bACF,Non-ACF.bACF
+2012,1,females,16-19,Non-ACF,30865,,1,0.032,,bACF,Non-ACF.bACF
+2012,2,females,16-19,Non-ACF,31079,a) HIV-negative,1,0.032,30084.472,bACF,Non-ACF.bACF
+2012,2,females,16-19,Non-ACF,31079,b) HIV-positive,3,0.032,994.528,bACF,Non-ACF.bACF
+2012,3,females,16-19,Non-ACF,31291,a) HIV-negative,2,0.032,30289.688,bACF,Non-ACF.bACF
+2012,4,females,16-19,Non-ACF,31504,,1,0.032,,bACF,Non-ACF.bACF
+2012,4,females,16-19,Non-ACF,31504,a) HIV-negative,3,0.032,30495.872,bACF,Non-ACF.bACF
+2012,4,females,16-19,Non-ACF,31504,b) HIV-positive,1,0.032,1008.128,bACF,Non-ACF.bACF
+2013,1,females,16-19,Non-ACF,31717,a) HIV-negative,3,0.032,30702.056,bACF,Non-ACF.bACF
+2013,1,females,16-19,Non-ACF,31717,b) HIV-positive,3,0.032,1014.944,bACF,Non-ACF.bACF
+2013,2,females,16-19,Non-ACF,31930,,2,0.032,,bACF,Non-ACF.bACF
+2013,2,females,16-19,Non-ACF,31930,a) HIV-negative,2,0.032,30908.24,bACF,Non-ACF.bACF
+2013,3,females,16-19,Non-ACF,32142,a) HIV-negative,3,0.032,31113.456,bACF,Non-ACF.bACF
+2013,4,females,16-19,Non-ACF,32356,a) HIV-negative,2,0.032,31320.608,bACF,Non-ACF.bACF
+2013,4,females,16-19,Non-ACF,32356,b) HIV-positive,1,0.032,1035.392,bACF,Non-ACF.bACF
+2014,1,females,16-19,Non-ACF,32568,,1,0.032,,bACF,Non-ACF.bACF
+2014,1,females,16-19,Non-ACF,32568,a) HIV-negative,2,0.032,31525.824,bACF,Non-ACF.bACF
+2014,1,females,16-19,Non-ACF,32568,b) HIV-positive,1,0.032,1042.176,bACF,Non-ACF.bACF
+2014,2,females,16-19,Non-ACF,32781,,1,0.032,,bACF,Non-ACF.bACF
+2014,2,females,16-19,Non-ACF,32781,a) HIV-negative,2,0.032,31732.008,bACF,Non-ACF.bACF
+2014,3,females,16-19,Non-ACF,32994,a) HIV-negative,2,0.032,31938.192,bACF,Non-ACF.bACF
+2014,3,females,16-19,Non-ACF,32994,b) HIV-positive,3,0.032,1055.808,bACF,Non-ACF.bACF
+2014,4,females,16-19,Non-ACF,33207,a) HIV-negative,1,0.032,32144.376,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,females,16-19,Non-ACF,33207,b) HIV-positive,2,0.032,1062.624,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,females,16-19,Non-ACF,33419,a) HIV-negative,3,0.032,32349.592,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,females,16-19,Non-ACF,33419,b) HIV-positive,2,0.032,1069.408,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,females,16-19,Non-ACF,33633,a) HIV-negative,1,0.032,32556.744,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,females,16-19,Non-ACF,33633,b) HIV-positive,3,0.032,1076.256,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,females,16-19,Non-ACF,33845,a) HIV-negative,1,0.032,32761.96,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,females,16-19,Non-ACF,33845,b) HIV-positive,1,0.032,1083.04,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,females,16-19,Non-ACF,34058,a) HIV-negative,4,0.032,32968.144,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,females,16-19,Non-ACF,34058,b) HIV-positive,2,0.032,1089.856,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,females,16-19,Non-ACF,34271,a) HIV-negative,3,0.032,33174.328,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,females,16-19,Non-ACF,34484,a) HIV-negative,2,0.032,33380.512,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,females,16-19,Non-ACF,34484,b) HIV-positive,1,0.032,1103.488,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,females,16-19,Non-ACF,34697,b) HIV-positive,1,0.032,1110.304,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,females,16-19,Non-ACF,34910,,,0.032,,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,females,16-19,Non-ACF,35122,a) HIV-negative,2,0.032,33998.096,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,females,16-19,Non-ACF,35336,a) HIV-negative,1,0.032,34205.248,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,females,16-19,Non-ACF,35336,b) HIV-positive,2,0.032,1130.752,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,females,16-19,Non-ACF,35548,a) HIV-negative,2,0.032,34410.464,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,females,16-19,Non-ACF,35548,b) HIV-positive,2,0.032,1137.536,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,females,16-19,Non-ACF,35761,a) HIV-negative,2,0.032,34616.648,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,females,16-19,Non-ACF,35761,b) HIV-positive,1,0.032,1144.352,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,females,16-19,Non-ACF,35974,a) HIV-negative,1,0.032,34822.832,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,females,16-19,Non-ACF,36187,a) HIV-negative,1,0.032,35029.016,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,females,16-19,Non-ACF,36187,b) HIV-positive,1,0.032,1157.984,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,females,16-19,Non-ACF,36395,b) HIV-positive,1,0.032,1164.64,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,females,16-19,Non-ACF,36604,a) HIV-negative,1,0.032,35432.672,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,females,16-19,Non-ACF,36604,b) HIV-positive,1,0.032,1171.328,cpost-ACF,Non-ACF.cpost-ACF
+2009,1,males,16-19,Non-ACF,24354,a) HIV-negative,2,0.019,23891.274,apre-ACF,Non-ACF.apre-ACF
+2009,2,males,16-19,Non-ACF,24586,,2,0.019,,apre-ACF,Non-ACF.apre-ACF
+2009,2,males,16-19,Non-ACF,24586,a) HIV-negative,1,0.019,24118.866,apre-ACF,Non-ACF.apre-ACF
+2009,3,males,16-19,Non-ACF,24818,,1,0.019,,apre-ACF,Non-ACF.apre-ACF
+2009,3,males,16-19,Non-ACF,24818,a) HIV-negative,2,0.019,24346.458,apre-ACF,Non-ACF.apre-ACF
+2009,3,males,16-19,Non-ACF,24818,b) HIV-positive,1,0.019,471.542,apre-ACF,Non-ACF.apre-ACF
+2009,4,males,16-19,Non-ACF,25050,a) HIV-negative,3,0.019,24574.05,apre-ACF,Non-ACF.apre-ACF
+2010,1,males,16-19,Non-ACF,25281,a) HIV-negative,1,0.019,24800.661,apre-ACF,Non-ACF.apre-ACF
+2010,2,males,16-19,Non-ACF,25514,,,0.019,,apre-ACF,Non-ACF.apre-ACF
+2010,3,males,16-19,Non-ACF,25746,,2,0.019,,apre-ACF,Non-ACF.apre-ACF
+2010,3,males,16-19,Non-ACF,25746,a) HIV-negative,4,0.019,25256.826,apre-ACF,Non-ACF.apre-ACF
+2010,4,males,16-19,Non-ACF,25977,b) HIV-positive,3,0.019,493.563,apre-ACF,Non-ACF.apre-ACF
+2011,1,males,16-19,Non-ACF,26209,,1,0.019,,apre-ACF,Non-ACF.apre-ACF
+2011,2,males,16-19,Non-ACF,26441,,2,0.019,,bACF,Non-ACF.bACF
+2011,2,males,16-19,Non-ACF,26441,a) HIV-negative,3,0.019,25938.621,bACF,Non-ACF.bACF
+2011,2,males,16-19,Non-ACF,26441,b) HIV-positive,1,0.019,502.379,bACF,Non-ACF.bACF
+2011,3,males,16-19,Non-ACF,26673,,1,0.019,,bACF,Non-ACF.bACF
+2011,3,males,16-19,Non-ACF,26673,a) HIV-negative,3,0.019,26166.213,bACF,Non-ACF.bACF
+2011,3,males,16-19,Non-ACF,26673,b) HIV-positive,1,0.019,506.787,bACF,Non-ACF.bACF
+2011,4,males,16-19,Non-ACF,26905,a) HIV-negative,1,0.019,26393.805,bACF,Non-ACF.bACF
+2011,4,males,16-19,Non-ACF,26905,b) HIV-positive,1,0.019,511.195,bACF,Non-ACF.bACF
+2012,1,males,16-19,Non-ACF,27136,a) HIV-negative,1,0.019,26620.416,bACF,Non-ACF.bACF
+2012,1,males,16-19,Non-ACF,27136,b) HIV-positive,3,0.019,515.584,bACF,Non-ACF.bACF
+2012,2,males,16-19,Non-ACF,27369,,,0.019,,bACF,Non-ACF.bACF
+2012,3,males,16-19,Non-ACF,27601,,2,0.019,,bACF,Non-ACF.bACF
+2012,3,males,16-19,Non-ACF,27601,a) HIV-negative,2,0.019,27076.581,bACF,Non-ACF.bACF
+2012,3,males,16-19,Non-ACF,27601,b) HIV-positive,1,0.019,524.419,bACF,Non-ACF.bACF
+2012,4,males,16-19,Non-ACF,27832,a) HIV-negative,2,0.019,27303.192,bACF,Non-ACF.bACF
+2012,4,males,16-19,Non-ACF,27832,b) HIV-positive,2,0.019,528.808,bACF,Non-ACF.bACF
+2013,1,males,16-19,Non-ACF,28064,,1,0.019,,bACF,Non-ACF.bACF
+2013,1,males,16-19,Non-ACF,28064,a) HIV-negative,2,0.019,27530.784,bACF,Non-ACF.bACF
+2013,2,males,16-19,Non-ACF,28296,b) HIV-positive,1,0.019,537.624,bACF,Non-ACF.bACF
+2013,3,males,16-19,Non-ACF,28528,,1,0.019,,bACF,Non-ACF.bACF
+2013,3,males,16-19,Non-ACF,28528,b) HIV-positive,2,0.019,542.032,bACF,Non-ACF.bACF
+2013,4,males,16-19,Non-ACF,28760,,5,0.019,,bACF,Non-ACF.bACF
+2013,4,males,16-19,Non-ACF,28760,a) HIV-negative,1,0.019,28213.56,bACF,Non-ACF.bACF
+2013,4,males,16-19,Non-ACF,28760,b) HIV-positive,1,0.019,546.44,bACF,Non-ACF.bACF
+2014,1,males,16-19,Non-ACF,28991,a) HIV-negative,3,0.019,28440.171,bACF,Non-ACF.bACF
+2014,1,males,16-19,Non-ACF,28991,b) HIV-positive,2,0.019,550.829,bACF,Non-ACF.bACF
+2014,2,males,16-19,Non-ACF,29224,a) HIV-negative,2,0.019,28668.744,bACF,Non-ACF.bACF
+2014,3,males,16-19,Non-ACF,29456,,,0.019,,bACF,Non-ACF.bACF
+2014,4,males,16-19,Non-ACF,29687,,1,0.019,,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,males,16-19,Non-ACF,29687,a) HIV-negative,1,0.019,29122.947,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,males,16-19,Non-ACF,29919,,1,0.019,,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,males,16-19,Non-ACF,29919,b) HIV-positive,1,0.019,568.461,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,males,16-19,Non-ACF,30151,a) HIV-negative,3,0.019,29578.131,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,males,16-19,Non-ACF,30151,b) HIV-positive,1,0.019,572.869,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,males,16-19,Non-ACF,30383,,1,0.019,,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,males,16-19,Non-ACF,30383,a) HIV-negative,4,0.019,29805.723,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,males,16-19,Non-ACF,30615,a) HIV-negative,3,0.019,30033.315,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,males,16-19,Non-ACF,30615,b) HIV-positive,2,0.019,581.685,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,males,16-19,Non-ACF,30846,a) HIV-negative,1,0.019,30259.926,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,males,16-19,Non-ACF,31079,a) HIV-negative,1,0.019,30488.499,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,males,16-19,Non-ACF,31311,a) HIV-negative,1,0.019,30716.091,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,males,16-19,Non-ACF,31542,a) HIV-negative,6,0.019,30942.702,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,males,16-19,Non-ACF,31542,b) HIV-positive,3,0.019,599.298,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,males,16-19,Non-ACF,31774,a) HIV-negative,1,0.019,31170.294,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,males,16-19,Non-ACF,32006,a) HIV-negative,3,0.019,31397.886,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,males,16-19,Non-ACF,32006,b) HIV-positive,1,0.019,608.114,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,males,16-19,Non-ACF,32238,a) HIV-negative,3,0.019,31625.478,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,males,16-19,Non-ACF,32470,a) HIV-negative,1,0.019,31853.07,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,males,16-19,Non-ACF,32470,b) HIV-positive,1,0.019,616.93,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,males,16-19,Non-ACF,32701,b) HIV-positive,1,0.019,621.319,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,males,16-19,Non-ACF,32934,a) HIV-negative,2,0.019,32308.254,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,males,16-19,Non-ACF,33160,a) HIV-negative,1,0.019,32529.96,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,males,16-19,Non-ACF,33160,b) HIV-positive,1,0.019,630.04,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,males,16-19,Non-ACF,33388,a) HIV-negative,1,0.019,32753.628,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,males,16-19,Non-ACF,33388,b) HIV-positive,1,0.019,634.372,cpost-ACF,Non-ACF.cpost-ACF
+2009,1,females,20-29,Non-ACF,57454,,3,0.1,,apre-ACF,Non-ACF.apre-ACF
+2009,1,females,20-29,Non-ACF,57454,a) HIV-negative,1,0.1,51708.6,apre-ACF,Non-ACF.apre-ACF
+2009,1,females,20-29,Non-ACF,57454,b) HIV-positive,16,0.1,5745.4,apre-ACF,Non-ACF.apre-ACF
+2009,2,females,20-29,Non-ACF,57540,,1,0.1,,apre-ACF,Non-ACF.apre-ACF
+2009,2,females,20-29,Non-ACF,57540,a) HIV-negative,6,0.1,51786,apre-ACF,Non-ACF.apre-ACF
+2009,2,females,20-29,Non-ACF,57540,b) HIV-positive,8,0.1,5754,apre-ACF,Non-ACF.apre-ACF
+2009,3,females,20-29,Non-ACF,57626,,4,0.1,,apre-ACF,Non-ACF.apre-ACF
+2009,3,females,20-29,Non-ACF,57626,a) HIV-negative,9,0.1,51863.4,apre-ACF,Non-ACF.apre-ACF
+2009,3,females,20-29,Non-ACF,57626,b) HIV-positive,20,0.1,5762.6,apre-ACF,Non-ACF.apre-ACF
+2009,4,females,20-29,Non-ACF,57712,,1,0.1,,apre-ACF,Non-ACF.apre-ACF
+2009,4,females,20-29,Non-ACF,57712,a) HIV-negative,25,0.1,51940.8,apre-ACF,Non-ACF.apre-ACF
+2009,4,females,20-29,Non-ACF,57712,b) HIV-positive,16,0.1,5771.2,apre-ACF,Non-ACF.apre-ACF
+2010,1,females,20-29,Non-ACF,57798,,10,0.1,,apre-ACF,Non-ACF.apre-ACF
+2010,1,females,20-29,Non-ACF,57798,a) HIV-negative,7,0.1,52018.2,apre-ACF,Non-ACF.apre-ACF
+2010,1,females,20-29,Non-ACF,57798,b) HIV-positive,11,0.1,5779.8,apre-ACF,Non-ACF.apre-ACF
+2010,2,females,20-29,Non-ACF,57884,,3,0.1,,apre-ACF,Non-ACF.apre-ACF
+2010,2,females,20-29,Non-ACF,57884,a) HIV-negative,10,0.1,52095.6,apre-ACF,Non-ACF.apre-ACF
+2010,2,females,20-29,Non-ACF,57884,b) HIV-positive,13,0.1,5788.4,apre-ACF,Non-ACF.apre-ACF
+2010,3,females,20-29,Non-ACF,57970,,7,0.1,,apre-ACF,Non-ACF.apre-ACF
+2010,3,females,20-29,Non-ACF,57970,a) HIV-negative,5,0.1,52173,apre-ACF,Non-ACF.apre-ACF
+2010,3,females,20-29,Non-ACF,57970,b) HIV-positive,11,0.1,5797,apre-ACF,Non-ACF.apre-ACF
+2010,4,females,20-29,Non-ACF,58057,,3,0.1,,apre-ACF,Non-ACF.apre-ACF
+2010,4,females,20-29,Non-ACF,58057,a) HIV-negative,1,0.1,52251.3,apre-ACF,Non-ACF.apre-ACF
+2010,4,females,20-29,Non-ACF,58057,b) HIV-positive,7,0.1,5805.7,apre-ACF,Non-ACF.apre-ACF
+2011,1,females,20-29,Non-ACF,58142,,3,0.1,,apre-ACF,Non-ACF.apre-ACF
+2011,1,females,20-29,Non-ACF,58142,a) HIV-negative,3,0.1,52327.8,apre-ACF,Non-ACF.apre-ACF
+2011,1,females,20-29,Non-ACF,58142,b) HIV-positive,6,0.1,5814.2,apre-ACF,Non-ACF.apre-ACF
+2011,2,females,20-29,Non-ACF,58228,,3,0.1,,bACF,Non-ACF.bACF
+2011,2,females,20-29,Non-ACF,58228,a) HIV-negative,5,0.1,52405.2,bACF,Non-ACF.bACF
+2011,2,females,20-29,Non-ACF,58228,b) HIV-positive,10,0.1,5822.8,bACF,Non-ACF.bACF
+2011,3,females,20-29,Non-ACF,58314,,1,0.1,,bACF,Non-ACF.bACF
+2011,3,females,20-29,Non-ACF,58314,a) HIV-negative,14,0.1,52482.6,bACF,Non-ACF.bACF
+2011,3,females,20-29,Non-ACF,58314,b) HIV-positive,10,0.1,5831.4,bACF,Non-ACF.bACF
+2011,4,females,20-29,Non-ACF,58400,,3,0.1,,bACF,Non-ACF.bACF
+2011,4,females,20-29,Non-ACF,58400,a) HIV-negative,3,0.1,52560,bACF,Non-ACF.bACF
+2011,4,females,20-29,Non-ACF,58400,b) HIV-positive,3,0.1,5840,bACF,Non-ACF.bACF
+2012,1,females,20-29,Non-ACF,58486,,1,0.1,,bACF,Non-ACF.bACF
+2012,1,females,20-29,Non-ACF,58486,a) HIV-negative,13,0.1,52637.4,bACF,Non-ACF.bACF
+2012,1,females,20-29,Non-ACF,58486,b) HIV-positive,11,0.1,5848.6,bACF,Non-ACF.bACF
+2012,2,females,20-29,Non-ACF,58572,,2,0.1,,bACF,Non-ACF.bACF
+2012,2,females,20-29,Non-ACF,58572,a) HIV-negative,1,0.1,52714.8,bACF,Non-ACF.bACF
+2012,2,females,20-29,Non-ACF,58572,b) HIV-positive,20,0.1,5857.2,bACF,Non-ACF.bACF
+2012,3,females,20-29,Non-ACF,58658,a) HIV-negative,9,0.1,52792.2,bACF,Non-ACF.bACF
+2012,3,females,20-29,Non-ACF,58658,b) HIV-positive,11,0.1,5865.8,bACF,Non-ACF.bACF
+2012,4,females,20-29,Non-ACF,58744,,1,0.1,,bACF,Non-ACF.bACF
+2012,4,females,20-29,Non-ACF,58744,a) HIV-negative,1,0.1,52869.6,bACF,Non-ACF.bACF
+2012,4,females,20-29,Non-ACF,58744,b) HIV-positive,16,0.1,5874.4,bACF,Non-ACF.bACF
+2013,1,females,20-29,Non-ACF,58830,,4,0.1,,bACF,Non-ACF.bACF
+2013,1,females,20-29,Non-ACF,58830,a) HIV-negative,9,0.1,52947,bACF,Non-ACF.bACF
+2013,1,females,20-29,Non-ACF,58830,b) HIV-positive,13,0.1,5883,bACF,Non-ACF.bACF
+2013,2,females,20-29,Non-ACF,58916,,2,0.1,,bACF,Non-ACF.bACF
+2013,2,females,20-29,Non-ACF,58916,a) HIV-negative,5,0.1,53024.4,bACF,Non-ACF.bACF
+2013,2,females,20-29,Non-ACF,58916,b) HIV-positive,11,0.1,5891.6,bACF,Non-ACF.bACF
+2013,3,females,20-29,Non-ACF,59002,,2,0.1,,bACF,Non-ACF.bACF
+2013,3,females,20-29,Non-ACF,59002,a) HIV-negative,6,0.1,53101.8,bACF,Non-ACF.bACF
+2013,3,females,20-29,Non-ACF,59002,b) HIV-positive,13,0.1,5900.2,bACF,Non-ACF.bACF
+2013,4,females,20-29,Non-ACF,59088,,2,0.1,,bACF,Non-ACF.bACF
+2013,4,females,20-29,Non-ACF,59088,a) HIV-negative,6,0.1,53179.2,bACF,Non-ACF.bACF
+2013,4,females,20-29,Non-ACF,59088,b) HIV-positive,8,0.1,5908.8,bACF,Non-ACF.bACF
+2014,1,females,20-29,Non-ACF,59174,a) HIV-negative,6,0.1,53256.6,bACF,Non-ACF.bACF
+2014,1,females,20-29,Non-ACF,59174,b) HIV-positive,8,0.1,5917.4,bACF,Non-ACF.bACF
+2014,2,females,20-29,Non-ACF,59260,,3,0.1,,bACF,Non-ACF.bACF
+2014,2,females,20-29,Non-ACF,59260,a) HIV-negative,3,0.1,53334,bACF,Non-ACF.bACF
+2014,2,females,20-29,Non-ACF,59260,b) HIV-positive,9,0.1,5926,bACF,Non-ACF.bACF
+2014,3,females,20-29,Non-ACF,59345,,2,0.1,,bACF,Non-ACF.bACF
+2014,3,females,20-29,Non-ACF,59345,a) HIV-negative,7,0.1,53410.5,bACF,Non-ACF.bACF
+2014,3,females,20-29,Non-ACF,59345,b) HIV-positive,9,0.1,5934.5,bACF,Non-ACF.bACF
+2014,4,females,20-29,Non-ACF,59432,,2,0.1,,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,females,20-29,Non-ACF,59432,a) HIV-negative,5,0.1,53488.8,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,females,20-29,Non-ACF,59432,b) HIV-positive,16,0.1,5943.2,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,females,20-29,Non-ACF,59518,a) HIV-negative,8,0.1,53566.2,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,females,20-29,Non-ACF,59518,b) HIV-positive,13,0.1,5951.8,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,females,20-29,Non-ACF,59603,a) HIV-negative,3,0.1,53642.7,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,females,20-29,Non-ACF,59603,b) HIV-positive,13,0.1,5960.3,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,females,20-29,Non-ACF,59690,a) HIV-negative,2,0.1,53721,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,females,20-29,Non-ACF,59690,b) HIV-positive,8,0.1,5969,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,females,20-29,Non-ACF,59775,,1,0.1,,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,females,20-29,Non-ACF,59775,a) HIV-negative,4,0.1,53797.5,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,females,20-29,Non-ACF,59775,b) HIV-positive,10,0.1,5977.5,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,females,20-29,Non-ACF,59862,a) HIV-negative,5,0.1,53875.8,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,females,20-29,Non-ACF,59862,b) HIV-positive,6,0.1,5986.2,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,females,20-29,Non-ACF,59948,a) HIV-negative,4,0.1,53953.2,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,females,20-29,Non-ACF,59948,b) HIV-positive,9,0.1,5994.8,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,females,20-29,Non-ACF,60034,a) HIV-negative,2,0.1,54030.6,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,females,20-29,Non-ACF,60034,b) HIV-positive,6,0.1,6003.4,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,females,20-29,Non-ACF,60120,a) HIV-negative,7,0.1,54108,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,females,20-29,Non-ACF,60120,b) HIV-positive,11,0.1,6012,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,females,20-29,Non-ACF,60206,,1,0.1,,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,females,20-29,Non-ACF,60206,a) HIV-negative,7,0.1,54185.4,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,females,20-29,Non-ACF,60206,b) HIV-positive,11,0.1,6020.6,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,females,20-29,Non-ACF,60292,a) HIV-negative,7,0.1,54262.8,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,females,20-29,Non-ACF,60292,b) HIV-positive,12,0.1,6029.2,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,females,20-29,Non-ACF,60378,a) HIV-negative,3,0.1,54340.2,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,females,20-29,Non-ACF,60378,b) HIV-positive,6,0.1,6037.8,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,females,20-29,Non-ACF,60464,a) HIV-negative,3,0.1,54417.6,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,females,20-29,Non-ACF,60464,b) HIV-positive,5,0.1,6046.4,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,females,20-29,Non-ACF,60550,a) HIV-negative,5,0.1,54495,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,females,20-29,Non-ACF,60550,b) HIV-positive,7,0.1,6055,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,females,20-29,Non-ACF,60636,a) HIV-negative,6,0.1,54572.4,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,females,20-29,Non-ACF,60636,b) HIV-positive,5,0.1,6063.6,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,females,20-29,Non-ACF,60719,a) HIV-negative,6,0.1,54647.1,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,females,20-29,Non-ACF,60719,b) HIV-positive,7,0.1,6071.9,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,females,20-29,Non-ACF,60803,a) HIV-negative,2,0.1,54722.7,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,females,20-29,Non-ACF,60803,b) HIV-positive,4,0.1,6080.3,cpost-ACF,Non-ACF.cpost-ACF
+2009,1,males,20-29,Non-ACF,54147,,7,0.038,,apre-ACF,Non-ACF.apre-ACF
+2009,1,males,20-29,Non-ACF,54147,a) HIV-negative,4,0.038,52089.414,apre-ACF,Non-ACF.apre-ACF
+2009,1,males,20-29,Non-ACF,54147,b) HIV-positive,6,0.038,2057.586,apre-ACF,Non-ACF.apre-ACF
+2009,2,males,20-29,Non-ACF,54189,,7,0.038,,apre-ACF,Non-ACF.apre-ACF
+2009,2,males,20-29,Non-ACF,54189,a) HIV-negative,8,0.038,52129.818,apre-ACF,Non-ACF.apre-ACF
+2009,2,males,20-29,Non-ACF,54189,b) HIV-positive,7,0.038,2059.182,apre-ACF,Non-ACF.apre-ACF
+2009,3,males,20-29,Non-ACF,54231,,17,0.038,,apre-ACF,Non-ACF.apre-ACF
+2009,3,males,20-29,Non-ACF,54231,a) HIV-negative,9,0.038,52170.222,apre-ACF,Non-ACF.apre-ACF
+2009,3,males,20-29,Non-ACF,54231,b) HIV-positive,12,0.038,2060.778,apre-ACF,Non-ACF.apre-ACF
+2009,4,males,20-29,Non-ACF,54273,,4,0.038,,apre-ACF,Non-ACF.apre-ACF
+2009,4,males,20-29,Non-ACF,54273,a) HIV-negative,16,0.038,52210.626,apre-ACF,Non-ACF.apre-ACF
+2009,4,males,20-29,Non-ACF,54273,b) HIV-positive,5,0.038,2062.374,apre-ACF,Non-ACF.apre-ACF
+2010,1,males,20-29,Non-ACF,54314,,16,0.038,,apre-ACF,Non-ACF.apre-ACF
+2010,1,males,20-29,Non-ACF,54314,a) HIV-negative,8,0.038,52250.068,apre-ACF,Non-ACF.apre-ACF
+2010,1,males,20-29,Non-ACF,54314,b) HIV-positive,8,0.038,2063.932,apre-ACF,Non-ACF.apre-ACF
+2010,2,males,20-29,Non-ACF,54356,,9,0.038,,apre-ACF,Non-ACF.apre-ACF
+2010,2,males,20-29,Non-ACF,54356,a) HIV-negative,9,0.038,52290.472,apre-ACF,Non-ACF.apre-ACF
+2010,2,males,20-29,Non-ACF,54356,b) HIV-positive,14,0.038,2065.528,apre-ACF,Non-ACF.apre-ACF
+2010,3,males,20-29,Non-ACF,54398,,15,0.038,,apre-ACF,Non-ACF.apre-ACF
+2010,3,males,20-29,Non-ACF,54398,a) HIV-negative,13,0.038,52330.876,apre-ACF,Non-ACF.apre-ACF
+2010,3,males,20-29,Non-ACF,54398,b) HIV-positive,14,0.038,2067.124,apre-ACF,Non-ACF.apre-ACF
+2010,4,males,20-29,Non-ACF,54440,,9,0.038,,apre-ACF,Non-ACF.apre-ACF
+2010,4,males,20-29,Non-ACF,54440,a) HIV-negative,9,0.038,52371.28,apre-ACF,Non-ACF.apre-ACF
+2010,4,males,20-29,Non-ACF,54440,b) HIV-positive,13,0.038,2068.72,apre-ACF,Non-ACF.apre-ACF
+2011,1,males,20-29,Non-ACF,54482,,6,0.038,,apre-ACF,Non-ACF.apre-ACF
+2011,1,males,20-29,Non-ACF,54482,a) HIV-negative,7,0.038,52411.684,apre-ACF,Non-ACF.apre-ACF
+2011,1,males,20-29,Non-ACF,54482,b) HIV-positive,5,0.038,2070.316,apre-ACF,Non-ACF.apre-ACF
+2011,2,males,20-29,Non-ACF,54524,,6,0.038,,bACF,Non-ACF.bACF
+2011,2,males,20-29,Non-ACF,54524,a) HIV-negative,4,0.038,52452.088,bACF,Non-ACF.bACF
+2011,2,males,20-29,Non-ACF,54524,b) HIV-positive,10,0.038,2071.912,bACF,Non-ACF.bACF
+2011,3,males,20-29,Non-ACF,54566,,7,0.038,,bACF,Non-ACF.bACF
+2011,3,males,20-29,Non-ACF,54566,a) HIV-negative,16,0.038,52492.492,bACF,Non-ACF.bACF
+2011,3,males,20-29,Non-ACF,54566,b) HIV-positive,13,0.038,2073.508,bACF,Non-ACF.bACF
+2011,4,males,20-29,Non-ACF,54608,,4,0.038,,bACF,Non-ACF.bACF
+2011,4,males,20-29,Non-ACF,54608,a) HIV-negative,17,0.038,52532.896,bACF,Non-ACF.bACF
+2011,4,males,20-29,Non-ACF,54608,b) HIV-positive,17,0.038,2075.104,bACF,Non-ACF.bACF
+2012,1,males,20-29,Non-ACF,54649,,4,0.038,,bACF,Non-ACF.bACF
+2012,1,males,20-29,Non-ACF,54649,a) HIV-negative,10,0.038,52572.338,bACF,Non-ACF.bACF
+2012,1,males,20-29,Non-ACF,54649,b) HIV-positive,23,0.038,2076.662,bACF,Non-ACF.bACF
+2012,2,males,20-29,Non-ACF,54691,,2,0.038,,bACF,Non-ACF.bACF
+2012,2,males,20-29,Non-ACF,54691,a) HIV-negative,10,0.038,52612.742,bACF,Non-ACF.bACF
+2012,2,males,20-29,Non-ACF,54691,b) HIV-positive,16,0.038,2078.258,bACF,Non-ACF.bACF
+2012,3,males,20-29,Non-ACF,54733,,2,0.038,,bACF,Non-ACF.bACF
+2012,3,males,20-29,Non-ACF,54733,a) HIV-negative,15,0.038,52653.146,bACF,Non-ACF.bACF
+2012,3,males,20-29,Non-ACF,54733,b) HIV-positive,7,0.038,2079.854,bACF,Non-ACF.bACF
+2012,4,males,20-29,Non-ACF,54775,,3,0.038,,bACF,Non-ACF.bACF
+2012,4,males,20-29,Non-ACF,54775,a) HIV-negative,11,0.038,52693.55,bACF,Non-ACF.bACF
+2012,4,males,20-29,Non-ACF,54775,b) HIV-positive,14,0.038,2081.45,bACF,Non-ACF.bACF
+2013,1,males,20-29,Non-ACF,54817,,12,0.038,,bACF,Non-ACF.bACF
+2013,1,males,20-29,Non-ACF,54817,a) HIV-negative,16,0.038,52733.954,bACF,Non-ACF.bACF
+2013,1,males,20-29,Non-ACF,54817,b) HIV-positive,11,0.038,2083.046,bACF,Non-ACF.bACF
+2013,2,males,20-29,Non-ACF,54858,,5,0.038,,bACF,Non-ACF.bACF
+2013,2,males,20-29,Non-ACF,54858,a) HIV-negative,7,0.038,52773.396,bACF,Non-ACF.bACF
+2013,2,males,20-29,Non-ACF,54858,b) HIV-positive,14,0.038,2084.604,bACF,Non-ACF.bACF
+2013,3,males,20-29,Non-ACF,54900,,4,0.038,,bACF,Non-ACF.bACF
+2013,3,males,20-29,Non-ACF,54900,a) HIV-negative,9,0.038,52813.8,bACF,Non-ACF.bACF
+2013,3,males,20-29,Non-ACF,54900,b) HIV-positive,6,0.038,2086.2,bACF,Non-ACF.bACF
+2013,4,males,20-29,Non-ACF,54942,,6,0.038,,bACF,Non-ACF.bACF
+2013,4,males,20-29,Non-ACF,54942,a) HIV-negative,8,0.038,52854.204,bACF,Non-ACF.bACF
+2013,4,males,20-29,Non-ACF,54942,b) HIV-positive,5,0.038,2087.796,bACF,Non-ACF.bACF
+2014,1,males,20-29,Non-ACF,54984,,4,0.038,,bACF,Non-ACF.bACF
+2014,1,males,20-29,Non-ACF,54984,a) HIV-negative,15,0.038,52894.608,bACF,Non-ACF.bACF
+2014,1,males,20-29,Non-ACF,54984,b) HIV-positive,17,0.038,2089.392,bACF,Non-ACF.bACF
+2014,2,males,20-29,Non-ACF,55026,,3,0.038,,bACF,Non-ACF.bACF
+2014,2,males,20-29,Non-ACF,55026,a) HIV-negative,13,0.038,52935.012,bACF,Non-ACF.bACF
+2014,2,males,20-29,Non-ACF,55026,b) HIV-positive,15,0.038,2090.988,bACF,Non-ACF.bACF
+2014,3,males,20-29,Non-ACF,55067,,3,0.038,,bACF,Non-ACF.bACF
+2014,3,males,20-29,Non-ACF,55067,a) HIV-negative,12,0.038,52974.454,bACF,Non-ACF.bACF
+2014,3,males,20-29,Non-ACF,55067,b) HIV-positive,15,0.038,2092.546,bACF,Non-ACF.bACF
+2014,4,males,20-29,Non-ACF,55109,,3,0.038,,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,males,20-29,Non-ACF,55109,a) HIV-negative,13,0.038,53014.858,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,males,20-29,Non-ACF,55109,b) HIV-positive,12,0.038,2094.142,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,males,20-29,Non-ACF,55151,,1,0.038,,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,males,20-29,Non-ACF,55151,a) HIV-negative,7,0.038,53055.262,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,males,20-29,Non-ACF,55151,b) HIV-positive,12,0.038,2095.738,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,males,20-29,Non-ACF,55193,,2,0.038,,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,males,20-29,Non-ACF,55193,a) HIV-negative,11,0.038,53095.666,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,males,20-29,Non-ACF,55193,b) HIV-positive,11,0.038,2097.334,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,males,20-29,Non-ACF,55235,,2,0.038,,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,males,20-29,Non-ACF,55235,a) HIV-negative,14,0.038,53136.07,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,males,20-29,Non-ACF,55235,b) HIV-positive,16,0.038,2098.93,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,males,20-29,Non-ACF,55277,,1,0.038,,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,males,20-29,Non-ACF,55277,a) HIV-negative,10,0.038,53176.474,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,males,20-29,Non-ACF,55277,b) HIV-positive,3,0.038,2100.526,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,males,20-29,Non-ACF,55319,,2,0.038,,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,males,20-29,Non-ACF,55319,a) HIV-negative,14,0.038,53216.878,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,males,20-29,Non-ACF,55319,b) HIV-positive,4,0.038,2102.122,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,males,20-29,Non-ACF,55361,,1,0.038,,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,males,20-29,Non-ACF,55361,a) HIV-negative,16,0.038,53257.282,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,males,20-29,Non-ACF,55361,b) HIV-positive,5,0.038,2103.718,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,males,20-29,Non-ACF,55402,a) HIV-negative,14,0.038,53296.724,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,males,20-29,Non-ACF,55402,b) HIV-positive,12,0.038,2105.276,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,males,20-29,Non-ACF,55444,a) HIV-negative,22,0.038,53337.128,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,males,20-29,Non-ACF,55444,b) HIV-positive,15,0.038,2106.872,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,males,20-29,Non-ACF,55486,,2,0.038,,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,males,20-29,Non-ACF,55486,a) HIV-negative,22,0.038,53377.532,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,males,20-29,Non-ACF,55486,b) HIV-positive,12,0.038,2108.468,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,males,20-29,Non-ACF,55528,a) HIV-negative,20,0.038,53417.936,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,males,20-29,Non-ACF,55528,b) HIV-positive,13,0.038,2110.064,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,males,20-29,Non-ACF,55570,a) HIV-negative,13,0.038,53458.34,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,males,20-29,Non-ACF,55570,b) HIV-positive,8,0.038,2111.66,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,males,20-29,Non-ACF,55612,a) HIV-negative,7,0.038,53498.744,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,males,20-29,Non-ACF,55612,b) HIV-positive,6,0.038,2113.256,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,males,20-29,Non-ACF,55654,a) HIV-negative,6,0.038,53539.148,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,males,20-29,Non-ACF,55654,b) HIV-positive,9,0.038,2114.852,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,males,20-29,Non-ACF,55695,a) HIV-negative,11,0.038,53578.59,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,males,20-29,Non-ACF,55695,b) HIV-positive,10,0.038,2116.41,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,males,20-29,Non-ACF,55736,a) HIV-negative,6,0.038,53618.032,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,males,20-29,Non-ACF,55736,b) HIV-positive,8,0.038,2117.968,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,males,20-29,Non-ACF,55778,a) HIV-negative,11,0.038,53658.436,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,males,20-29,Non-ACF,55778,b) HIV-positive,9,0.038,2119.564,cpost-ACF,Non-ACF.cpost-ACF
+2009,1,females,30-39,Non-ACF,23326,,1,0.287,,apre-ACF,Non-ACF.apre-ACF
+2009,1,females,30-39,Non-ACF,23326,a) HIV-negative,6,0.287,16631.438,apre-ACF,Non-ACF.apre-ACF
+2009,1,females,30-39,Non-ACF,23326,b) HIV-positive,10,0.287,6694.562,apre-ACF,Non-ACF.apre-ACF
+2009,2,females,30-39,Non-ACF,23700,,2,0.287,,apre-ACF,Non-ACF.apre-ACF
+2009,2,females,30-39,Non-ACF,23700,a) HIV-negative,2,0.287,16898.1,apre-ACF,Non-ACF.apre-ACF
+2009,2,females,30-39,Non-ACF,23700,b) HIV-positive,10,0.287,6801.9,apre-ACF,Non-ACF.apre-ACF
+2009,3,females,30-39,Non-ACF,24073,a) HIV-negative,3,0.287,17164.049,apre-ACF,Non-ACF.apre-ACF
+2009,3,females,30-39,Non-ACF,24073,b) HIV-positive,19,0.287,6908.951,apre-ACF,Non-ACF.apre-ACF
+2009,4,females,30-39,Non-ACF,24447,,2,0.287,,apre-ACF,Non-ACF.apre-ACF
+2009,4,females,30-39,Non-ACF,24447,a) HIV-negative,2,0.287,17430.711,apre-ACF,Non-ACF.apre-ACF
+2009,4,females,30-39,Non-ACF,24447,b) HIV-positive,15,0.287,7016.289,apre-ACF,Non-ACF.apre-ACF
+2010,1,females,30-39,Non-ACF,24821,,3,0.287,,apre-ACF,Non-ACF.apre-ACF
+2010,1,females,30-39,Non-ACF,24821,a) HIV-negative,1,0.287,17697.373,apre-ACF,Non-ACF.apre-ACF
+2010,1,females,30-39,Non-ACF,24821,b) HIV-positive,12,0.287,7123.627,apre-ACF,Non-ACF.apre-ACF
+2010,2,females,30-39,Non-ACF,25194,,2,0.287,,apre-ACF,Non-ACF.apre-ACF
+2010,2,females,30-39,Non-ACF,25194,a) HIV-negative,1,0.287,17963.322,apre-ACF,Non-ACF.apre-ACF
+2010,2,females,30-39,Non-ACF,25194,b) HIV-positive,9,0.287,7230.678,apre-ACF,Non-ACF.apre-ACF
+2010,3,females,30-39,Non-ACF,25568,,4,0.287,,apre-ACF,Non-ACF.apre-ACF
+2010,3,females,30-39,Non-ACF,25568,a) HIV-negative,2,0.287,18229.984,apre-ACF,Non-ACF.apre-ACF
+2010,3,females,30-39,Non-ACF,25568,b) HIV-positive,13,0.287,7338.016,apre-ACF,Non-ACF.apre-ACF
+2010,4,females,30-39,Non-ACF,25941,,3,0.287,,apre-ACF,Non-ACF.apre-ACF
+2010,4,females,30-39,Non-ACF,25941,a) HIV-negative,4,0.287,18495.933,apre-ACF,Non-ACF.apre-ACF
+2010,4,females,30-39,Non-ACF,25941,b) HIV-positive,6,0.287,7445.067,apre-ACF,Non-ACF.apre-ACF
+2011,1,females,30-39,Non-ACF,26315,,2,0.287,,apre-ACF,Non-ACF.apre-ACF
+2011,1,females,30-39,Non-ACF,26315,a) HIV-negative,1,0.287,18762.595,apre-ACF,Non-ACF.apre-ACF
+2011,1,females,30-39,Non-ACF,26315,b) HIV-positive,8,0.287,7552.405,apre-ACF,Non-ACF.apre-ACF
+2011,2,females,30-39,Non-ACF,26689,,3,0.287,,bACF,Non-ACF.bACF
+2011,2,females,30-39,Non-ACF,26689,a) HIV-negative,4,0.287,19029.257,bACF,Non-ACF.bACF
+2011,2,females,30-39,Non-ACF,26689,b) HIV-positive,15,0.287,7659.743,bACF,Non-ACF.bACF
+2011,3,females,30-39,Non-ACF,27063,,1,0.287,,bACF,Non-ACF.bACF
+2011,3,females,30-39,Non-ACF,27063,a) HIV-negative,1,0.287,19295.919,bACF,Non-ACF.bACF
+2011,3,females,30-39,Non-ACF,27063,b) HIV-positive,12,0.287,7767.081,bACF,Non-ACF.bACF
+2011,4,females,30-39,Non-ACF,27436,,1,0.287,,bACF,Non-ACF.bACF
+2011,4,females,30-39,Non-ACF,27436,a) HIV-negative,2,0.287,19561.868,bACF,Non-ACF.bACF
+2011,4,females,30-39,Non-ACF,27436,b) HIV-positive,8,0.287,7874.132,bACF,Non-ACF.bACF
+2012,1,females,30-39,Non-ACF,27810,a) HIV-negative,1,0.287,19828.53,bACF,Non-ACF.bACF
+2012,1,females,30-39,Non-ACF,27810,b) HIV-positive,14,0.287,7981.47,bACF,Non-ACF.bACF
+2012,2,females,30-39,Non-ACF,28183,a) HIV-negative,3,0.287,20094.479,bACF,Non-ACF.bACF
+2012,2,females,30-39,Non-ACF,28183,b) HIV-positive,10,0.287,8088.521,bACF,Non-ACF.bACF
+2012,3,females,30-39,Non-ACF,28557,,1,0.287,,bACF,Non-ACF.bACF
+2012,3,females,30-39,Non-ACF,28557,a) HIV-negative,2,0.287,20361.141,bACF,Non-ACF.bACF
+2012,3,females,30-39,Non-ACF,28557,b) HIV-positive,19,0.287,8195.859,bACF,Non-ACF.bACF
+2012,4,females,30-39,Non-ACF,28931,,1,0.287,,bACF,Non-ACF.bACF
+2012,4,females,30-39,Non-ACF,28931,a) HIV-negative,4,0.287,20627.803,bACF,Non-ACF.bACF
+2012,4,females,30-39,Non-ACF,28931,b) HIV-positive,19,0.287,8303.197,bACF,Non-ACF.bACF
+2013,1,females,30-39,Non-ACF,29304,,2,0.287,,bACF,Non-ACF.bACF
+2013,1,females,30-39,Non-ACF,29304,a) HIV-negative,3,0.287,20893.752,bACF,Non-ACF.bACF
+2013,1,females,30-39,Non-ACF,29304,b) HIV-positive,15,0.287,8410.248,bACF,Non-ACF.bACF
+2013,2,females,30-39,Non-ACF,29678,a) HIV-negative,1,0.287,21160.414,bACF,Non-ACF.bACF
+2013,2,females,30-39,Non-ACF,29678,b) HIV-positive,13,0.287,8517.586,bACF,Non-ACF.bACF
+2013,3,females,30-39,Non-ACF,30051,a) HIV-negative,1,0.287,21426.363,bACF,Non-ACF.bACF
+2013,3,females,30-39,Non-ACF,30051,b) HIV-positive,16,0.287,8624.637,bACF,Non-ACF.bACF
+2013,4,females,30-39,Non-ACF,30425,,3,0.287,,bACF,Non-ACF.bACF
+2013,4,females,30-39,Non-ACF,30425,a) HIV-negative,3,0.287,21693.025,bACF,Non-ACF.bACF
+2013,4,females,30-39,Non-ACF,30425,b) HIV-positive,15,0.287,8731.975,bACF,Non-ACF.bACF
+2014,1,females,30-39,Non-ACF,30799,,1,0.287,,bACF,Non-ACF.bACF
+2014,1,females,30-39,Non-ACF,30799,a) HIV-negative,3,0.287,21959.687,bACF,Non-ACF.bACF
+2014,1,females,30-39,Non-ACF,30799,b) HIV-positive,18,0.287,8839.313,bACF,Non-ACF.bACF
+2014,2,females,30-39,Non-ACF,31172,a) HIV-negative,4,0.287,22225.636,bACF,Non-ACF.bACF
+2014,2,females,30-39,Non-ACF,31172,b) HIV-positive,15,0.287,8946.364,bACF,Non-ACF.bACF
+2014,3,females,30-39,Non-ACF,31546,,1,0.287,,bACF,Non-ACF.bACF
+2014,3,females,30-39,Non-ACF,31546,a) HIV-negative,3,0.287,22492.298,bACF,Non-ACF.bACF
+2014,3,females,30-39,Non-ACF,31546,b) HIV-positive,21,0.287,9053.702,bACF,Non-ACF.bACF
+2014,4,females,30-39,Non-ACF,31920,,1,0.287,,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,females,30-39,Non-ACF,31920,a) HIV-negative,1,0.287,22758.96,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,females,30-39,Non-ACF,31920,b) HIV-positive,25,0.287,9161.04,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,females,30-39,Non-ACF,32293,a) HIV-negative,3,0.287,23024.909,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,females,30-39,Non-ACF,32293,b) HIV-positive,14,0.287,9268.091,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,females,30-39,Non-ACF,32667,,1,0.287,,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,females,30-39,Non-ACF,32667,a) HIV-negative,5,0.287,23291.571,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,females,30-39,Non-ACF,32667,b) HIV-positive,11,0.287,9375.429,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,females,30-39,Non-ACF,33041,a) HIV-negative,4,0.287,23558.233,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,females,30-39,Non-ACF,33041,b) HIV-positive,7,0.287,9482.767,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,females,30-39,Non-ACF,33414,a) HIV-negative,6,0.287,23824.182,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,females,30-39,Non-ACF,33414,b) HIV-positive,14,0.287,9589.818,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,females,30-39,Non-ACF,33788,,2,0.287,,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,females,30-39,Non-ACF,33788,a) HIV-negative,3,0.287,24090.844,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,females,30-39,Non-ACF,33788,b) HIV-positive,17,0.287,9697.156,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,females,30-39,Non-ACF,34162,a) HIV-negative,3,0.287,24357.506,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,females,30-39,Non-ACF,34162,b) HIV-positive,13,0.287,9804.494,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,females,30-39,Non-ACF,34535,a) HIV-negative,3,0.287,24623.455,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,females,30-39,Non-ACF,34535,b) HIV-positive,17,0.287,9911.545,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,females,30-39,Non-ACF,34909,,3,0.287,,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,females,30-39,Non-ACF,34909,a) HIV-negative,1,0.287,24890.117,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,females,30-39,Non-ACF,34909,b) HIV-positive,12,0.287,10018.883,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,females,30-39,Non-ACF,35282,a) HIV-negative,5,0.287,25156.066,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,females,30-39,Non-ACF,35282,b) HIV-positive,11,0.287,10125.934,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,females,30-39,Non-ACF,35655,a) HIV-negative,1,0.287,25422.015,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,females,30-39,Non-ACF,35655,b) HIV-positive,13,0.287,10232.985,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,females,30-39,Non-ACF,36030,a) HIV-negative,2,0.287,25689.39,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,females,30-39,Non-ACF,36030,b) HIV-positive,18,0.287,10340.61,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,females,30-39,Non-ACF,36403,a) HIV-negative,1,0.287,25955.339,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,females,30-39,Non-ACF,36403,b) HIV-positive,8,0.287,10447.661,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,females,30-39,Non-ACF,36777,a) HIV-negative,3,0.287,26222.001,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,females,30-39,Non-ACF,36777,b) HIV-positive,7,0.287,10554.999,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,females,30-39,Non-ACF,37150,a) HIV-negative,7,0.287,26487.95,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,females,30-39,Non-ACF,37150,b) HIV-positive,4,0.287,10662.05,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,females,30-39,Non-ACF,37515,a) HIV-negative,2,0.287,26748.195,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,females,30-39,Non-ACF,37515,b) HIV-positive,3,0.287,10766.805,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,females,30-39,Non-ACF,37883,a) HIV-negative,3,0.287,27010.579,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,females,30-39,Non-ACF,37883,b) HIV-positive,3,0.287,10872.421,cpost-ACF,Non-ACF.cpost-ACF
+2009,1,males,30-39,Non-ACF,35539,,8,0.166,,apre-ACF,Non-ACF.apre-ACF
+2009,1,males,30-39,Non-ACF,35539,a) HIV-negative,2,0.166,29639.526,apre-ACF,Non-ACF.apre-ACF
+2009,1,males,30-39,Non-ACF,35539,b) HIV-positive,10,0.166,5899.474,apre-ACF,Non-ACF.apre-ACF
+2009,2,males,30-39,Non-ACF,35749,,7,0.166,,apre-ACF,Non-ACF.apre-ACF
+2009,2,males,30-39,Non-ACF,35749,a) HIV-negative,4,0.166,29814.666,apre-ACF,Non-ACF.apre-ACF
+2009,2,males,30-39,Non-ACF,35749,b) HIV-positive,25,0.166,5934.334,apre-ACF,Non-ACF.apre-ACF
+2009,3,males,30-39,Non-ACF,35958,,14,0.166,,apre-ACF,Non-ACF.apre-ACF
+2009,3,males,30-39,Non-ACF,35958,a) HIV-negative,8,0.166,29988.972,apre-ACF,Non-ACF.apre-ACF
+2009,3,males,30-39,Non-ACF,35958,b) HIV-positive,23,0.166,5969.028,apre-ACF,Non-ACF.apre-ACF
+2009,4,males,30-39,Non-ACF,36167,,4,0.166,,apre-ACF,Non-ACF.apre-ACF
+2009,4,males,30-39,Non-ACF,36167,a) HIV-negative,17,0.166,30163.278,apre-ACF,Non-ACF.apre-ACF
+2009,4,males,30-39,Non-ACF,36167,b) HIV-positive,18,0.166,6003.722,apre-ACF,Non-ACF.apre-ACF
+2010,1,males,30-39,Non-ACF,36376,,12,0.166,,apre-ACF,Non-ACF.apre-ACF
+2010,1,males,30-39,Non-ACF,36376,a) HIV-negative,8,0.166,30337.584,apre-ACF,Non-ACF.apre-ACF
+2010,1,males,30-39,Non-ACF,36376,b) HIV-positive,20,0.166,6038.416,apre-ACF,Non-ACF.apre-ACF
+2010,2,males,30-39,Non-ACF,36586,,5,0.166,,apre-ACF,Non-ACF.apre-ACF
+2010,2,males,30-39,Non-ACF,36586,a) HIV-negative,2,0.166,30512.724,apre-ACF,Non-ACF.apre-ACF
+2010,2,males,30-39,Non-ACF,36586,b) HIV-positive,12,0.166,6073.276,apre-ACF,Non-ACF.apre-ACF
+2010,3,males,30-39,Non-ACF,36796,,8,0.166,,apre-ACF,Non-ACF.apre-ACF
+2010,3,males,30-39,Non-ACF,36796,a) HIV-negative,10,0.166,30687.864,apre-ACF,Non-ACF.apre-ACF
+2010,3,males,30-39,Non-ACF,36796,b) HIV-positive,28,0.166,6108.136,apre-ACF,Non-ACF.apre-ACF
+2010,4,males,30-39,Non-ACF,37005,,6,0.166,,apre-ACF,Non-ACF.apre-ACF
+2010,4,males,30-39,Non-ACF,37005,a) HIV-negative,5,0.166,30862.17,apre-ACF,Non-ACF.apre-ACF
+2010,4,males,30-39,Non-ACF,37005,b) HIV-positive,21,0.166,6142.83,apre-ACF,Non-ACF.apre-ACF
+2011,1,males,30-39,Non-ACF,37215,,10,0.166,,apre-ACF,Non-ACF.apre-ACF
+2011,1,males,30-39,Non-ACF,37215,a) HIV-negative,6,0.166,31037.31,apre-ACF,Non-ACF.apre-ACF
+2011,1,males,30-39,Non-ACF,37215,b) HIV-positive,13,0.166,6177.69,apre-ACF,Non-ACF.apre-ACF
+2011,2,males,30-39,Non-ACF,37424,,5,0.166,,bACF,Non-ACF.bACF
+2011,2,males,30-39,Non-ACF,37424,a) HIV-negative,5,0.166,31211.616,bACF,Non-ACF.bACF
+2011,2,males,30-39,Non-ACF,37424,b) HIV-positive,16,0.166,6212.384,bACF,Non-ACF.bACF
+2011,3,males,30-39,Non-ACF,37634,,9,0.166,,bACF,Non-ACF.bACF
+2011,3,males,30-39,Non-ACF,37634,a) HIV-negative,2,0.166,31386.756,bACF,Non-ACF.bACF
+2011,3,males,30-39,Non-ACF,37634,b) HIV-positive,27,0.166,6247.244,bACF,Non-ACF.bACF
+2011,4,males,30-39,Non-ACF,37844,,5,0.166,,bACF,Non-ACF.bACF
+2011,4,males,30-39,Non-ACF,37844,a) HIV-negative,7,0.166,31561.896,bACF,Non-ACF.bACF
+2011,4,males,30-39,Non-ACF,37844,b) HIV-positive,25,0.166,6282.104,bACF,Non-ACF.bACF
+2012,1,males,30-39,Non-ACF,38053,,3,0.166,,bACF,Non-ACF.bACF
+2012,1,males,30-39,Non-ACF,38053,a) HIV-negative,10,0.166,31736.202,bACF,Non-ACF.bACF
+2012,1,males,30-39,Non-ACF,38053,b) HIV-positive,20,0.166,6316.798,bACF,Non-ACF.bACF
+2012,2,males,30-39,Non-ACF,38262,,5,0.166,,bACF,Non-ACF.bACF
+2012,2,males,30-39,Non-ACF,38262,a) HIV-negative,7,0.166,31910.508,bACF,Non-ACF.bACF
+2012,2,males,30-39,Non-ACF,38262,b) HIV-positive,27,0.166,6351.492,bACF,Non-ACF.bACF
+2012,3,males,30-39,Non-ACF,38471,,5,0.166,,bACF,Non-ACF.bACF
+2012,3,males,30-39,Non-ACF,38471,a) HIV-negative,12,0.166,32084.814,bACF,Non-ACF.bACF
+2012,3,males,30-39,Non-ACF,38471,b) HIV-positive,30,0.166,6386.186,bACF,Non-ACF.bACF
+2012,4,males,30-39,Non-ACF,38681,,6,0.166,,bACF,Non-ACF.bACF
+2012,4,males,30-39,Non-ACF,38681,a) HIV-negative,11,0.166,32259.954,bACF,Non-ACF.bACF
+2012,4,males,30-39,Non-ACF,38681,b) HIV-positive,36,0.166,6421.046,bACF,Non-ACF.bACF
+2013,1,males,30-39,Non-ACF,38891,,8,0.166,,bACF,Non-ACF.bACF
+2013,1,males,30-39,Non-ACF,38891,a) HIV-negative,10,0.166,32435.094,bACF,Non-ACF.bACF
+2013,1,males,30-39,Non-ACF,38891,b) HIV-positive,21,0.166,6455.906,bACF,Non-ACF.bACF
+2013,2,males,30-39,Non-ACF,39100,,2,0.166,,bACF,Non-ACF.bACF
+2013,2,males,30-39,Non-ACF,39100,a) HIV-negative,7,0.166,32609.4,bACF,Non-ACF.bACF
+2013,2,males,30-39,Non-ACF,39100,b) HIV-positive,32,0.166,6490.6,bACF,Non-ACF.bACF
+2013,3,males,30-39,Non-ACF,39309,,3,0.166,,bACF,Non-ACF.bACF
+2013,3,males,30-39,Non-ACF,39309,a) HIV-negative,9,0.166,32783.706,bACF,Non-ACF.bACF
+2013,3,males,30-39,Non-ACF,39309,b) HIV-positive,17,0.166,6525.294,bACF,Non-ACF.bACF
+2013,4,males,30-39,Non-ACF,39519,,3,0.166,,bACF,Non-ACF.bACF
+2013,4,males,30-39,Non-ACF,39519,a) HIV-negative,8,0.166,32958.846,bACF,Non-ACF.bACF
+2013,4,males,30-39,Non-ACF,39519,b) HIV-positive,15,0.166,6560.154,bACF,Non-ACF.bACF
+2014,1,males,30-39,Non-ACF,39729,,3,0.166,,bACF,Non-ACF.bACF
+2014,1,males,30-39,Non-ACF,39729,a) HIV-negative,15,0.166,33133.986,bACF,Non-ACF.bACF
+2014,1,males,30-39,Non-ACF,39729,b) HIV-positive,29,0.166,6595.014,bACF,Non-ACF.bACF
+2014,2,males,30-39,Non-ACF,39938,,5,0.166,,bACF,Non-ACF.bACF
+2014,2,males,30-39,Non-ACF,39938,a) HIV-negative,14,0.166,33308.292,bACF,Non-ACF.bACF
+2014,2,males,30-39,Non-ACF,39938,b) HIV-positive,28,0.166,6629.708,bACF,Non-ACF.bACF
+2014,3,males,30-39,Non-ACF,40147,,4,0.166,,bACF,Non-ACF.bACF
+2014,3,males,30-39,Non-ACF,40147,a) HIV-negative,14,0.166,33482.598,bACF,Non-ACF.bACF
+2014,3,males,30-39,Non-ACF,40147,b) HIV-positive,28,0.166,6664.402,bACF,Non-ACF.bACF
+2014,4,males,30-39,Non-ACF,40356,,1,0.166,,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,males,30-39,Non-ACF,40356,a) HIV-negative,7,0.166,33656.904,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,males,30-39,Non-ACF,40356,b) HIV-positive,26,0.166,6699.096,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,males,30-39,Non-ACF,40566,,5,0.166,,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,males,30-39,Non-ACF,40566,a) HIV-negative,6,0.166,33832.044,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,males,30-39,Non-ACF,40566,b) HIV-positive,30,0.166,6733.956,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,males,30-39,Non-ACF,40776,,4,0.166,,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,males,30-39,Non-ACF,40776,a) HIV-negative,12,0.166,34007.184,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,males,30-39,Non-ACF,40776,b) HIV-positive,25,0.166,6768.816,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,males,30-39,Non-ACF,40985,,3,0.166,,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,males,30-39,Non-ACF,40985,a) HIV-negative,8,0.166,34181.49,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,males,30-39,Non-ACF,40985,b) HIV-positive,27,0.166,6803.51,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,males,30-39,Non-ACF,41194,,2,0.166,,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,males,30-39,Non-ACF,41194,a) HIV-negative,12,0.166,34355.796,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,males,30-39,Non-ACF,41194,b) HIV-positive,27,0.166,6838.204,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,males,30-39,Non-ACF,41404,a) HIV-negative,11,0.166,34530.936,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,males,30-39,Non-ACF,41404,b) HIV-positive,24,0.166,6873.064,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,males,30-39,Non-ACF,41614,,1,0.166,,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,males,30-39,Non-ACF,41614,a) HIV-negative,9,0.166,34706.076,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,males,30-39,Non-ACF,41614,b) HIV-positive,31,0.166,6907.924,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,males,30-39,Non-ACF,41824,,1,0.166,,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,males,30-39,Non-ACF,41824,a) HIV-negative,14,0.166,34881.216,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,males,30-39,Non-ACF,41824,b) HIV-positive,33,0.166,6942.784,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,males,30-39,Non-ACF,42033,,1,0.166,,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,males,30-39,Non-ACF,42033,a) HIV-negative,14,0.166,35055.522,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,males,30-39,Non-ACF,42033,b) HIV-positive,27,0.166,6977.478,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,males,30-39,Non-ACF,42242,a) HIV-negative,10,0.166,35229.828,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,males,30-39,Non-ACF,42242,b) HIV-positive,21,0.166,7012.172,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,males,30-39,Non-ACF,42451,,1,0.166,,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,males,30-39,Non-ACF,42451,a) HIV-negative,10,0.166,35404.134,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,males,30-39,Non-ACF,42451,b) HIV-positive,23,0.166,7046.866,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,males,30-39,Non-ACF,42661,a) HIV-negative,15,0.166,35579.274,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,males,30-39,Non-ACF,42661,b) HIV-positive,27,0.166,7081.726,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,males,30-39,Non-ACF,42870,a) HIV-negative,14,0.166,35753.58,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,males,30-39,Non-ACF,42870,b) HIV-positive,20,0.166,7116.42,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,males,30-39,Non-ACF,43080,a) HIV-negative,14,0.166,35928.72,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,males,30-39,Non-ACF,43080,b) HIV-positive,13,0.166,7151.28,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,males,30-39,Non-ACF,43289,a) HIV-negative,12,0.166,36103.026,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,males,30-39,Non-ACF,43289,b) HIV-positive,15,0.166,7185.974,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,males,30-39,Non-ACF,43494,a) HIV-negative,14,0.166,36273.996,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,males,30-39,Non-ACF,43494,b) HIV-positive,22,0.166,7220.004,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,males,30-39,Non-ACF,43700,a) HIV-negative,8,0.166,36445.8,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,males,30-39,Non-ACF,43700,b) HIV-positive,20,0.166,7254.2,cpost-ACF,Non-ACF.cpost-ACF
+2009,1,females,40-49,Non-ACF,11963,,2,0.32,,apre-ACF,Non-ACF.apre-ACF
+2009,1,females,40-49,Non-ACF,11963,b) HIV-positive,3,0.32,3828.16,apre-ACF,Non-ACF.apre-ACF
+2009,2,females,40-49,Non-ACF,12152,b) HIV-positive,4,0.32,3888.64,apre-ACF,Non-ACF.apre-ACF
+2009,3,females,40-49,Non-ACF,12341,,1,0.32,,apre-ACF,Non-ACF.apre-ACF
+2009,3,females,40-49,Non-ACF,12341,b) HIV-positive,4,0.32,3949.12,apre-ACF,Non-ACF.apre-ACF
+2009,4,females,40-49,Non-ACF,12531,a) HIV-negative,3,0.32,8521.08,apre-ACF,Non-ACF.apre-ACF
+2009,4,females,40-49,Non-ACF,12531,b) HIV-positive,2,0.32,4009.92,apre-ACF,Non-ACF.apre-ACF
+2010,1,females,40-49,Non-ACF,12721,,1,0.32,,apre-ACF,Non-ACF.apre-ACF
+2010,1,females,40-49,Non-ACF,12721,a) HIV-negative,5,0.32,8650.28,apre-ACF,Non-ACF.apre-ACF
+2010,1,females,40-49,Non-ACF,12721,b) HIV-positive,3,0.32,4070.72,apre-ACF,Non-ACF.apre-ACF
+2010,2,females,40-49,Non-ACF,12910,,1,0.32,,apre-ACF,Non-ACF.apre-ACF
+2010,2,females,40-49,Non-ACF,12910,b) HIV-positive,4,0.32,4131.2,apre-ACF,Non-ACF.apre-ACF
+2010,3,females,40-49,Non-ACF,13099,,1,0.32,,apre-ACF,Non-ACF.apre-ACF
+2010,3,females,40-49,Non-ACF,13099,b) HIV-positive,2,0.32,4191.68,apre-ACF,Non-ACF.apre-ACF
+2010,4,females,40-49,Non-ACF,13288,,1,0.32,,apre-ACF,Non-ACF.apre-ACF
+2010,4,females,40-49,Non-ACF,13288,a) HIV-negative,1,0.32,9035.84,apre-ACF,Non-ACF.apre-ACF
+2010,4,females,40-49,Non-ACF,13288,b) HIV-positive,7,0.32,4252.16,apre-ACF,Non-ACF.apre-ACF
+2011,1,females,40-49,Non-ACF,13478,,1,0.32,,apre-ACF,Non-ACF.apre-ACF
+2011,1,females,40-49,Non-ACF,13478,b) HIV-positive,1,0.32,4312.96,apre-ACF,Non-ACF.apre-ACF
+2011,2,females,40-49,Non-ACF,13667,a) HIV-negative,3,0.32,9293.56,bACF,Non-ACF.bACF
+2011,2,females,40-49,Non-ACF,13667,b) HIV-positive,4,0.32,4373.44,bACF,Non-ACF.bACF
+2011,3,females,40-49,Non-ACF,13856,b) HIV-positive,5,0.32,4433.92,bACF,Non-ACF.bACF
+2011,4,females,40-49,Non-ACF,14045,,2,0.32,,bACF,Non-ACF.bACF
+2011,4,females,40-49,Non-ACF,14045,a) HIV-negative,1,0.32,9550.6,bACF,Non-ACF.bACF
+2011,4,females,40-49,Non-ACF,14045,b) HIV-positive,3,0.32,4494.4,bACF,Non-ACF.bACF
+2012,1,females,40-49,Non-ACF,14235,a) HIV-negative,1,0.32,9679.8,bACF,Non-ACF.bACF
+2012,1,females,40-49,Non-ACF,14235,b) HIV-positive,5,0.32,4555.2,bACF,Non-ACF.bACF
+2012,2,females,40-49,Non-ACF,14424,,1,0.32,,bACF,Non-ACF.bACF
+2012,2,females,40-49,Non-ACF,14424,b) HIV-positive,5,0.32,4615.68,bACF,Non-ACF.bACF
+2012,3,females,40-49,Non-ACF,14613,,2,0.32,,bACF,Non-ACF.bACF
+2012,3,females,40-49,Non-ACF,14613,b) HIV-positive,9,0.32,4676.16,bACF,Non-ACF.bACF
+2012,4,females,40-49,Non-ACF,14802,,1,0.32,,bACF,Non-ACF.bACF
+2012,4,females,40-49,Non-ACF,14802,a) HIV-negative,1,0.32,10065.36,bACF,Non-ACF.bACF
+2012,4,females,40-49,Non-ACF,14802,b) HIV-positive,5,0.32,4736.64,bACF,Non-ACF.bACF
+2013,1,females,40-49,Non-ACF,14992,,1,0.32,,bACF,Non-ACF.bACF
+2013,1,females,40-49,Non-ACF,14992,a) HIV-negative,2,0.32,10194.56,bACF,Non-ACF.bACF
+2013,1,females,40-49,Non-ACF,14992,b) HIV-positive,11,0.32,4797.44,bACF,Non-ACF.bACF
+2013,2,females,40-49,Non-ACF,15181,a) HIV-negative,1,0.32,10323.08,bACF,Non-ACF.bACF
+2013,2,females,40-49,Non-ACF,15181,b) HIV-positive,3,0.32,4857.92,bACF,Non-ACF.bACF
+2013,3,females,40-49,Non-ACF,15371,b) HIV-positive,6,0.32,4918.72,bACF,Non-ACF.bACF
+2013,4,females,40-49,Non-ACF,15560,,1,0.32,,bACF,Non-ACF.bACF
+2013,4,females,40-49,Non-ACF,15560,b) HIV-positive,6,0.32,4979.2,bACF,Non-ACF.bACF
+2014,1,females,40-49,Non-ACF,15749,b) HIV-positive,8,0.32,5039.68,bACF,Non-ACF.bACF
+2014,2,females,40-49,Non-ACF,15938,a) HIV-negative,1,0.32,10837.84,bACF,Non-ACF.bACF
+2014,2,females,40-49,Non-ACF,15938,b) HIV-positive,4,0.32,5100.16,bACF,Non-ACF.bACF
+2014,3,females,40-49,Non-ACF,16128,,2,0.32,,bACF,Non-ACF.bACF
+2014,3,females,40-49,Non-ACF,16128,a) HIV-negative,4,0.32,10967.04,bACF,Non-ACF.bACF
+2014,3,females,40-49,Non-ACF,16128,b) HIV-positive,6,0.32,5160.96,bACF,Non-ACF.bACF
+2014,4,females,40-49,Non-ACF,16317,a) HIV-negative,1,0.32,11095.56,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,females,40-49,Non-ACF,16317,b) HIV-positive,9,0.32,5221.44,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,females,40-49,Non-ACF,16506,b) HIV-positive,4,0.32,5281.92,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,females,40-49,Non-ACF,16695,a) HIV-negative,2,0.32,11352.6,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,females,40-49,Non-ACF,16695,b) HIV-positive,6,0.32,5342.4,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,females,40-49,Non-ACF,16885,a) HIV-negative,1,0.32,11481.8,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,females,40-49,Non-ACF,16885,b) HIV-positive,12,0.32,5403.2,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,females,40-49,Non-ACF,17074,,1,0.32,,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,females,40-49,Non-ACF,17074,a) HIV-negative,1,0.32,11610.32,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,females,40-49,Non-ACF,17074,b) HIV-positive,2,0.32,5463.68,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,females,40-49,Non-ACF,17263,b) HIV-positive,5,0.32,5524.16,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,females,40-49,Non-ACF,17452,b) HIV-positive,6,0.32,5584.64,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,females,40-49,Non-ACF,17642,a) HIV-negative,3,0.32,11996.56,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,females,40-49,Non-ACF,17642,b) HIV-positive,8,0.32,5645.44,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,females,40-49,Non-ACF,17832,b) HIV-positive,4,0.32,5706.24,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,females,40-49,Non-ACF,18021,b) HIV-positive,2,0.32,5766.72,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,females,40-49,Non-ACF,18210,a) HIV-negative,1,0.32,12382.8,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,females,40-49,Non-ACF,18210,b) HIV-positive,6,0.32,5827.2,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,females,40-49,Non-ACF,18399,a) HIV-negative,1,0.32,12511.32,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,females,40-49,Non-ACF,18399,b) HIV-positive,5,0.32,5887.68,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,females,40-49,Non-ACF,18588,a) HIV-negative,3,0.32,12639.84,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,females,40-49,Non-ACF,18588,b) HIV-positive,3,0.32,5948.16,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,females,40-49,Non-ACF,18778,a) HIV-negative,2,0.32,12769.04,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,females,40-49,Non-ACF,18778,b) HIV-positive,2,0.32,6008.96,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,females,40-49,Non-ACF,18967,a) HIV-negative,3,0.32,12897.56,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,females,40-49,Non-ACF,18967,b) HIV-positive,4,0.32,6069.44,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,females,40-49,Non-ACF,19151,a) HIV-negative,1,0.32,13022.68,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,females,40-49,Non-ACF,19151,b) HIV-positive,8,0.32,6128.32,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,females,40-49,Non-ACF,19338,b) HIV-positive,2,0.32,6188.16,cpost-ACF,Non-ACF.cpost-ACF
+2009,1,males,40-49,Non-ACF,15822,,3,0.22,,apre-ACF,Non-ACF.apre-ACF
+2009,1,males,40-49,Non-ACF,15822,a) HIV-negative,1,0.22,12341.16,apre-ACF,Non-ACF.apre-ACF
+2009,1,males,40-49,Non-ACF,15822,b) HIV-positive,6,0.22,3480.84,apre-ACF,Non-ACF.apre-ACF
+2009,2,males,40-49,Non-ACF,16127,,6,0.22,,apre-ACF,Non-ACF.apre-ACF
+2009,2,males,40-49,Non-ACF,16127,a) HIV-negative,3,0.22,12579.06,apre-ACF,Non-ACF.apre-ACF
+2009,2,males,40-49,Non-ACF,16127,b) HIV-positive,12,0.22,3547.94,apre-ACF,Non-ACF.apre-ACF
+2009,3,males,40-49,Non-ACF,16433,,4,0.22,,apre-ACF,Non-ACF.apre-ACF
+2009,3,males,40-49,Non-ACF,16433,a) HIV-negative,3,0.22,12817.74,apre-ACF,Non-ACF.apre-ACF
+2009,3,males,40-49,Non-ACF,16433,b) HIV-positive,12,0.22,3615.26,apre-ACF,Non-ACF.apre-ACF
+2009,4,males,40-49,Non-ACF,16738,a) HIV-negative,7,0.22,13055.64,apre-ACF,Non-ACF.apre-ACF
+2009,4,males,40-49,Non-ACF,16738,b) HIV-positive,14,0.22,3682.36,apre-ACF,Non-ACF.apre-ACF
+2010,1,males,40-49,Non-ACF,17043,,8,0.22,,apre-ACF,Non-ACF.apre-ACF
+2010,1,males,40-49,Non-ACF,17043,a) HIV-negative,3,0.22,13293.54,apre-ACF,Non-ACF.apre-ACF
+2010,1,males,40-49,Non-ACF,17043,b) HIV-positive,12,0.22,3749.46,apre-ACF,Non-ACF.apre-ACF
+2010,2,males,40-49,Non-ACF,17349,,6,0.22,,apre-ACF,Non-ACF.apre-ACF
+2010,2,males,40-49,Non-ACF,17349,a) HIV-negative,4,0.22,13532.22,apre-ACF,Non-ACF.apre-ACF
+2010,2,males,40-49,Non-ACF,17349,b) HIV-positive,3,0.22,3816.78,apre-ACF,Non-ACF.apre-ACF
+2010,3,males,40-49,Non-ACF,17654,,3,0.22,,apre-ACF,Non-ACF.apre-ACF
+2010,3,males,40-49,Non-ACF,17654,a) HIV-negative,4,0.22,13770.12,apre-ACF,Non-ACF.apre-ACF
+2010,3,males,40-49,Non-ACF,17654,b) HIV-positive,15,0.22,3883.88,apre-ACF,Non-ACF.apre-ACF
+2010,4,males,40-49,Non-ACF,17960,,1,0.22,,apre-ACF,Non-ACF.apre-ACF
+2010,4,males,40-49,Non-ACF,17960,a) HIV-negative,2,0.22,14008.8,apre-ACF,Non-ACF.apre-ACF
+2010,4,males,40-49,Non-ACF,17960,b) HIV-positive,8,0.22,3951.2,apre-ACF,Non-ACF.apre-ACF
+2011,1,males,40-49,Non-ACF,18264,,2,0.22,,apre-ACF,Non-ACF.apre-ACF
+2011,1,males,40-49,Non-ACF,18264,b) HIV-positive,6,0.22,4018.08,apre-ACF,Non-ACF.apre-ACF
+2011,2,males,40-49,Non-ACF,18571,,2,0.22,,bACF,Non-ACF.bACF
+2011,2,males,40-49,Non-ACF,18571,a) HIV-negative,2,0.22,14485.38,bACF,Non-ACF.bACF
+2011,2,males,40-49,Non-ACF,18571,b) HIV-positive,20,0.22,4085.62,bACF,Non-ACF.bACF
+2011,3,males,40-49,Non-ACF,18875,,2,0.22,,bACF,Non-ACF.bACF
+2011,3,males,40-49,Non-ACF,18875,a) HIV-negative,4,0.22,14722.5,bACF,Non-ACF.bACF
+2011,3,males,40-49,Non-ACF,18875,b) HIV-positive,14,0.22,4152.5,bACF,Non-ACF.bACF
+2011,4,males,40-49,Non-ACF,19181,,1,0.22,,bACF,Non-ACF.bACF
+2011,4,males,40-49,Non-ACF,19181,a) HIV-negative,3,0.22,14961.18,bACF,Non-ACF.bACF
+2011,4,males,40-49,Non-ACF,19181,b) HIV-positive,12,0.22,4219.82,bACF,Non-ACF.bACF
+2012,1,males,40-49,Non-ACF,19486,a) HIV-negative,3,0.22,15199.08,bACF,Non-ACF.bACF
+2012,1,males,40-49,Non-ACF,19486,b) HIV-positive,9,0.22,4286.92,bACF,Non-ACF.bACF
+2012,2,males,40-49,Non-ACF,19792,,1,0.22,,bACF,Non-ACF.bACF
+2012,2,males,40-49,Non-ACF,19792,a) HIV-negative,2,0.22,15437.76,bACF,Non-ACF.bACF
+2012,2,males,40-49,Non-ACF,19792,b) HIV-positive,8,0.22,4354.24,bACF,Non-ACF.bACF
+2012,3,males,40-49,Non-ACF,20096,,1,0.22,,bACF,Non-ACF.bACF
+2012,3,males,40-49,Non-ACF,20096,a) HIV-negative,5,0.22,15674.88,bACF,Non-ACF.bACF
+2012,3,males,40-49,Non-ACF,20096,b) HIV-positive,11,0.22,4421.12,bACF,Non-ACF.bACF
+2012,4,males,40-49,Non-ACF,20402,,2,0.22,,bACF,Non-ACF.bACF
+2012,4,males,40-49,Non-ACF,20402,a) HIV-negative,4,0.22,15913.56,bACF,Non-ACF.bACF
+2012,4,males,40-49,Non-ACF,20402,b) HIV-positive,13,0.22,4488.44,bACF,Non-ACF.bACF
+2013,1,males,40-49,Non-ACF,20707,,3,0.22,,bACF,Non-ACF.bACF
+2013,1,males,40-49,Non-ACF,20707,a) HIV-negative,1,0.22,16151.46,bACF,Non-ACF.bACF
+2013,1,males,40-49,Non-ACF,20707,b) HIV-positive,12,0.22,4555.54,bACF,Non-ACF.bACF
+2013,2,males,40-49,Non-ACF,21013,,1,0.22,,bACF,Non-ACF.bACF
+2013,2,males,40-49,Non-ACF,21013,a) HIV-negative,2,0.22,16390.14,bACF,Non-ACF.bACF
+2013,2,males,40-49,Non-ACF,21013,b) HIV-positive,9,0.22,4622.86,bACF,Non-ACF.bACF
+2013,3,males,40-49,Non-ACF,21318,,4,0.22,,bACF,Non-ACF.bACF
+2013,3,males,40-49,Non-ACF,21318,a) HIV-negative,4,0.22,16628.04,bACF,Non-ACF.bACF
+2013,3,males,40-49,Non-ACF,21318,b) HIV-positive,18,0.22,4689.96,bACF,Non-ACF.bACF
+2013,4,males,40-49,Non-ACF,21623,a) HIV-negative,1,0.22,16865.94,bACF,Non-ACF.bACF
+2013,4,males,40-49,Non-ACF,21623,b) HIV-positive,8,0.22,4757.06,bACF,Non-ACF.bACF
+2014,1,males,40-49,Non-ACF,21929,,1,0.22,,bACF,Non-ACF.bACF
+2014,1,males,40-49,Non-ACF,21929,a) HIV-negative,6,0.22,17104.62,bACF,Non-ACF.bACF
+2014,1,males,40-49,Non-ACF,21929,b) HIV-positive,16,0.22,4824.38,bACF,Non-ACF.bACF
+2014,2,males,40-49,Non-ACF,22233,,1,0.22,,bACF,Non-ACF.bACF
+2014,2,males,40-49,Non-ACF,22233,a) HIV-negative,3,0.22,17341.74,bACF,Non-ACF.bACF
+2014,2,males,40-49,Non-ACF,22233,b) HIV-positive,12,0.22,4891.26,bACF,Non-ACF.bACF
+2014,3,males,40-49,Non-ACF,22540,,1,0.22,,bACF,Non-ACF.bACF
+2014,3,males,40-49,Non-ACF,22540,a) HIV-negative,4,0.22,17581.2,bACF,Non-ACF.bACF
+2014,3,males,40-49,Non-ACF,22540,b) HIV-positive,13,0.22,4958.8,bACF,Non-ACF.bACF
+2014,4,males,40-49,Non-ACF,22844,,3,0.22,,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,males,40-49,Non-ACF,22844,a) HIV-negative,2,0.22,17818.32,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,males,40-49,Non-ACF,22844,b) HIV-positive,23,0.22,5025.68,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,males,40-49,Non-ACF,23150,a) HIV-negative,5,0.22,18057,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,males,40-49,Non-ACF,23150,b) HIV-positive,14,0.22,5093,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,males,40-49,Non-ACF,23455,,1,0.22,,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,males,40-49,Non-ACF,23455,a) HIV-negative,3,0.22,18294.9,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,males,40-49,Non-ACF,23455,b) HIV-positive,9,0.22,5160.1,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,males,40-49,Non-ACF,23761,a) HIV-negative,4,0.22,18533.58,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,males,40-49,Non-ACF,23761,b) HIV-positive,14,0.22,5227.42,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,males,40-49,Non-ACF,24065,a) HIV-negative,3,0.22,18770.7,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,males,40-49,Non-ACF,24065,b) HIV-positive,16,0.22,5294.3,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,males,40-49,Non-ACF,24371,a) HIV-negative,2,0.22,19009.38,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,males,40-49,Non-ACF,24371,b) HIV-positive,6,0.22,5361.62,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,males,40-49,Non-ACF,24677,a) HIV-negative,4,0.22,19248.06,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,males,40-49,Non-ACF,24677,b) HIV-positive,17,0.22,5428.94,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,males,40-49,Non-ACF,24982,a) HIV-negative,9,0.22,19485.96,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,males,40-49,Non-ACF,24982,b) HIV-positive,20,0.22,5496.04,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,males,40-49,Non-ACF,25287,,1,0.22,,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,males,40-49,Non-ACF,25287,a) HIV-negative,3,0.22,19723.86,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,males,40-49,Non-ACF,25287,b) HIV-positive,7,0.22,5563.14,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,males,40-49,Non-ACF,25593,a) HIV-negative,4,0.22,19962.54,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,males,40-49,Non-ACF,25593,b) HIV-positive,16,0.22,5630.46,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,males,40-49,Non-ACF,25898,a) HIV-negative,3,0.22,20200.44,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,males,40-49,Non-ACF,25898,b) HIV-positive,15,0.22,5697.56,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,males,40-49,Non-ACF,26203,a) HIV-negative,3,0.22,20438.34,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,males,40-49,Non-ACF,26203,b) HIV-positive,14,0.22,5764.66,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,males,40-49,Non-ACF,26509,a) HIV-negative,1,0.22,20677.02,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,males,40-49,Non-ACF,26509,b) HIV-positive,10,0.22,5831.98,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,males,40-49,Non-ACF,26814,a) HIV-negative,5,0.22,20914.92,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,males,40-49,Non-ACF,26814,b) HIV-positive,8,0.22,5899.08,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,males,40-49,Non-ACF,27119,a) HIV-negative,4,0.22,21152.82,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,males,40-49,Non-ACF,27119,b) HIV-positive,10,0.22,5966.18,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,males,40-49,Non-ACF,27417,a) HIV-negative,5,0.22,21385.26,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,males,40-49,Non-ACF,27417,b) HIV-positive,8,0.22,6031.74,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,males,40-49,Non-ACF,27718,a) HIV-negative,3,0.22,21620.04,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,males,40-49,Non-ACF,27718,b) HIV-positive,9,0.22,6097.96,cpost-ACF,Non-ACF.cpost-ACF
+2009,1,females,50+,Non-ACF,9845,,1,0.162,,apre-ACF,Non-ACF.apre-ACF
+2009,1,females,50+,Non-ACF,9845,b) HIV-positive,2,0.162,1594.89,apre-ACF,Non-ACF.apre-ACF
+2009,2,females,50+,Non-ACF,9977,a) HIV-negative,1,0.162,8360.726,apre-ACF,Non-ACF.apre-ACF
+2009,2,females,50+,Non-ACF,9977,b) HIV-positive,1,0.162,1616.274,apre-ACF,Non-ACF.apre-ACF
+2009,3,females,50+,Non-ACF,10107,,1,0.162,,apre-ACF,Non-ACF.apre-ACF
+2009,3,females,50+,Non-ACF,10107,a) HIV-negative,3,0.162,8469.666,apre-ACF,Non-ACF.apre-ACF
+2009,3,females,50+,Non-ACF,10107,b) HIV-positive,7,0.162,1637.334,apre-ACF,Non-ACF.apre-ACF
+2009,4,females,50+,Non-ACF,10238,a) HIV-negative,1,0.162,8579.444,apre-ACF,Non-ACF.apre-ACF
+2009,4,females,50+,Non-ACF,10238,b) HIV-positive,1,0.162,1658.556,apre-ACF,Non-ACF.apre-ACF
+2010,1,females,50+,Non-ACF,10371,,2,0.162,,apre-ACF,Non-ACF.apre-ACF
+2010,1,females,50+,Non-ACF,10371,a) HIV-negative,1,0.162,8690.898,apre-ACF,Non-ACF.apre-ACF
+2010,1,females,50+,Non-ACF,10371,b) HIV-positive,4,0.162,1680.102,apre-ACF,Non-ACF.apre-ACF
+2010,2,females,50+,Non-ACF,10502,b) HIV-positive,4,0.162,1701.324,apre-ACF,Non-ACF.apre-ACF
+2010,3,females,50+,Non-ACF,10634,a) HIV-negative,1,0.162,8911.292,apre-ACF,Non-ACF.apre-ACF
+2010,3,females,50+,Non-ACF,10634,b) HIV-positive,1,0.162,1722.708,apre-ACF,Non-ACF.apre-ACF
+2010,4,females,50+,Non-ACF,10765,b) HIV-positive,1,0.162,1743.93,apre-ACF,Non-ACF.apre-ACF
+2011,1,females,50+,Non-ACF,10897,,2,0.162,,apre-ACF,Non-ACF.apre-ACF
+2011,2,females,50+,Non-ACF,11029,a) HIV-negative,1,0.162,9242.302,bACF,Non-ACF.bACF
+2011,2,females,50+,Non-ACF,11029,b) HIV-positive,1,0.162,1786.698,bACF,Non-ACF.bACF
+2011,3,females,50+,Non-ACF,11160,,2,0.162,,bACF,Non-ACF.bACF
+2011,3,females,50+,Non-ACF,11160,a) HIV-negative,1,0.162,9352.08,bACF,Non-ACF.bACF
+2011,3,females,50+,Non-ACF,11160,b) HIV-positive,4,0.162,1807.92,bACF,Non-ACF.bACF
+2011,4,females,50+,Non-ACF,11292,b) HIV-positive,1,0.162,1829.304,bACF,Non-ACF.bACF
+2012,1,females,50+,Non-ACF,11423,,1,0.162,,bACF,Non-ACF.bACF
+2012,1,females,50+,Non-ACF,11423,b) HIV-positive,1,0.162,1850.526,bACF,Non-ACF.bACF
+2012,2,females,50+,Non-ACF,11555,,1,0.162,,bACF,Non-ACF.bACF
+2012,2,females,50+,Non-ACF,11555,a) HIV-negative,2,0.162,9683.09,bACF,Non-ACF.bACF
+2012,2,females,50+,Non-ACF,11555,b) HIV-positive,7,0.162,1871.91,bACF,Non-ACF.bACF
+2012,3,females,50+,Non-ACF,11686,,1,0.162,,bACF,Non-ACF.bACF
+2012,3,females,50+,Non-ACF,11686,a) HIV-negative,3,0.162,9792.868,bACF,Non-ACF.bACF
+2012,3,females,50+,Non-ACF,11686,b) HIV-positive,3,0.162,1893.132,bACF,Non-ACF.bACF
+2012,4,females,50+,Non-ACF,11818,,1,0.162,,bACF,Non-ACF.bACF
+2012,4,females,50+,Non-ACF,11818,b) HIV-positive,2,0.162,1914.516,bACF,Non-ACF.bACF
+2013,1,females,50+,Non-ACF,11950,,1,0.162,,bACF,Non-ACF.bACF
+2013,1,females,50+,Non-ACF,11950,a) HIV-negative,1,0.162,10014.1,bACF,Non-ACF.bACF
+2013,1,females,50+,Non-ACF,11950,b) HIV-positive,4,0.162,1935.9,bACF,Non-ACF.bACF
+2013,2,females,50+,Non-ACF,12081,a) HIV-negative,3,0.162,10123.878,bACF,Non-ACF.bACF
+2013,2,females,50+,Non-ACF,12081,b) HIV-positive,6,0.162,1957.122,bACF,Non-ACF.bACF
+2013,3,females,50+,Non-ACF,12212,,2,0.162,,bACF,Non-ACF.bACF
+2013,3,females,50+,Non-ACF,12212,a) HIV-negative,4,0.162,10233.656,bACF,Non-ACF.bACF
+2013,3,females,50+,Non-ACF,12212,b) HIV-positive,3,0.162,1978.344,bACF,Non-ACF.bACF
+2013,4,females,50+,Non-ACF,12344,,1,0.162,,bACF,Non-ACF.bACF
+2013,4,females,50+,Non-ACF,12344,a) HIV-negative,1,0.162,10344.272,bACF,Non-ACF.bACF
+2013,4,females,50+,Non-ACF,12344,b) HIV-positive,3,0.162,1999.728,bACF,Non-ACF.bACF
+2014,1,females,50+,Non-ACF,12475,,1,0.162,,bACF,Non-ACF.bACF
+2014,1,females,50+,Non-ACF,12475,a) HIV-negative,1,0.162,10454.05,bACF,Non-ACF.bACF
+2014,1,females,50+,Non-ACF,12475,b) HIV-positive,6,0.162,2020.95,bACF,Non-ACF.bACF
+2014,2,females,50+,Non-ACF,12607,,1,0.162,,bACF,Non-ACF.bACF
+2014,2,females,50+,Non-ACF,12607,a) HIV-negative,3,0.162,10564.666,bACF,Non-ACF.bACF
+2014,2,females,50+,Non-ACF,12607,b) HIV-positive,4,0.162,2042.334,bACF,Non-ACF.bACF
+2014,3,females,50+,Non-ACF,12738,a) HIV-negative,1,0.162,10674.444,bACF,Non-ACF.bACF
+2014,3,females,50+,Non-ACF,12738,b) HIV-positive,6,0.162,2063.556,bACF,Non-ACF.bACF
+2014,4,females,50+,Non-ACF,12870,a) HIV-negative,5,0.162,10785.06,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,females,50+,Non-ACF,12870,b) HIV-positive,4,0.162,2084.94,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,females,50+,Non-ACF,13002,a) HIV-negative,2,0.162,10895.676,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,females,50+,Non-ACF,13002,b) HIV-positive,2,0.162,2106.324,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,females,50+,Non-ACF,13133,,1,0.162,,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,females,50+,Non-ACF,13133,b) HIV-positive,1,0.162,2127.546,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,females,50+,Non-ACF,13265,,1,0.162,,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,females,50+,Non-ACF,13265,a) HIV-negative,1,0.162,11116.07,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,females,50+,Non-ACF,13265,b) HIV-positive,4,0.162,2148.93,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,females,50+,Non-ACF,13396,a) HIV-negative,1,0.162,11225.848,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,females,50+,Non-ACF,13396,b) HIV-positive,5,0.162,2170.152,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,females,50+,Non-ACF,13528,,1,0.162,,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,females,50+,Non-ACF,13528,b) HIV-positive,3,0.162,2191.536,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,females,50+,Non-ACF,13660,b) HIV-positive,3,0.162,2212.92,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,females,50+,Non-ACF,13791,a) HIV-negative,2,0.162,11556.858,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,females,50+,Non-ACF,13791,b) HIV-positive,5,0.162,2234.142,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,females,50+,Non-ACF,13923,a) HIV-negative,3,0.162,11667.474,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,females,50+,Non-ACF,13923,b) HIV-positive,3,0.162,2255.526,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,females,50+,Non-ACF,14055,a) HIV-negative,2,0.162,11778.09,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,females,50+,Non-ACF,14055,b) HIV-positive,2,0.162,2276.91,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,females,50+,Non-ACF,14186,a) HIV-negative,5,0.162,11887.868,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,females,50+,Non-ACF,14186,b) HIV-positive,3,0.162,2298.132,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,females,50+,Non-ACF,14317,a) HIV-negative,1,0.162,11997.646,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,females,50+,Non-ACF,14317,b) HIV-positive,7,0.162,2319.354,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,females,50+,Non-ACF,14449,,1,0.162,,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,females,50+,Non-ACF,14449,a) HIV-negative,2,0.162,12108.262,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,females,50+,Non-ACF,14449,b) HIV-positive,1,0.162,2340.738,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,females,50+,Non-ACF,14581,a) HIV-negative,2,0.162,12218.878,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,females,50+,Non-ACF,14581,b) HIV-positive,5,0.162,2362.122,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,females,50+,Non-ACF,14712,a) HIV-negative,4,0.162,12328.656,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,females,50+,Non-ACF,14712,b) HIV-positive,1,0.162,2383.344,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,females,50+,Non-ACF,14840,a) HIV-negative,1,0.162,12435.92,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,females,50+,Non-ACF,14840,b) HIV-positive,1,0.162,2404.08,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,females,50+,Non-ACF,14970,,,0.162,,cpost-ACF,Non-ACF.cpost-ACF
+2009,1,males,50+,Non-ACF,14904,,5,0.174,,apre-ACF,Non-ACF.apre-ACF
+2009,1,males,50+,Non-ACF,14904,a) HIV-negative,1,0.174,12310.704,apre-ACF,Non-ACF.apre-ACF
+2009,1,males,50+,Non-ACF,14904,b) HIV-positive,3,0.174,2593.296,apre-ACF,Non-ACF.apre-ACF
+2009,2,males,50+,Non-ACF,15035,,3,0.174,,apre-ACF,Non-ACF.apre-ACF
+2009,2,males,50+,Non-ACF,15035,a) HIV-negative,2,0.174,12418.91,apre-ACF,Non-ACF.apre-ACF
+2009,2,males,50+,Non-ACF,15035,b) HIV-positive,3,0.174,2616.09,apre-ACF,Non-ACF.apre-ACF
+2009,3,males,50+,Non-ACF,15164,,3,0.174,,apre-ACF,Non-ACF.apre-ACF
+2009,3,males,50+,Non-ACF,15164,a) HIV-negative,1,0.174,12525.464,apre-ACF,Non-ACF.apre-ACF
+2009,3,males,50+,Non-ACF,15164,b) HIV-positive,5,0.174,2638.536,apre-ACF,Non-ACF.apre-ACF
+2009,4,males,50+,Non-ACF,15294,a) HIV-negative,6,0.174,12632.844,apre-ACF,Non-ACF.apre-ACF
+2009,4,males,50+,Non-ACF,15294,b) HIV-positive,6,0.174,2661.156,apre-ACF,Non-ACF.apre-ACF
+2010,1,males,50+,Non-ACF,15424,,3,0.174,,apre-ACF,Non-ACF.apre-ACF
+2010,1,males,50+,Non-ACF,15424,a) HIV-negative,1,0.174,12740.224,apre-ACF,Non-ACF.apre-ACF
+2010,1,males,50+,Non-ACF,15424,b) HIV-positive,5,0.174,2683.776,apre-ACF,Non-ACF.apre-ACF
+2010,2,males,50+,Non-ACF,15555,,2,0.174,,apre-ACF,Non-ACF.apre-ACF
+2010,2,males,50+,Non-ACF,15555,a) HIV-negative,3,0.174,12848.43,apre-ACF,Non-ACF.apre-ACF
+2010,2,males,50+,Non-ACF,15555,b) HIV-positive,2,0.174,2706.57,apre-ACF,Non-ACF.apre-ACF
+2010,3,males,50+,Non-ACF,15685,,2,0.174,,apre-ACF,Non-ACF.apre-ACF
+2010,3,males,50+,Non-ACF,15685,a) HIV-negative,2,0.174,12955.81,apre-ACF,Non-ACF.apre-ACF
+2010,3,males,50+,Non-ACF,15685,b) HIV-positive,5,0.174,2729.19,apre-ACF,Non-ACF.apre-ACF
+2010,4,males,50+,Non-ACF,15815,,2,0.174,,apre-ACF,Non-ACF.apre-ACF
+2010,4,males,50+,Non-ACF,15815,a) HIV-negative,1,0.174,13063.19,apre-ACF,Non-ACF.apre-ACF
+2010,4,males,50+,Non-ACF,15815,b) HIV-positive,3,0.174,2751.81,apre-ACF,Non-ACF.apre-ACF
+2011,1,males,50+,Non-ACF,15945,,1,0.174,,apre-ACF,Non-ACF.apre-ACF
+2011,1,males,50+,Non-ACF,15945,b) HIV-positive,1,0.174,2774.43,apre-ACF,Non-ACF.apre-ACF
+2011,2,males,50+,Non-ACF,16074,a) HIV-negative,2,0.174,13277.124,bACF,Non-ACF.bACF
+2011,2,males,50+,Non-ACF,16074,b) HIV-positive,6,0.174,2796.876,bACF,Non-ACF.bACF
+2011,3,males,50+,Non-ACF,16205,a) HIV-negative,4,0.174,13385.33,bACF,Non-ACF.bACF
+2011,3,males,50+,Non-ACF,16205,b) HIV-positive,3,0.174,2819.67,bACF,Non-ACF.bACF
+2011,4,males,50+,Non-ACF,16335,,1,0.174,,bACF,Non-ACF.bACF
+2011,4,males,50+,Non-ACF,16335,a) HIV-negative,2,0.174,13492.71,bACF,Non-ACF.bACF
+2011,4,males,50+,Non-ACF,16335,b) HIV-positive,7,0.174,2842.29,bACF,Non-ACF.bACF
+2012,1,males,50+,Non-ACF,16466,,1,0.174,,bACF,Non-ACF.bACF
+2012,1,males,50+,Non-ACF,16466,a) HIV-negative,2,0.174,13600.916,bACF,Non-ACF.bACF
+2012,1,males,50+,Non-ACF,16466,b) HIV-positive,7,0.174,2865.084,bACF,Non-ACF.bACF
+2012,2,males,50+,Non-ACF,16595,,1,0.174,,bACF,Non-ACF.bACF
+2012,2,males,50+,Non-ACF,16595,a) HIV-negative,3,0.174,13707.47,bACF,Non-ACF.bACF
+2012,2,males,50+,Non-ACF,16595,b) HIV-positive,5,0.174,2887.53,bACF,Non-ACF.bACF
+2012,3,males,50+,Non-ACF,16725,,2,0.174,,bACF,Non-ACF.bACF
+2012,3,males,50+,Non-ACF,16725,b) HIV-positive,6,0.174,2910.15,bACF,Non-ACF.bACF
+2012,4,males,50+,Non-ACF,16855,,1,0.174,,bACF,Non-ACF.bACF
+2012,4,males,50+,Non-ACF,16855,b) HIV-positive,3,0.174,2932.77,bACF,Non-ACF.bACF
+2013,1,males,50+,Non-ACF,16986,a) HIV-negative,1,0.174,14030.436,bACF,Non-ACF.bACF
+2013,1,males,50+,Non-ACF,16986,b) HIV-positive,5,0.174,2955.564,bACF,Non-ACF.bACF
+2013,2,males,50+,Non-ACF,17116,,2,0.174,,bACF,Non-ACF.bACF
+2013,2,males,50+,Non-ACF,17116,a) HIV-negative,6,0.174,14137.816,bACF,Non-ACF.bACF
+2013,2,males,50+,Non-ACF,17116,b) HIV-positive,9,0.174,2978.184,bACF,Non-ACF.bACF
+2013,3,males,50+,Non-ACF,17246,,2,0.174,,bACF,Non-ACF.bACF
+2013,3,males,50+,Non-ACF,17246,a) HIV-negative,2,0.174,14245.196,bACF,Non-ACF.bACF
+2013,3,males,50+,Non-ACF,17246,b) HIV-positive,7,0.174,3000.804,bACF,Non-ACF.bACF
+2013,4,males,50+,Non-ACF,17376,,1,0.174,,bACF,Non-ACF.bACF
+2013,4,males,50+,Non-ACF,17376,a) HIV-negative,2,0.174,14352.576,bACF,Non-ACF.bACF
+2013,4,males,50+,Non-ACF,17376,b) HIV-positive,5,0.174,3023.424,bACF,Non-ACF.bACF
+2014,1,males,50+,Non-ACF,17506,,1,0.174,,bACF,Non-ACF.bACF
+2014,1,males,50+,Non-ACF,17506,a) HIV-negative,6,0.174,14459.956,bACF,Non-ACF.bACF
+2014,1,males,50+,Non-ACF,17506,b) HIV-positive,3,0.174,3046.044,bACF,Non-ACF.bACF
+2014,2,males,50+,Non-ACF,17636,,2,0.174,,bACF,Non-ACF.bACF
+2014,2,males,50+,Non-ACF,17636,a) HIV-negative,4,0.174,14567.336,bACF,Non-ACF.bACF
+2014,2,males,50+,Non-ACF,17636,b) HIV-positive,7,0.174,3068.664,bACF,Non-ACF.bACF
+2014,3,males,50+,Non-ACF,17766,,1,0.174,,bACF,Non-ACF.bACF
+2014,3,males,50+,Non-ACF,17766,a) HIV-negative,3,0.174,14674.716,bACF,Non-ACF.bACF
+2014,3,males,50+,Non-ACF,17766,b) HIV-positive,8,0.174,3091.284,bACF,Non-ACF.bACF
+2014,4,males,50+,Non-ACF,17897,,1,0.174,,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,males,50+,Non-ACF,17897,a) HIV-negative,6,0.174,14782.922,cpost-ACF,Non-ACF.cpost-ACF
+2014,4,males,50+,Non-ACF,17897,b) HIV-positive,14,0.174,3114.078,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,males,50+,Non-ACF,18026,a) HIV-negative,7,0.174,14889.476,cpost-ACF,Non-ACF.cpost-ACF
+2015,1,males,50+,Non-ACF,18026,b) HIV-positive,7,0.174,3136.524,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,males,50+,Non-ACF,18156,,2,0.174,,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,males,50+,Non-ACF,18156,a) HIV-negative,2,0.174,14996.856,cpost-ACF,Non-ACF.cpost-ACF
+2015,2,males,50+,Non-ACF,18156,b) HIV-positive,6,0.174,3159.144,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,males,50+,Non-ACF,18287,,1,0.174,,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,males,50+,Non-ACF,18287,a) HIV-negative,4,0.174,15105.062,cpost-ACF,Non-ACF.cpost-ACF
+2015,3,males,50+,Non-ACF,18287,b) HIV-positive,5,0.174,3181.938,cpost-ACF,Non-ACF.cpost-ACF
+2015,4,males,50+,Non-ACF,18417,b) HIV-positive,4,0.174,3204.558,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,males,50+,Non-ACF,18547,,1,0.174,,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,males,50+,Non-ACF,18547,a) HIV-negative,3,0.174,15319.822,cpost-ACF,Non-ACF.cpost-ACF
+2016,1,males,50+,Non-ACF,18547,b) HIV-positive,4,0.174,3227.178,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,males,50+,Non-ACF,18677,a) HIV-negative,3,0.174,15427.202,cpost-ACF,Non-ACF.cpost-ACF
+2016,2,males,50+,Non-ACF,18677,b) HIV-positive,5,0.174,3249.798,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,males,50+,Non-ACF,18807,a) HIV-negative,1,0.174,15534.582,cpost-ACF,Non-ACF.cpost-ACF
+2016,3,males,50+,Non-ACF,18807,b) HIV-positive,5,0.174,3272.418,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,males,50+,Non-ACF,18937,a) HIV-negative,1,0.174,15641.962,cpost-ACF,Non-ACF.cpost-ACF
+2016,4,males,50+,Non-ACF,18937,b) HIV-positive,5,0.174,3295.038,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,males,50+,Non-ACF,19068,a) HIV-negative,2,0.174,15750.168,cpost-ACF,Non-ACF.cpost-ACF
+2017,1,males,50+,Non-ACF,19068,b) HIV-positive,1,0.174,3317.832,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,males,50+,Non-ACF,19198,a) HIV-negative,5,0.174,15857.548,cpost-ACF,Non-ACF.cpost-ACF
+2017,2,males,50+,Non-ACF,19198,b) HIV-positive,5,0.174,3340.452,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,males,50+,Non-ACF,19328,a) HIV-negative,6,0.174,15964.928,cpost-ACF,Non-ACF.cpost-ACF
+2017,3,males,50+,Non-ACF,19328,b) HIV-positive,4,0.174,3363.072,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,males,50+,Non-ACF,19457,a) HIV-negative,1,0.174,16071.482,cpost-ACF,Non-ACF.cpost-ACF
+2017,4,males,50+,Non-ACF,19457,b) HIV-positive,2,0.174,3385.518,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,males,50+,Non-ACF,19588,a) HIV-negative,2,0.174,16179.688,cpost-ACF,Non-ACF.cpost-ACF
+2018,1,males,50+,Non-ACF,19588,b) HIV-positive,3,0.174,3408.312,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,males,50+,Non-ACF,19718,a) HIV-negative,5,0.174,16287.068,cpost-ACF,Non-ACF.cpost-ACF
+2018,2,males,50+,Non-ACF,19718,b) HIV-positive,4,0.174,3430.932,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,males,50+,Non-ACF,19846,a) HIV-negative,2,0.174,16392.796,cpost-ACF,Non-ACF.cpost-ACF
+2018,3,males,50+,Non-ACF,19846,b) HIV-positive,2,0.174,3453.204,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,males,50+,Non-ACF,19974,a) HIV-negative,1,0.174,16498.524,cpost-ACF,Non-ACF.cpost-ACF
+2018,4,males,50+,Non-ACF,19974,b) HIV-positive,6,0.174,3475.476,cpost-ACF,Non-ACF.cpost-ACF

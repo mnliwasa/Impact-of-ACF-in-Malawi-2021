@@ -1,0 +1,460 @@
+---
+title: "Part 3 - population denominators"
+author: "Dr Marriott Nliwasa"
+date: "23/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Census data
+
+Import the census datasets
+
+```{r}
+blantyre_census_2008_2018 <- read_xlsx(here("data-raw/2019-06-26_blantyre_census.xlsx"))
+
+glimpse(blantyre_census_2008_2018)
+
+```
+
+save the census data
+
+```{r}
+
+usethis::use_data(blantyre_census_2008_2018, overwrite = TRUE)
+
+```
+
+
+Now interpolate population for each age and sex band assuming a constanst population growth over the 10y period
+
+```{r}
+
+#Get the census data into long format
+#note, we are assuming that population estimates are mid-year i.e. at end of Q2
+blantyre_census_2008_2018_2 <- blantyre_census_2008_2018 %>%
+  mutate(quarter = 2) %>%
+  mutate(year_q = paste(Year, quarter, sep=".")) %>%
+  janitor::clean_names() %>%
+  ungroup() %>%
+  gather(sex, population, -district, -year, -age, -quarter, -year_q)
+
+#get the age levels.
+ages <- blantyre_census_2008_2018_2 %>%
+  select(age) %>%
+  distinct() %>%
+  pull()
+
+#get the levels of other variables
+sexes <- c("total","males", "females")
+years <- 2008:2018
+quarters <- 1:4
+districts <- c("Blantyre City", "Blantyre Rural")
+
+#expand to get all combinations
+census_by_q <- crossing(year = years,
+                        quarter = quarters, 
+                        age = ages,
+                        sex = sexes,
+                        district = districts
+                        )
+
+#make the year_q variable
+census_by_q <- census_by_q %>%
+  mutate(year_q = paste(year, quarter, sep="."))
+
+#merge to give the quarters inbetween census with no estimates
+blantyre_census_by_q <- full_join(blantyre_census_2008_2018_2, census_by_q, by= c("year", "year_q", "quarter", "district", "age", "sex"))
+
+#now do the linear interpolation
+blantyre_census_by_q <- blantyre_census_by_q %>%
+  filter(year_q !="2008.1" & year_q !="2018.3" & year_q !="2018.4") %>%
+  arrange(year_q, age, sex) %>%
+  group_by(age, sex, district) %>%
+  mutate(population = round(na.approx(population))) 
+
+#Need to remove some white space from the 75+ age group name
+blantyre_census_by_q <- blantyre_census_by_q %>%
+  ungroup() %>%
+  mutate(age = str_trim(age))
+
+blantyre_census_by_q %>% 
+  janitor::tabyl(age)
+
+#Now need to project forwards for each age-sex district group for the last 2 quarters of 2018.
+qs_2018 <- crossing(
+  year = 2018,
+  quarter = 3:4,
+  age = ages,
+  sex = sexes,
+  district = districts,
+  population = NA_character_
+)
+
+qs_2018 <- qs_2018 %>%
+  mutate(age = str_trim(age))
+
+#make the year_q variable
+qs_2018 <- qs_2018 %>%
+  mutate(year_q = paste(year, quarter, sep="."))
+
+#bind onto the existing census estimates
+blantyre_census_by_q <- blantyre_census_by_q %>%
+  bind_rows(qs_2018)
+
+#now estimate the change per quarter for each age-sex group
+growth_rates <- blantyre_census_by_q %>%
+  ungroup() %>%
+  janitor::clean_names() %>%
+  filter(year_q %in% c("2008.2", "2018.2")) %>%
+  arrange(year_q, age, sex, district) %>%
+  group_by(age, sex, district) %>%
+  mutate(pop_diff = population - lag(population)) %>%
+  mutate(pct_change = (pop_diff/population)/41) %>%
+  mutate(check = round((lag(population) * pct_change) + lag(population))) %>%
+  select(district, age, sex, pct_change) %>%
+  filter(!is.na(pct_change))
+
+
+blantyre_census_by_q <- blantyre_census_by_q %>%
+  left_join(growth_rates)
+
+blantyre_census_by_q <- blantyre_census_by_q %>%
+  ungroup() %>%
+  group_by(district, age, sex) %>%
+  mutate(population = case_when(is.na(population) ~ round((lag(population)*pct_change) + lag(population)),
+                                TRUE ~ population)) %>%
+ mutate(population = case_when(is.na(population) ~ round((lag(population)*pct_change) + lag(population)),
+                                TRUE ~ population))
+
+
+#did that work???
+blantyre_census_by_q %>%
+  ggplot() +
+  geom_line(aes(x=year_q, y=population, group=age, colour=age)) +
+  facet_grid(sex~district, scales="free_y") +
+  theme_classic(base_family = "Open Sans Condensed Light") +
+  theme(axis.text.x=element_text(angle=45, hjust=1))
+
+blantyre_census_by_q %>%
+  filter(district=="Blantyre City") %>%
+  ggplot() +
+  geom_line(aes(x=year_q, y=population, group=age, colour=age)) +
+  facet_wrap(sex~.) +
+  theme_classic(base_family = "Open Sans Condensed Light") +
+  theme(axis.text.x=element_text(angle=45, hjust=1))
+
+blantyre_census_by_q %>%
+  filter(district=="Blantyre Rural") %>%
+  ggplot() +
+  geom_line(aes(x=year_q, y=population, group=age, colour=age)) +
+  facet_wrap(sex~.) +
+  theme_classic(base_family = "Open Sans Condensed Light") +
+  theme(axis.text.x=element_text(angle=45, hjust=1))
+
+#Some sanity checks
+blantyre_census_by_q %>%  
+  filter(year_q !="2008.2") %>%
+  group_by(year, district, age, sex) %>%
+  summarise(population = sum(population))
+
+#Some sanity checks
+blantyre_census_by_q %>%  
+  filter(year_q =="2018.4") %>%
+  group_by(district, sex) %>%
+  summarise(population = sum(population))
+
+#Some sanity checks
+blantyre_census_by_q %>%  
+  filter(year_q =="2018.4") %>%
+  group_by(district, age) %>%
+  summarise(population = sum(population))
+
+blantyre_census_by_q %>%  
+  filter(year_q =="2018.4") %>%
+  filter(sex != "total") %>%
+  group_by(district) %>%
+  summarise(population = sum(population))
+
+blantyre_census_by_q <- blantyre_census_by_q %>%
+  ungroup() %>%
+  select(-pct_change)
+
+```
+
+Save the census dataset
+
+```{r}
+
+use_data(blantyre_census_by_q, overwrite = TRUE)
+
+```
+
+#HIV prevalence estimates
+
+```{r}
+hivprev <- tribble(
+  ~sex, ~age, ~hiv_prev,
+  "males", "16-19", 0.019,
+  "females", "16-19", 0.032,
+  "males", "20-29", 0.038,
+  "females", "20-29", 0.100,
+  "males", "30-39", 0.166,
+  "females", "30-39", 0.287,
+  "males", "40-49", 0.220,
+  "females", "40-49", 0.320,
+  "males", "50+", 0.174,
+  "females", "50+", 0.162
+)
+
+#get some denominators
+
+keep_ages <- c("15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49", "50-54",
+               "55-59", "60-64", "65-69", "70-74", "75+")
+
+hiv_pops_blantyre_city <- blantyre_census_by_q %>%
+  filter(age %in% keep_ages) %>%
+  filter(district=="Blantyre City") %>%
+  filter(sex != "total") %>%
+  mutate(age = case_when(age=="15-19" ~ "16-19",
+                                age=="20-24" ~ "20-29",
+                                age=="25-29" ~ "20-29",
+                                age=="30-34" ~ "30-39",
+                                age=="35-39" ~ "30-39",
+                                age=="40-44" ~ "40-49",
+                                age=="45-49" ~ "40-49",
+                                age=="50-54" ~ "50+",
+                                age=="55-59" ~ "50+",
+                                age=="60-64" ~ "50+",
+                                age=="65-69" ~ "50+",
+                                age=="70-74" ~ "50+",
+                                age=="75+" ~ "50+")) %>%
+  group_by(year_q, sex, age) %>%
+  summarise(population = sum(population))
+
+hiv_pops_blantyre_city <- left_join(hiv_pops_blantyre_city, hivprev, by=c("age", "sex"))
+
+hiv_pops_blantyre_city <- hiv_pops_blantyre_city %>%
+  mutate(hiv_positive_pop = round(population*hiv_prev),
+         hiv_negative_pop = population-hiv_positive_pop) %>%
+  separate(year_q, into = c("year", "quarter"), remove = FALSE)
+
+hiv_pops_blantyre_city <- hiv_pops_blantyre_city %>%
+  rename(total= population, hiv_pos=hiv_positive_pop, hiv_neg = hiv_negative_pop) %>%
+  gather(hiv, population, -year_q, -year, -quarter, -sex, -age, -hiv_prev) %>%
+  filter(hiv != "total")
+
+#Some sanity checks
+#Does the total population match the population of Blantyre City
+
+hiv_pops_blantyre_city %>%
+  ggplot() +
+  geom_bar(aes(x=age, y=population, group=hiv, fill=hiv), stat="identity") +
+  facet_wrap(sex ~ year_q) + theme_minimal()
+
+use_data(hiv_pops_blantyre_city, overwrite = TRUE)
+```
+
+Merge in the case notification data
+
+```{r}
+#merge the HIV pops to the age-sex-quarter groups
+hiv_cnrs <- hiv_pops_blantyre_city %>%
+  mutate(hiv = case_when(hiv=="hiv_pos" ~ "b) HIV-positive",
+                         hiv=="hiv_neg" ~ "a) HIV-negative")) %>%
+  filter(year !="2008")
+
+#TODO Here consider multiple imuptation for HIV status
+
+#sort out the TB case notifications by correct age groups and HIV status
+hiv_tb_cases_2011_2018 <-all_cases_2009_2018mn2 %>%
+  select(year, quarter, year_q, age, sex, hiv, acf) %>%
+  mutate(sex = case_when(sex=="Male" ~ "males",
+                         sex=="Female" ~ "females")) %>%
+  filter(age>15) %>%
+  mutate(age = case_when(age >15 & age <=19 ~ "16-19",
+                         age >=20 & age <=29 ~ "20-29",
+                         age >=30 & age <=39 ~ "30-39",
+                         age >=40 & age <=49 ~ "40-49",
+                         age >=50 ~ "50+")) %>%
+  group_by(year_q, sex, age, hiv) %>%
+  count() %>%
+  ungroup() %>%
+  mutate(hiv = case_when(is.na(hiv) ~ "c) HIV unknown",
+                         TRUE ~ hiv)) %>%
+  separate(year_q, into=c("year", "quarter"), remove = FALSE) %>%
+  filter(year !="2008")
+
+hiv_cnrs <- left_join(hiv_cnrs, hiv_tb_cases_2011_2018, 
+                      by=c("year_q","year", "quarter", "sex", "age", "hiv"))
+
+
+
+```
+	Now merge TB cases onto the acf demographies
+
+```{r}
+
+acf_pops <- read_xlsx(here("data-raw/acf_pops.xlsx"))
+
+acf_pops <- acf_pops %>%
+  mutate(sex = case_when(sex==1 ~ "males",
+                         sex==2 ~ "females")) %>%
+  mutate(area = case_when(area==1 ~ "ACF",
+                          area==2 ~ "Non-ACF")) %>%
+  mutate(age =  case_when(agegp==1 ~ "16-19",
+                          agegp==2 ~ "20-29",
+                          agegp==3 ~ "30-39",
+                          agegp==4 ~ "40-49",
+                          agegp==5 ~ "50+")) %>%
+  select(-agegp) %>%
+  mutate(population = round(population)) %>%
+  filter(area == "ACF") %>%
+  mutate(year = as.character(year)) %>%
+  mutate(quarter="1") %>%
+  mutate(year_q = paste(year, quarter, sep=".")) %>%
+  filter(year=="2009")
+
+
+yq <- hiv_cnrs %>%
+  ungroup() %>%
+  select(year, quarter, year_q, sex, age) %>%
+  distinct()
+  
+acf_pops <- left_join(yq, acf_pops, by=c("year", "quarter", "year_q", "sex", "age"))
+
+#get population group growth rates
+growth_rates <- blantyre_census_by_q %>%
+  mutate(new_age = case_when(age=="15-19" ~ "16-19",
+                                age=="20-24" ~ "20-29",
+                                age=="25-29" ~ "20-29",
+                                age=="30-34" ~ "30-39",
+                                age=="35-39" ~ "30-39",
+                                age=="40-44" ~ "40-49",
+                                age=="45-49" ~ "40-49",
+                                age=="50-54" ~ "50+",
+                                age=="55-59" ~ "50+",
+                                age=="60-64" ~ "50+",
+                                age=="65-69" ~ "50+",
+                                age=="70-74" ~ "50+",
+                                age=="75+" ~ "50+",
+                         TRUE ~ NA_character_)) %>%
+  filter(!is.na(new_age)) %>%
+  filter(sex !="total") %>%
+  filter(district=="Blantyre City") %>%
+  filter(year>=2009) %>%
+  mutate(year = as.character(year),
+         quarter = as.character(quarter)) %>%
+  group_by(year_q, new_age, sex) %>%
+  summarise(population = sum(population)) %>%
+  ungroup()
+
+#Check that worked
+growth_rates %>%
+  filter(year_q=="2009.1") %>%
+  summarise(sum=sum(population))
+
+growth_rates %>%
+  filter(year_q=="2018.4") %>%
+  summarise(sum=sum(population))
+  
+
+#now estimate the change per quarter for each age-sex group
+growth_rates <- growth_rates %>%
+  arrange(new_age, sex, year_q) %>%
+  group_by(new_age, sex) %>%
+  mutate(pct_change = (population/ lag(population))) %>%
+  rename(age = new_age, total_pop=population)
+
+acf_pops <- left_join(growth_rates, acf_pops, by=c("year_q", "sex", "age"))
+
+#now project forwards to get the quarterly estimated acf population  
+
+acf_pops <- acf_pops %>%
+  mutate(acf_pop = population)
+
+
+p <- progress_estimated(nrow(acf_pops))
+for(i in 1:nrow(acf_pops)) {
+  acf_pops %>%
+    mutate(acf_pop = if_else(is.na(acf_pop), lag(acf_pop)*pct_change, acf_pop)) -> acf_pops
+  p$tick()$print()
+}
+
+#tidyup a bit
+acf_pops <- acf_pops %>%
+  select(year_q, year, quarter, sex, age, total_pop, acf_pop) %>%
+  mutate(acf_pop = round(acf_pop)) %>%
+  ungroup()
+
+
+# Check these totals
+acf_pops %>%
+  ungroup() %>%
+  filter(year_q=="2009.1") %>%
+  summarise(acf_pop = sum(acf_pop))
+
+acf_pops %>%
+  ungroup() %>%
+  filter(year_q=="2018.4") %>%
+  summarise(acf_pop = sum(acf_pop))
+
+# acf_pops %>%
+#   ungroup() %>%
+#   group_by(acf) %>%
+#   filter(year_q=="2009.1") %>%
+#   summarise(acf_pop = sum(acf_pop))
+
+# acf_pops %>%
+#   ungroup() %>%
+#   group_by(acf) %>%
+#   filter(year_q=="2018.4") %>%
+#   summarise(acf_pop = sum(acf_pop))
+
+# #some graphical checks
+# acf_pops %>%
+#   ggplot() +
+#   geom_line(aes(x=year_q, y=acf_pop, group=age, colour=age)) +
+#   facet_wrap(acf ~ sex + age) +
+#   theme_classic(base_family = "Open Sans Condensed Light") +
+#   theme(axis.text.x=element_text(angle=45, hjust=1))
+# 
+# acf_pops %>%
+#   mutate(percent_acf = acf_pop/total_pop) %>%
+#   ggplot() +
+#   geom_line(aes(x=year_q, y=percent_acf, group=age, colour=age)) +
+#   facet_wrap(sex~age) +
+#   theme_classic(base_family = "Open Sans Condensed Light") +
+#   theme(axis.text.x=element_text(angle=45, hjust=1))
+# 
+# acf_pops %>% 
+#   mutate(non_acf_pop = total_pop -acf_pop) %>%
+#   select(year, year_q, age, sex, acf_pop, non_acf_pop, quarter) %>%
+#   gather(acf, population, -year_q, -age, -sex, -year, -quarter) %>%
+#   mutate(acf = case_when(acf=="acf_pop"~ "ACF",
+#                          acf=="non_acf_pop" ~ "Non-ACF")) %>%
+#   filter(quarter==1) %>%
+#   group_by(year, acf) %>%
+#   summarise(population = sum(population))
+# 
+acf_pops <- acf_pops %>%
+   ungroup() %>%
+   mutate(non_acf_pop = total_pop - acf_pop) %>%
+   gather(acf, population, -year_q, -year, -quarter, -age, -sex) %>%
+   mutate(acf = case_when(acf=="total_pop" ~ "total",
+                          acf=="acf_pop" ~ "ACF",
+                          acf=="non_acf_pop" ~ "Non-ACF")) %>%
+   filter(acf != "total")
+
+
+use_data(acf_pops, overwrite = TRUE)
+
+```
+```{r}
+#New HIV denominators
+
+
+```
+
