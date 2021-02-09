@@ -1,0 +1,161 @@
+---
+title: "Part 1 code Final trends analysis"
+author: "Dr Marriott Nliwasa"
+date: "20/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## TB case notification data formating
+
+```{r }
+library(tidyverse)
+library(haven)
+library(lubridate)
+library(labelled)
+library(here)
+library(usethis)
+library(readxl)
+library(zoo)
+library(janitor)
+```
+# import dataset
+
+```{r enter_data, echo=FALSE}
+
+x01_2009_2010 <- read_dta(here("data-raw/cnr_2009_2010_cleaned_24may15.dta"))
+dim(x01_2009_2010)
+#8149 records from 2009
+
+x01_lab2018 <- read_dta(here("data-raw/x01_labreq_Matched__all.dta"))
+dim(x01_lab2018)
+table(x01_lab2018$x05year)
+#22613 records 2011 to 2018
+
+
+x01_merged_2011_2018 <- read_dta(here("data-raw/all_merged_2011_2018.dta"))
+dim(x01_merged_2011_2018)
+table(x01_merged_2011_2018$x05year)
+
+cnrs_mn <- read_dta("cnr_cleaned_MN.dta")
+
+```
+
+
+#prepare 2009 to 2011q1-- retrospectively collected data
+
+```{r}
+
+
+dim(x01_2009_2010)
+
+tb_cases_2009_2010q1 <- x01_2009_2010 %>% 
+  select(reg_date = date, sex, age, hiv, acf=area, smr_clinic = smr) %>%
+  mutate(reg_date = ymd(reg_date))%>%
+  mutate(sex= case_when(sex==1 ~ "Male",
+                        sex==2 ~ "Female"))  %>%
+  mutate(hiv = case_when(hiv==2 ~ "a) HIV-negative",
+                         hiv==1 ~ "b) HIV-positive",)) %>%
+  mutate(smr_clinic = case_when(smr_clinic==2 ~ "a) Smear-negative",
+                                smr_clinic==1 ~ "b) Smear-positive",
+                                smr_clinic==3 ~ NA_character_)) %>%
+  mutate(acf = case_when(acf==1 ~ "ACF",
+                         acf==2 ~ "Non-ACF")) %>%
+  mutate(quarter = quarter(reg_date)) %>%
+  mutate(year = year(reg_date)) %>%
+  mutate(year_q = paste(year, quarter, sep=".")) %>%
+  filter(year_q!=2011.2) %>%
+  filter(age>15) %>%
+  filter(!is.na(acf))%>%
+  filter(!is.na(sex))%>%
+  filter(!is.na(reg_date))%>%
+   filter(!is.na(age))
+
+ sum(tb_cases_2009_2010q1$age)
+dim(tb_cases_2009_2010q1)
+table (tb_cases_2009_2010q1$year_q)
+
+usethis::use_data(tb_cases_2009_2010q1, overwrite = TRUE)
+
+```
+#prepare the 2011 to 2018 data
+```{r}
+#Keep only those in intervention and non-intervention clusters
+dim(x01_lab2018)
+table(x01_lab2018$x01area, useNA = "always")
+
+x01_lab2018 <- x01_lab2018 %>%
+  filter(x01area <= 2)
+
+#6032 outside of ACF and non-ACF areas filtered out
+
+#Check if missing registration date
+sum(is.na(x01_lab2018$x05regdate))
+#6 found
+
+x01_lab2018 <- x01_lab2018 %>%
+  filter(!(is.na(x01_lab2018$x05regdate)))
+dim(x01_lab2018)
+
+
+# create quarters and registration date
+x01_lab2018 <- x01_lab2018 %>%
+  mutate(year = year(x05regdate), quarter = quarter(x05regdate))%>%
+mutate(year_q = paste(year, quarter, sep=".")) 
+table (x01_lab2018$year_q)
+
+x01_lab2018 <- x01_lab2018 %>%
+filter(year_q>=2011.2 )%>%
+  filter(x12age>15) %>%
+  filter(!is.na(x01area))%>%
+  filter(!is.na(x11sex))%>%
+  filter(!is.na(x05regdate))%>%
+  filter(!is.na(x12age))
+
+
+
+x01_lab2018 <- x01_lab2018 %>%
+ mutate(x11sex= case_when(x11sex==1 ~ "Male",
+                        x11sex==2 ~ "Female"))  %>%
+  mutate(x20hiv = case_when(x20hiv==2 ~ "a) HIV-negative",
+                         x20hiv==1 ~ "b) HIV-positive",)) %>%
+   mutate(x01area = case_when(x01area ==1 ~ "ACF",
+                         x01area ==2 ~ "Non-ACF"))%>%
+ mutate(x15smr = case_when(x15smr==2 ~ "a) Smear-negative",
+                                x15smr==1 ~ "b) Smear-positive",
+                                x15smr==3 ~ NA_character_))
+dim (x01_lab2018)
+tb_cases_2011_2018b <- x01_lab2018
+usethis::use_data(tb_cases_2011_2018b, overwrite = TRUE)
+```
+#Append datasets
+```{r}
+
+tb_cases_2011_2018b <- tb_cases_2011_2018b  %>%
+ mutate(reg_date = x05regdate, sex=x11sex, age=x12age,  acf = x01area, hiv=x20hiv, smr_clinic=x15smr)
+
+str(tb_cases_2009_2010q1)
+table (tb_cases_2009_2010q1$sex, useNA="always")
+table (tb_cases_2011_2018b$sex, useNA="always")
+table (tb_cases_2009_2010q1$hiv, useNA="always")
+table (tb_cases_2011_2018b$hiv, useNA="always")
+table (tb_cases_2009_2010q1$acf, useNA="always")
+table (tb_cases_2011_2018b$acf, useNA="always")
+table (tb_cases_2009_2010q1$smr_clinic, useNA="always")
+table (tb_cases_2011_2018b$smr_clinic, useNA="always")
+
+attributes(tb_cases_2011_2018b$age)
+
+attributes(tb_cases_2009_2010q1$age)
+var_label(tb_cases_2009_2010q1$age) <- NULL
+
+all_cases_2009_2018real<- bind_rows(tb_cases_2011_2018b, tb_cases_2009_2010q1)
+
+all_cases_2009_2018mn<-all_cases_2009_2018real
+table (all_cases_2009_2018mn$year)
+table (all_cases_2009_2018mn$year_q)
+```
+
